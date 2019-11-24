@@ -32,8 +32,10 @@
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.lstDataMeibo = new System.Windows.Forms.ListBox();
-			this.txtLeft = new System.Windows.Forms.TextBox();
-			this.txtRight = new System.Windows.Forms.TextBox();
+			this.txtL = new System.Windows.Forms.TextBox();
+			this.txtR = new System.Windows.Forms.TextBox();
+			this.lblL = new System.Windows.Forms.Label();
+			this.lblR = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
@@ -82,27 +84,47 @@
 			this.lstDataMeibo.TabIndex = 16;
 			this.lstDataMeibo.SelectedIndexChanged += new System.EventHandler(this.lstDataMeibo_SelectedIndexChanged);
 			// 
-			// txtLeft
+			// txtL
 			// 
-			this.txtLeft.Location = new System.Drawing.Point(35, 23);
-			this.txtLeft.Name = "txtLeft";
-			this.txtLeft.Size = new System.Drawing.Size(100, 19);
-			this.txtLeft.TabIndex = 19;
+			this.txtL.Location = new System.Drawing.Point(35, 23);
+			this.txtL.Name = "txtL";
+			this.txtL.Size = new System.Drawing.Size(100, 19);
+			this.txtL.TabIndex = 19;
 			// 
-			// txtRight
+			// txtR
 			// 
-			this.txtRight.Location = new System.Drawing.Point(185, 27);
-			this.txtRight.Name = "txtRight";
-			this.txtRight.Size = new System.Drawing.Size(100, 19);
-			this.txtRight.TabIndex = 20;
+			this.txtR.Location = new System.Drawing.Point(185, 27);
+			this.txtR.Name = "txtR";
+			this.txtR.Size = new System.Drawing.Size(100, 19);
+			this.txtR.TabIndex = 20;
+			// 
+			// lblL
+			// 
+			this.lblL.AutoSize = true;
+			this.lblL.Location = new System.Drawing.Point(33, 45);
+			this.lblL.Name = "lblL";
+			this.lblL.Size = new System.Drawing.Size(35, 12);
+			this.lblL.TabIndex = 21;
+			this.lblL.Text = "label1";
+			// 
+			// lblR
+			// 
+			this.lblR.AutoSize = true;
+			this.lblR.Location = new System.Drawing.Point(183, 49);
+			this.lblR.Name = "lblR";
+			this.lblR.Size = new System.Drawing.Size(35, 12);
+			this.lblR.TabIndex = 22;
+			this.lblR.Text = "label1";
 			// 
 			// frmData
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(926, 572);
-			this.Controls.Add(this.txtRight);
-			this.Controls.Add(this.txtLeft);
+			this.Controls.Add(this.lblR);
+			this.Controls.Add(this.lblL);
+			this.Controls.Add(this.txtR);
+			this.Controls.Add(this.txtL);
 			this.Controls.Add(this.dataGridView2);
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.lstDataMeibo);
@@ -123,7 +145,9 @@
 		public System.Windows.Forms.ListBox lstDataPair;
 		public System.Windows.Forms.DataGridView dataGridView2;
 		public System.Windows.Forms.DataGridView dataGridView1;
-		public System.Windows.Forms.TextBox txtLeft;
-		public System.Windows.Forms.TextBox txtRight;
+		public System.Windows.Forms.TextBox txtL;
+		public System.Windows.Forms.TextBox txtR;
+		private System.Windows.Forms.Label lblL;
+		private System.Windows.Forms.Label lblR;
 	}
 }

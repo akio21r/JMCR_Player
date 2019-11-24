@@ -29,150 +29,139 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPair));
-			this.pctLeft = new System.Windows.Forms.PictureBox();
-			this.txtLeft = new System.Windows.Forms.TextBox();
-			this.lblVS = new System.Windows.Forms.Label();
-			this.pctRight = new System.Windows.Forms.PictureBox();
-			this.txtRight = new System.Windows.Forms.TextBox();
-			this.lblSchoolLeft = new System.Windows.Forms.Label();
-			this.lblSchoolRight = new System.Windows.Forms.Label();
-			this.lblNameLeft = new System.Windows.Forms.Label();
-			this.lblNameRight = new System.Windows.Forms.Label();
-			this.lblCarLeft = new System.Windows.Forms.Label();
-			this.lblCarRight = new System.Windows.Forms.Label();
+			this.txtL = new System.Windows.Forms.TextBox();
+			this.txtR = new System.Windows.Forms.TextBox();
+			this.lblSchoolL = new System.Windows.Forms.Label();
+			this.lblSchoolR = new System.Windows.Forms.Label();
+			this.lblNameL = new System.Windows.Forms.Label();
+			this.lblNameR = new System.Windows.Forms.Label();
+			this.lblCarL = new System.Windows.Forms.Label();
+			this.lblCarR = new System.Windows.Forms.Label();
 			this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
 			this.button1 = new System.Windows.Forms.Button();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			((System.ComponentModel.ISupportInitialize)(this.pctLeft)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pctRight)).BeginInit();
+			this.pctTitle = new System.Windows.Forms.PictureBox();
+			this.pctVS = new System.Windows.Forms.PictureBox();
+			this.pctR = new System.Windows.Forms.PictureBox();
+			this.pctL = new System.Windows.Forms.PictureBox();
+			this.pctBackImage = new System.Windows.Forms.PictureBox();
+			this.pctCourse1 = new System.Windows.Forms.PictureBox();
+			this.pctCourse2 = new System.Windows.Forms.PictureBox();
+			this.lblL = new System.Windows.Forms.Label();
+			this.lblR = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctTitle)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctVS)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctR)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctL)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctCourse1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctCourse2)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// pctLeft
+			// txtL
 			// 
-			this.pctLeft.BackColor = System.Drawing.Color.Transparent;
-			this.pctLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.pctLeft.ErrorImage = null;
-			this.pctLeft.Location = new System.Drawing.Point(12, 56);
-			this.pctLeft.Name = "pctLeft";
-			this.pctLeft.Size = new System.Drawing.Size(422, 370);
-			this.pctLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pctLeft.TabIndex = 0;
-			this.pctLeft.TabStop = false;
+			this.txtL.BackColor = System.Drawing.Color.DarkBlue;
+			this.txtL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtL.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.txtL.ForeColor = System.Drawing.Color.Lime;
+			this.txtL.Location = new System.Drawing.Point(12, 12);
+			this.txtL.Name = "txtL";
+			this.txtL.ReadOnly = true;
+			this.txtL.Size = new System.Drawing.Size(177, 48);
+			this.txtL.TabIndex = 1;
+			this.txtL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtL.Visible = false;
 			// 
-			// txtLeft
+			// txtR
 			// 
-			this.txtLeft.BackColor = System.Drawing.Color.Teal;
-			this.txtLeft.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtLeft.Location = new System.Drawing.Point(12, 12);
-			this.txtLeft.Name = "txtLeft";
-			this.txtLeft.Size = new System.Drawing.Size(121, 12);
-			this.txtLeft.TabIndex = 1;
-			this.txtLeft.TextChanged += new System.EventHandler(this.txtLeft_TextChanged);
+			this.txtR.BackColor = System.Drawing.Color.DarkBlue;
+			this.txtR.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtR.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.txtR.ForeColor = System.Drawing.Color.Lime;
+			this.txtR.Location = new System.Drawing.Point(982, 12);
+			this.txtR.Name = "txtR";
+			this.txtR.ReadOnly = true;
+			this.txtR.Size = new System.Drawing.Size(177, 48);
+			this.txtR.TabIndex = 1;
+			this.txtR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtR.Visible = false;
 			// 
-			// lblVS
+			// lblSchoolL
 			// 
-			this.lblVS.AutoSize = true;
-			this.lblVS.Font = new System.Drawing.Font("Segoe UI Symbol", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblVS.ForeColor = System.Drawing.Color.Yellow;
-			this.lblVS.Location = new System.Drawing.Point(486, 216);
-			this.lblVS.Name = "lblVS";
-			this.lblVS.Size = new System.Drawing.Size(73, 50);
-			this.lblVS.TabIndex = 2;
-			this.lblVS.Text = "VS.";
+			this.lblSchoolL.AutoSize = true;
+			this.lblSchoolL.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblSchoolL.Font = new System.Drawing.Font("MS UI Gothic", 18F);
+			this.lblSchoolL.ForeColor = System.Drawing.Color.Yellow;
+			this.lblSchoolL.Location = new System.Drawing.Point(13, 433);
+			this.lblSchoolL.Name = "lblSchoolL";
+			this.lblSchoolL.Size = new System.Drawing.Size(82, 24);
+			this.lblSchoolL.TabIndex = 4;
+			this.lblSchoolL.Text = "高校名";
 			// 
-			// pctRight
+			// lblSchoolR
 			// 
-			this.pctRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pctRight.Location = new System.Drawing.Point(614, 56);
-			this.pctRight.Name = "pctRight";
-			this.pctRight.Size = new System.Drawing.Size(422, 370);
-			this.pctRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pctRight.TabIndex = 3;
-			this.pctRight.TabStop = false;
+			this.lblSchoolR.AutoSize = true;
+			this.lblSchoolR.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblSchoolR.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblSchoolR.ForeColor = System.Drawing.Color.Yellow;
+			this.lblSchoolR.Location = new System.Drawing.Point(610, 433);
+			this.lblSchoolR.Name = "lblSchoolR";
+			this.lblSchoolR.Size = new System.Drawing.Size(82, 24);
+			this.lblSchoolR.TabIndex = 4;
+			this.lblSchoolR.Text = "高校名";
 			// 
-			// txtRight
+			// lblNameL
 			// 
-			this.txtRight.BackColor = System.Drawing.Color.Teal;
-			this.txtRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtRight.Location = new System.Drawing.Point(614, 12);
-			this.txtRight.Name = "txtRight";
-			this.txtRight.Size = new System.Drawing.Size(121, 12);
-			this.txtRight.TabIndex = 1;
-			this.txtRight.TextChanged += new System.EventHandler(this.txtRight_TextChanged);
+			this.lblNameL.AutoSize = true;
+			this.lblNameL.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblNameL.Font = new System.Drawing.Font("MS UI Gothic", 18F);
+			this.lblNameL.ForeColor = System.Drawing.Color.Yellow;
+			this.lblNameL.Location = new System.Drawing.Point(13, 470);
+			this.lblNameL.Name = "lblNameL";
+			this.lblNameL.Size = new System.Drawing.Size(58, 24);
+			this.lblNameL.TabIndex = 4;
+			this.lblNameL.Text = "氏名";
 			// 
-			// lblSchoolLeft
+			// lblNameR
 			// 
-			this.lblSchoolLeft.AutoSize = true;
-			this.lblSchoolLeft.Font = new System.Drawing.Font("HG正楷書体-PRO", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.lblSchoolLeft.ForeColor = System.Drawing.Color.Yellow;
-			this.lblSchoolLeft.Location = new System.Drawing.Point(13, 433);
-			this.lblSchoolLeft.Name = "lblSchoolLeft";
-			this.lblSchoolLeft.Size = new System.Drawing.Size(85, 24);
-			this.lblSchoolLeft.TabIndex = 4;
-			this.lblSchoolLeft.Text = "高校名";
+			this.lblNameR.AutoSize = true;
+			this.lblNameR.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblNameR.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblNameR.ForeColor = System.Drawing.Color.Yellow;
+			this.lblNameR.Location = new System.Drawing.Point(610, 470);
+			this.lblNameR.Name = "lblNameR";
+			this.lblNameR.Size = new System.Drawing.Size(58, 24);
+			this.lblNameR.TabIndex = 4;
+			this.lblNameR.Text = "氏名";
 			// 
-			// lblSchoolRight
+			// lblCarL
 			// 
-			this.lblSchoolRight.AutoSize = true;
-			this.lblSchoolRight.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.lblSchoolRight.ForeColor = System.Drawing.Color.Yellow;
-			this.lblSchoolRight.Location = new System.Drawing.Point(610, 433);
-			this.lblSchoolRight.Name = "lblSchoolRight";
-			this.lblSchoolRight.Size = new System.Drawing.Size(82, 24);
-			this.lblSchoolRight.TabIndex = 4;
-			this.lblSchoolRight.Text = "高校名";
+			this.lblCarL.AutoSize = true;
+			this.lblCarL.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblCarL.Font = new System.Drawing.Font("MS UI Gothic", 18F);
+			this.lblCarL.ForeColor = System.Drawing.Color.Yellow;
+			this.lblCarL.Location = new System.Drawing.Point(13, 512);
+			this.lblCarL.Name = "lblCarL";
+			this.lblCarL.Size = new System.Drawing.Size(107, 24);
+			this.lblCarL.TabIndex = 4;
+			this.lblCarL.Text = "カーネーム";
 			// 
-			// lblNameLeft
+			// lblCarR
 			// 
-			this.lblNameLeft.AutoSize = true;
-			this.lblNameLeft.Font = new System.Drawing.Font("HG正楷書体-PRO", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(128)));
-			this.lblNameLeft.ForeColor = System.Drawing.Color.Yellow;
-			this.lblNameLeft.Location = new System.Drawing.Point(13, 470);
-			this.lblNameLeft.Name = "lblNameLeft";
-			this.lblNameLeft.Size = new System.Drawing.Size(60, 24);
-			this.lblNameLeft.TabIndex = 4;
-			this.lblNameLeft.Text = "氏名";
-			// 
-			// lblNameRight
-			// 
-			this.lblNameRight.AutoSize = true;
-			this.lblNameRight.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.lblNameRight.ForeColor = System.Drawing.Color.Yellow;
-			this.lblNameRight.Location = new System.Drawing.Point(610, 470);
-			this.lblNameRight.Name = "lblNameRight";
-			this.lblNameRight.Size = new System.Drawing.Size(58, 24);
-			this.lblNameRight.TabIndex = 4;
-			this.lblNameRight.Text = "氏名";
-			// 
-			// lblCarLeft
-			// 
-			this.lblCarLeft.AutoSize = true;
-			this.lblCarLeft.BackColor = System.Drawing.Color.Transparent;
-			this.lblCarLeft.Font = new System.Drawing.Font("HG正楷書体-PRO", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.lblCarLeft.ForeColor = System.Drawing.Color.Yellow;
-			this.lblCarLeft.Location = new System.Drawing.Point(13, 512);
-			this.lblCarLeft.Name = "lblCarLeft";
-			this.lblCarLeft.Size = new System.Drawing.Size(180, 33);
-			this.lblCarLeft.TabIndex = 4;
-			this.lblCarLeft.Text = "カーネーム";
-			// 
-			// lblCarRight
-			// 
-			this.lblCarRight.AutoSize = true;
-			this.lblCarRight.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.lblCarRight.ForeColor = System.Drawing.Color.Yellow;
-			this.lblCarRight.Location = new System.Drawing.Point(610, 512);
-			this.lblCarRight.Name = "lblCarRight";
-			this.lblCarRight.Size = new System.Drawing.Size(107, 24);
-			this.lblCarRight.TabIndex = 4;
-			this.lblCarRight.Text = "カーネーム";
+			this.lblCarR.AutoSize = true;
+			this.lblCarR.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblCarR.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblCarR.ForeColor = System.Drawing.Color.Yellow;
+			this.lblCarR.Location = new System.Drawing.Point(610, 512);
+			this.lblCarR.Name = "lblCarR";
+			this.lblCarR.Size = new System.Drawing.Size(107, 24);
+			this.lblCarR.TabIndex = 4;
+			this.lblCarR.Text = "カーネーム";
 			// 
 			// axWindowsMediaPlayer1
 			// 
 			this.axWindowsMediaPlayer1.Enabled = true;
-			this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(311, 331);
+			this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(311, 237);
 			this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
 			this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
 			this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(297, 178);
@@ -181,7 +170,7 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(464, 35);
+			this.button1.Location = new System.Drawing.Point(500, 127);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 6;
@@ -189,47 +178,152 @@
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// pictureBox1
+			// pctTitle
 			// 
-			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox1.Image = global::JMCR.Properties.Resources.Image3;
-			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(1048, 554);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 15;
-			this.pictureBox1.TabStop = false;
+			this.pctTitle.BackColor = System.Drawing.Color.Transparent;
+			this.pctTitle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctTitle.Image = ((System.Drawing.Image)(resources.GetObject("pctTitle.Image")));
+			this.pctTitle.Location = new System.Drawing.Point(168, 12);
+			this.pctTitle.Name = "pctTitle";
+			this.pctTitle.Size = new System.Drawing.Size(808, 93);
+			this.pctTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctTitle.TabIndex = 17;
+			this.pctTitle.TabStop = false;
+			// 
+			// pctVS
+			// 
+			this.pctVS.BackColor = System.Drawing.Color.Transparent;
+			this.pctVS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctVS.Image = ((System.Drawing.Image)(resources.GetObject("pctVS.Image")));
+			this.pctVS.Location = new System.Drawing.Point(418, 156);
+			this.pctVS.Name = "pctVS";
+			this.pctVS.Size = new System.Drawing.Size(204, 173);
+			this.pctVS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctVS.TabIndex = 16;
+			this.pctVS.TabStop = false;
+			this.pctVS.Click += new System.EventHandler(this.pctVS_Click);
+			// 
+			// pctR
+			// 
+			this.pctR.BackColor = System.Drawing.Color.Transparent;
+			this.pctR.Location = new System.Drawing.Point(614, 121);
+			this.pctR.Name = "pctR";
+			this.pctR.Size = new System.Drawing.Size(422, 305);
+			this.pctR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pctR.TabIndex = 3;
+			this.pctR.TabStop = false;
+			// 
+			// pctL
+			// 
+			this.pctL.BackColor = System.Drawing.Color.Transparent;
+			this.pctL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctL.ErrorImage = null;
+			this.pctL.Location = new System.Drawing.Point(12, 121);
+			this.pctL.Name = "pctL";
+			this.pctL.Size = new System.Drawing.Size(422, 305);
+			this.pctL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pctL.TabIndex = 0;
+			this.pctL.TabStop = false;
+			// 
+			// pctBackImage
+			// 
+			this.pctBackImage.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pctBackImage.Image = ((System.Drawing.Image)(resources.GetObject("pctBackImage.Image")));
+			this.pctBackImage.Location = new System.Drawing.Point(0, 0);
+			this.pctBackImage.Name = "pctBackImage";
+			this.pctBackImage.Size = new System.Drawing.Size(1115, 546);
+			this.pctBackImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctBackImage.TabIndex = 15;
+			this.pctBackImage.TabStop = false;
+			// 
+			// pctCourse1
+			// 
+			this.pctCourse1.BackColor = System.Drawing.Color.Black;
+			this.pctCourse1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctCourse1.Image = ((System.Drawing.Image)(resources.GetObject("pctCourse1.Image")));
+			this.pctCourse1.Location = new System.Drawing.Point(12, 30);
+			this.pctCourse1.Name = "pctCourse1";
+			this.pctCourse1.Size = new System.Drawing.Size(58, 196);
+			this.pctCourse1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctCourse1.TabIndex = 18;
+			this.pctCourse1.TabStop = false;
+			// 
+			// pctCourse2
+			// 
+			this.pctCourse2.BackColor = System.Drawing.Color.Black;
+			this.pctCourse2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctCourse2.Image = ((System.Drawing.Image)(resources.GetObject("pctCourse2.Image")));
+			this.pctCourse2.Location = new System.Drawing.Point(993, 38);
+			this.pctCourse2.Name = "pctCourse2";
+			this.pctCourse2.Size = new System.Drawing.Size(58, 196);
+			this.pctCourse2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctCourse2.TabIndex = 19;
+			this.pctCourse2.TabStop = false;
+			// 
+			// lblL
+			// 
+			this.lblL.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblL.ForeColor = System.Drawing.Color.Chartreuse;
+			this.lblL.Location = new System.Drawing.Point(44, 38);
+			this.lblL.Name = "lblL";
+			this.lblL.Size = new System.Drawing.Size(192, 48);
+			this.lblL.TabIndex = 20;
+			this.lblL.Text = "No";
+			this.lblL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblL.TextChanged += new System.EventHandler(this.lblL_TextChanged);
+			// 
+			// lblR
+			// 
+			this.lblR.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblR.ForeColor = System.Drawing.Color.Chartreuse;
+			this.lblR.Location = new System.Drawing.Point(911, 38);
+			this.lblR.Name = "lblR";
+			this.lblR.Size = new System.Drawing.Size(192, 48);
+			this.lblR.TabIndex = 21;
+			this.lblR.Text = "No";
+			this.lblR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblR.TextChanged += new System.EventHandler(this.lblR_TextChanged);
 			// 
 			// frmPair
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
-			this.ClientSize = new System.Drawing.Size(1048, 554);
+			this.ClientSize = new System.Drawing.Size(1115, 546);
+			this.Controls.Add(this.lblR);
+			this.Controls.Add(this.lblL);
+			this.Controls.Add(this.pctCourse2);
+			this.Controls.Add(this.pctCourse1);
+			this.Controls.Add(this.pctTitle);
+			this.Controls.Add(this.pctVS);
 			this.Controls.Add(this.button1);
-			this.Controls.Add(this.lblCarRight);
-			this.Controls.Add(this.lblNameRight);
-			this.Controls.Add(this.lblSchoolRight);
-			this.Controls.Add(this.lblCarLeft);
-			this.Controls.Add(this.lblNameLeft);
-			this.Controls.Add(this.lblSchoolLeft);
-			this.Controls.Add(this.pctRight);
-			this.Controls.Add(this.lblVS);
-			this.Controls.Add(this.txtRight);
-			this.Controls.Add(this.txtLeft);
-			this.Controls.Add(this.pctLeft);
+			this.Controls.Add(this.lblCarR);
+			this.Controls.Add(this.lblNameR);
+			this.Controls.Add(this.lblSchoolR);
+			this.Controls.Add(this.lblCarL);
+			this.Controls.Add(this.lblNameL);
+			this.Controls.Add(this.lblSchoolL);
+			this.Controls.Add(this.pctR);
+			this.Controls.Add(this.txtR);
+			this.Controls.Add(this.txtL);
+			this.Controls.Add(this.pctL);
 			this.Controls.Add(this.axWindowsMediaPlayer1);
-			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.pctBackImage);
 			this.KeyPreview = true;
 			this.Name = "frmPair";
 			this.Text = "決勝トーナメント";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.frmTournament_Load);
-			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmTournament_KeyPress);
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPair_KeyDown);
 			this.Resize += new System.EventHandler(this.frmTournament_Resize);
-			((System.ComponentModel.ISupportInitialize)(this.pctLeft)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pctRight)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctTitle)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctVS)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctR)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctL)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctCourse1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctCourse2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -237,20 +331,25 @@
 
 		#endregion
 
-		public System.Windows.Forms.PictureBox pctLeft;
-		public System.Windows.Forms.TextBox txtLeft;
-		public System.Windows.Forms.Label lblVS;
-		public System.Windows.Forms.PictureBox pctRight;
-		public System.Windows.Forms.TextBox txtRight;
-		public System.Windows.Forms.Label lblSchoolLeft;
-		public System.Windows.Forms.Label lblSchoolRight;
-		public System.Windows.Forms.Label lblNameLeft;
-		public System.Windows.Forms.Label lblNameRight;
-		public System.Windows.Forms.Label lblCarLeft;
-		public System.Windows.Forms.Label lblCarRight;
+		public System.Windows.Forms.PictureBox pctL;
+		public System.Windows.Forms.TextBox txtL;
+		public System.Windows.Forms.PictureBox pctR;
+		public System.Windows.Forms.TextBox txtR;
+		public System.Windows.Forms.Label lblSchoolL;
+		public System.Windows.Forms.Label lblSchoolR;
+		public System.Windows.Forms.Label lblNameL;
+		public System.Windows.Forms.Label lblNameR;
+		public System.Windows.Forms.Label lblCarL;
+		public System.Windows.Forms.Label lblCarR;
 		private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
 		private System.Windows.Forms.Button button1;
-		public System.Windows.Forms.PictureBox pictureBox1;
+		public System.Windows.Forms.PictureBox pctBackImage;
+		private System.Windows.Forms.PictureBox pctVS;
+		private System.Windows.Forms.PictureBox pctTitle;
+		private System.Windows.Forms.PictureBox pctCourse1;
+		private System.Windows.Forms.PictureBox pctCourse2;
+		private System.Windows.Forms.Label lblL;
+		private System.Windows.Forms.Label lblR;
 	}
 }
 

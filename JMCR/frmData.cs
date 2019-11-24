@@ -11,28 +11,29 @@ namespace JMCR
 {
 	public partial class frmData : Form
 	{
-
+		//--------------------------------------------------------------
 		// 名簿データ
 		const int	MAX_MEIBO	= 2000;		// 名簿データの最大個数
 		public struct tMeibo{
-			public int		No_int;			// ゼッケン番号
-			public String	No_str;			// ゼッケン番号（0埋3桁の文字列）
+			public int		No;				// ゼッケン番号
 			public String	School;			// 学校名
 			public String	Name;			// 選手名
 			public String	Car;			// カーネーム
 		}
 		public static tMeibo[] meibo = new tMeibo[MAX_MEIBO];
-		public static int meibo_count;		// 読み込んだ数
+		public static int meibo_count;		// 名簿データの数
 
-
-
-		public static DataTable table			= new DataTable("Table");
-		public static String[,] strDataMeibo	= new String[1000, 4];	//基本データ
-		public static String[,] strDataPair		= new String[1000, 2];	//対戦表
-
-		public static int SelectNoLeft, SelectNoRight;
-
-	//	public frmPair frmPair = new frmPair();
+		//--------------------------------------------------------------
+		// 対戦データ
+//		public static String[,] strDataPair	= new String[1000, 2];		//対戦表
+		public static int[,] DataPair		= new int[MAX_MEIBO, 2];	//対戦表
+		public static int DataPair_count;	// 対戦表データの数
+		public static int PairNoNow = 0;	// 対戦表の現在位置
+		public static int SelectNoL, SelectNoR;
+	
+		//--------------------------------------------------------------
+		//
+		public static DataTable table		= new DataTable("Table");
 
 		public frmData()
 		{
@@ -45,6 +46,7 @@ namespace JMCR
 		{
 		}
 
+		// 名簿データの読み込み
 		private void CSVFileLoad_Meibo()
 		{
             // カラム名の追加
@@ -63,33 +65,26 @@ namespace JMCR
 				field = line.Split(',');
 
 				// 名簿データへの読込
-				meibo[meibo_count].No_int		= int.Parse(field[0]);
-				meibo[meibo_count].No_str			= meibo[meibo_count].No_int.ToString("000");
-				meibo[meibo_count].School		= field[1];
-				meibo[meibo_count].Name			= field[2];
-				meibo[meibo_count].Car			= field[3];
+				meibo[meibo_count].No		= int.Parse(field[0]);
+				meibo[meibo_count].School	= field[1];
+				meibo[meibo_count].Name		= field[2];
+				meibo[meibo_count].Car		= field[3];
 	
 				
 				// ListBox
 				lstDataMeibo.Items.Add(
-					meibo[meibo_count].No_str + '\t' +
+					meibo[meibo_count].No.ToString("000") + '\t' +
 					meibo[meibo_count].School + '\t' +
 					meibo[meibo_count].Name + '\t' +
 					meibo[meibo_count].Car);
 
 				// データを追加
 				frmData.table.Rows.Add(
-					meibo[meibo_count].No_str,
+					meibo[meibo_count].No.ToString("000"),
 					meibo[meibo_count].School,
 					meibo[meibo_count].Name,
 					meibo[meibo_count].Car);
 	
-				// String[,]
-				frmData.strDataMeibo[meibo_count, 0] = meibo[meibo_count].No_str;
-				frmData.strDataMeibo[meibo_count, 1] = meibo[meibo_count].School;
-				frmData.strDataMeibo[meibo_count, 2] = meibo[meibo_count].Name;
-				frmData.strDataMeibo[meibo_count, 3] = meibo[meibo_count].Car;
-
 			}
 			
 			reader.Close();
@@ -99,6 +94,7 @@ namespace JMCR
             dataGridView1.DataSource = frmData.table;
 		}
 
+		// 対戦データの読み込み
 		private void CSVFileLoad_Pair()
 		{
 			// CSVファイルの読み込み
@@ -106,17 +102,22 @@ namespace JMCR
 			string[] field;
 			System.IO.StreamReader reader = new System.IO.StreamReader(@"データ\dataPair.csv", Encoding.Default);
 			lstDataPair.Items.Clear();
-			for(int n=0; !reader.EndOfStream; n++){
+			for(DataPair_count=0; !reader.EndOfStream; DataPair_count++){
 				line = reader.ReadLine();
 				field = line.Split(',');
 
+				// 対戦データ
+				DataPair[DataPair_count, 0] = int.Parse(field[0]);
+				DataPair[DataPair_count, 1] = int.Parse(field[1]);
+
 				// String[,]
-				strDataPair[n, 0] = int.Parse(field[0]).ToString("000");
-				strDataPair[n, 1] = int.Parse(field[1]).ToString("000");
+			//	strDataPair[n, 0] = DataPair[n, 0].ToString("000");
+			//	strDataPair[n, 1] = DataPair[n, 1].ToString("000");
 
 				// ListBox
-				lstDataPair.Items.Add(strDataPair[n, 0] + '\t' + strDataPair[n, 1]);
-		}
+				lstDataPair.Items.Add(	DataPair[DataPair_count, 0].ToString("000") + '\t'
+										+ DataPair[DataPair_count, 1].ToString("000"));
+			}
 			reader.Close();
 		}
 
@@ -127,18 +128,13 @@ namespace JMCR
 
 		private void dataGridView1_SelectionChanged(object sender, EventArgs e)
 		{
-			txtLeft.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-/*			frmPair.txtLeft.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-			frmPair.lblSchoolLeft.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-			frmPair.lblNameLeft.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-			frmPair.lblCarLeft.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-*/
+			lblL.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
 		}
 
 		private void lstDataMeibo_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			int n = lstDataMeibo.SelectedIndex;
-			txtLeft.Text = strDataMeibo[n, 0];
+			lblL.Text = meibo[n].No.ToString();
 			
 
 		}
@@ -146,8 +142,11 @@ namespace JMCR
 		private void lstDataPair_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			int n = lstDataPair.SelectedIndex;
-			txtLeft.Text = strDataPair[n, 0];
-			txtRight.Text = strDataPair[n, 1];
+			SelectNoL = DataPair[n, 0];
+			SelectNoR = DataPair[n, 1];
+			lblL.Text = DataPair[n, 0].ToString();
+			lblR.Text = DataPair[n, 1].ToString();
+			PairNoNow = n;
 		}
 
 
