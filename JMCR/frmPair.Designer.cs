@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace JMCR
 {
-	partial class frmTournament
+	partial class frmPair
 	{
 		/// <summary>
 		/// 必要なデザイナー変数です。
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTournament));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPair));
 			this.pctLeft = new System.Windows.Forms.PictureBox();
 			this.txtLeft = new System.Windows.Forms.TextBox();
 			this.lblVS = new System.Windows.Forms.Label();
@@ -42,16 +42,10 @@
 			this.lblCarRight = new System.Windows.Forms.Label();
 			this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
 			this.button1 = new System.Windows.Forms.Button();
-			this.lstDataMeibo = new System.Windows.Forms.ListBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.lstDataPair = new System.Windows.Forms.ListBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pctLeft)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctRight)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -195,57 +189,10 @@
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// lstDataMeibo
-			// 
-			this.lstDataMeibo.FormattingEnabled = true;
-			this.lstDataMeibo.ItemHeight = 12;
-			this.lstDataMeibo.Location = new System.Drawing.Point(440, 89);
-			this.lstDataMeibo.Name = "lstDataMeibo";
-			this.lstDataMeibo.Size = new System.Drawing.Size(415, 124);
-			this.lstDataMeibo.TabIndex = 7;
-			this.lstDataMeibo.SelectedIndexChanged += new System.EventHandler(this.lstData_SelectedIndexChanged);
-			// 
-			// dataGridView1
-			// 
-			this.dataGridView1.AllowUserToAddRows = false;
-			this.dataGridView1.AllowUserToDeleteRows = false;
-			this.dataGridView1.AllowUserToResizeRows = false;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(565, 226);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.RowHeadersVisible = false;
-			this.dataGridView1.RowTemplate.Height = 21;
-			this.dataGridView1.ShowEditingIcon = false;
-			this.dataGridView1.Size = new System.Drawing.Size(471, 150);
-			this.dataGridView1.TabIndex = 12;
-			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-			this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
-			this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-			// 
-			// dataGridView2
-			// 
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Location = new System.Drawing.Point(413, 288);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.RowTemplate.Height = 21;
-			this.dataGridView2.Size = new System.Drawing.Size(138, 150);
-			this.dataGridView2.TabIndex = 13;
-			// 
-			// lstDataPair
-			// 
-			this.lstDataPair.FormattingEnabled = true;
-			this.lstDataPair.ItemHeight = 12;
-			this.lstDataPair.Location = new System.Drawing.Point(281, 19);
-			this.lstDataPair.Name = "lstDataPair";
-			this.lstDataPair.Size = new System.Drawing.Size(120, 88);
-			this.lstDataPair.TabIndex = 14;
-			this.lstDataPair.SelectedIndexChanged += new System.EventHandler(this.lstDataPair_SelectedIndexChanged);
-			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.Image3;
+			this.pictureBox1.Image = global::JMCR.Properties.Resources.Image3;
 			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(1048, 554);
@@ -253,16 +200,12 @@
 			this.pictureBox1.TabIndex = 15;
 			this.pictureBox1.TabStop = false;
 			// 
-			// frmTournament
+			// frmPair
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
 			this.ClientSize = new System.Drawing.Size(1048, 554);
-			this.Controls.Add(this.lstDataPair);
-			this.Controls.Add(this.dataGridView2);
-			this.Controls.Add(this.dataGridView1);
-			this.Controls.Add(this.lstDataMeibo);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.lblCarRight);
 			this.Controls.Add(this.lblNameRight);
@@ -278,7 +221,7 @@
 			this.Controls.Add(this.axWindowsMediaPlayer1);
 			this.Controls.Add(this.pictureBox1);
 			this.KeyPreview = true;
-			this.Name = "frmTournament";
+			this.Name = "frmPair";
 			this.Text = "決勝トーナメント";
 			this.Load += new System.EventHandler(this.frmTournament_Load);
 			this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmTournament_KeyPress);
@@ -286,8 +229,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctLeft)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctRight)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -296,24 +237,20 @@
 
 		#endregion
 
-		private System.Windows.Forms.PictureBox pctLeft;
-		private System.Windows.Forms.TextBox txtLeft;
-		private System.Windows.Forms.Label lblVS;
-		private System.Windows.Forms.PictureBox pctRight;
-		private System.Windows.Forms.TextBox txtRight;
-		private System.Windows.Forms.Label lblSchoolLeft;
-		private System.Windows.Forms.Label lblSchoolRight;
-		private System.Windows.Forms.Label lblNameLeft;
-		private System.Windows.Forms.Label lblNameRight;
-		private System.Windows.Forms.Label lblCarLeft;
-		private System.Windows.Forms.Label lblCarRight;
+		public System.Windows.Forms.PictureBox pctLeft;
+		public System.Windows.Forms.TextBox txtLeft;
+		public System.Windows.Forms.Label lblVS;
+		public System.Windows.Forms.PictureBox pctRight;
+		public System.Windows.Forms.TextBox txtRight;
+		public System.Windows.Forms.Label lblSchoolLeft;
+		public System.Windows.Forms.Label lblSchoolRight;
+		public System.Windows.Forms.Label lblNameLeft;
+		public System.Windows.Forms.Label lblNameRight;
+		public System.Windows.Forms.Label lblCarLeft;
+		public System.Windows.Forms.Label lblCarRight;
 		private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.ListBox lstDataMeibo;
-		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridView dataGridView2;
-		private System.Windows.Forms.ListBox lstDataPair;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		public System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
 

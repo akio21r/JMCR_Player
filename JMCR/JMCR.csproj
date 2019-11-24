@@ -8,7 +8,7 @@
     <ProjectGuid>{7FCF61F8-34AB-41FC-BC24-357E46671FCE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsFormsApplication1</RootNamespace>
+    <RootNamespace>JMCR</RootNamespace>
     <AssemblyName>JMCR</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -46,16 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmTournament.cs">
+    <Compile Include="frmData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTournament.Designer.cs">
-      <DependentUpon>frmTournament.cs</DependentUpon>
+    <Compile Include="frmData.Designer.cs">
+      <DependentUpon>frmData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPair.Designer.cs">
+      <DependentUpon>frmPair.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmTournament.resx">
-      <DependentUpon>frmTournament.cs</DependentUpon>
+    <EmbeddedResource Include="frmData.resx">
+      <DependentUpon>frmData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPair.resx">
+      <DependentUpon>frmPair.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
