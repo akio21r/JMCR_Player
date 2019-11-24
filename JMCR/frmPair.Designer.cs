@@ -38,7 +38,6 @@
 			this.lblCarL = new System.Windows.Forms.Label();
 			this.lblCarR = new System.Windows.Forms.Label();
 			this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-			this.button1 = new System.Windows.Forms.Button();
 			this.pctTitle = new System.Windows.Forms.PictureBox();
 			this.pctVS = new System.Windows.Forms.PictureBox();
 			this.pctR = new System.Windows.Forms.PictureBox();
@@ -48,6 +47,9 @@
 			this.pctCourse2 = new System.Windows.Forms.PictureBox();
 			this.lblL = new System.Windows.Forms.Label();
 			this.lblR = new System.Windows.Forms.Label();
+			this.lblCount = new System.Windows.Forms.Label();
+			this.pctWinL = new System.Windows.Forms.PictureBox();
+			this.pctWinR = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctTitle)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctVS)).BeginInit();
@@ -56,12 +58,15 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctCourse1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctCourse2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctWinL)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctWinR)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// txtL
 			// 
 			this.txtL.BackColor = System.Drawing.Color.DarkBlue;
 			this.txtL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtL.Enabled = false;
 			this.txtL.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.txtL.ForeColor = System.Drawing.Color.Lime;
 			this.txtL.Location = new System.Drawing.Point(12, 12);
@@ -76,6 +81,7 @@
 			// 
 			this.txtR.BackColor = System.Drawing.Color.DarkBlue;
 			this.txtR.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtR.Enabled = false;
 			this.txtR.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.txtR.ForeColor = System.Drawing.Color.Lime;
 			this.txtR.Location = new System.Drawing.Point(982, 12);
@@ -161,22 +167,12 @@
 			// axWindowsMediaPlayer1
 			// 
 			this.axWindowsMediaPlayer1.Enabled = true;
-			this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(311, 237);
+			this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(383, 335);
 			this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
 			this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-			this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(297, 178);
+			this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(221, 164);
 			this.axWindowsMediaPlayer1.TabIndex = 5;
-			this.axWindowsMediaPlayer1.Visible = false;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(500, 127);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 6;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);
 			// 
 			// pctTitle
 			// 
@@ -235,6 +231,7 @@
 			this.pctBackImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctBackImage.TabIndex = 15;
 			this.pctBackImage.TabStop = false;
+			this.pctBackImage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pctBackImage_MouseClick);
 			// 
 			// pctCourse1
 			// 
@@ -266,7 +263,7 @@
 			this.lblL.ForeColor = System.Drawing.Color.Chartreuse;
 			this.lblL.Location = new System.Drawing.Point(44, 38);
 			this.lblL.Name = "lblL";
-			this.lblL.Size = new System.Drawing.Size(192, 48);
+			this.lblL.Size = new System.Drawing.Size(200, 51);
 			this.lblL.TabIndex = 20;
 			this.lblL.Text = "No";
 			this.lblL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -278,11 +275,50 @@
 			this.lblR.ForeColor = System.Drawing.Color.Chartreuse;
 			this.lblR.Location = new System.Drawing.Point(911, 38);
 			this.lblR.Name = "lblR";
-			this.lblR.Size = new System.Drawing.Size(192, 48);
+			this.lblR.Size = new System.Drawing.Size(200, 51);
 			this.lblR.TabIndex = 21;
 			this.lblR.Text = "No";
 			this.lblR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.lblR.TextChanged += new System.EventHandler(this.lblR_TextChanged);
+			// 
+			// lblCount
+			// 
+			this.lblCount.BackColor = System.Drawing.Color.Transparent;
+			this.lblCount.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblCount.ForeColor = System.Drawing.Color.Chartreuse;
+			this.lblCount.Location = new System.Drawing.Point(422, 108);
+			this.lblCount.Name = "lblCount";
+			this.lblCount.Size = new System.Drawing.Size(200, 51);
+			this.lblCount.TabIndex = 22;
+			this.lblCount.Text = "1";
+			this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// pctWinL
+			// 
+			this.pctWinL.BackColor = System.Drawing.Color.Transparent;
+			this.pctWinL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctWinL.Image = ((System.Drawing.Image)(resources.GetObject("pctWinL.Image")));
+			this.pctWinL.Location = new System.Drawing.Point(88, 200);
+			this.pctWinL.Name = "pctWinL";
+			this.pctWinL.Size = new System.Drawing.Size(303, 181);
+			this.pctWinL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctWinL.TabIndex = 16;
+			this.pctWinL.TabStop = false;
+			this.pctWinL.Visible = false;
+			this.pctWinL.Click += new System.EventHandler(this.pctVS_Click);
+			// 
+			// pctWinR
+			// 
+			this.pctWinR.BackColor = System.Drawing.Color.Transparent;
+			this.pctWinR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctWinR.Image = ((System.Drawing.Image)(resources.GetObject("pctWinR.Image")));
+			this.pctWinR.Location = new System.Drawing.Point(660, 200);
+			this.pctWinR.Name = "pctWinR";
+			this.pctWinR.Size = new System.Drawing.Size(303, 181);
+			this.pctWinR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctWinR.TabIndex = 23;
+			this.pctWinR.TabStop = false;
+			this.pctWinR.Visible = false;
 			// 
 			// frmPair
 			// 
@@ -290,13 +326,16 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
 			this.ClientSize = new System.Drawing.Size(1115, 546);
+			this.Controls.Add(this.axWindowsMediaPlayer1);
+			this.Controls.Add(this.pctWinR);
+			this.Controls.Add(this.lblCount);
 			this.Controls.Add(this.lblR);
 			this.Controls.Add(this.lblL);
 			this.Controls.Add(this.pctCourse2);
 			this.Controls.Add(this.pctCourse1);
 			this.Controls.Add(this.pctTitle);
+			this.Controls.Add(this.pctWinL);
 			this.Controls.Add(this.pctVS);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.lblCarR);
 			this.Controls.Add(this.lblNameR);
 			this.Controls.Add(this.lblSchoolR);
@@ -307,7 +346,6 @@
 			this.Controls.Add(this.txtR);
 			this.Controls.Add(this.txtL);
 			this.Controls.Add(this.pctL);
-			this.Controls.Add(this.axWindowsMediaPlayer1);
 			this.Controls.Add(this.pctBackImage);
 			this.KeyPreview = true;
 			this.Name = "frmPair";
@@ -324,6 +362,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctCourse1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctCourse2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctWinL)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctWinR)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -342,7 +382,6 @@
 		public System.Windows.Forms.Label lblCarL;
 		public System.Windows.Forms.Label lblCarR;
 		private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
-		private System.Windows.Forms.Button button1;
 		public System.Windows.Forms.PictureBox pctBackImage;
 		private System.Windows.Forms.PictureBox pctVS;
 		private System.Windows.Forms.PictureBox pctTitle;
@@ -350,6 +389,9 @@
 		private System.Windows.Forms.PictureBox pctCourse2;
 		private System.Windows.Forms.Label lblL;
 		private System.Windows.Forms.Label lblR;
+		private System.Windows.Forms.Label lblCount;
+		private System.Windows.Forms.PictureBox pctWinL;
+		private System.Windows.Forms.PictureBox pctWinR;
 	}
 }
 

@@ -59,7 +59,6 @@ namespace JMCR
 			string line;
 			string[] field;
 			System.IO.StreamReader reader = new System.IO.StreamReader(@"データ\data.csv", Encoding.Default);
-			lstDataMeibo.Items.Clear();
 			for(meibo_count=0; !reader.EndOfStream; meibo_count++){
 				line = reader.ReadLine();
 				field = line.Split(',');
@@ -70,14 +69,6 @@ namespace JMCR
 				meibo[meibo_count].Name		= field[2];
 				meibo[meibo_count].Car		= field[3];
 	
-				
-				// ListBox
-				lstDataMeibo.Items.Add(
-					meibo[meibo_count].No.ToString("000") + '\t' +
-					meibo[meibo_count].School + '\t' +
-					meibo[meibo_count].Name + '\t' +
-					meibo[meibo_count].Car);
-
 				// データを追加
 				frmData.table.Rows.Add(
 					meibo[meibo_count].No.ToString("000"),
@@ -119,6 +110,8 @@ namespace JMCR
 										+ DataPair[DataPair_count, 1].ToString("000"));
 			}
 			reader.Close();
+			SelectNoL = DataPair[0, 0];
+			SelectNoR = DataPair[0, 1];
 		}
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -129,14 +122,6 @@ namespace JMCR
 		private void dataGridView1_SelectionChanged(object sender, EventArgs e)
 		{
 			lblL.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-		}
-
-		private void lstDataMeibo_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			int n = lstDataMeibo.SelectedIndex;
-			lblL.Text = meibo[n].No.ToString();
-			
-
 		}
 
 		private void lstDataPair_SelectedIndexChanged(object sender, EventArgs e)

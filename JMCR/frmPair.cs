@@ -29,11 +29,14 @@ namespace JMCR
 		private void frmTournament_Load(object sender, EventArgs e)
 		{
 			//MediaPlayerの設定
+			axWindowsMediaPlayer1.settings.autoStart = false;
 			axWindowsMediaPlayer1.uiMode = "none";
 			axWindowsMediaPlayer1.stretchToFit = true;
-			axWindowsMediaPlayer1.Dock = DockStyle.Fill;
-			axWindowsMediaPlayer1.settings.setMode("loop", true);
-			axWindowsMediaPlayer1.URL = @"素材\fire.mp4";	//渡されたファイルURLを読み込み
+		//	axWindowsMediaPlayer1.Dock = DockStyle.Fill;
+		//	axWindowsMediaPlayer1.fullScreen = true;
+		//	axWindowsMediaPlayer1.settings.setMode("loop", true);
+			axWindowsMediaPlayer1.URL = @"素材\NextChallenge.mp4";	//渡されたファイルURLを読み込み
+			axWindowsMediaPlayer1.Visible = false;
 
 			ResizeComponents();
 
@@ -51,10 +54,17 @@ namespace JMCR
 		//	pctBackImage.Controls.Add(pctCourse2);
 
 			pctBackImage.Controls.Add(pctVS);
+			pctBackImage.Controls.Add(lblCount);
+
 		//	axWindowsMediaPlayer1.Controls.Add(lblVS);
 
 			this.FormBorderStyle = FormBorderStyle.None;
 			this.WindowState = FormWindowState.Maximized;
+
+			pctL.Controls.Add(pctWinL);
+			pctR.Controls.Add(pctWinR);
+
+			lblCount.Text = (frmData.PairNoNow+1).ToString();
 		}
 
 
@@ -67,7 +77,8 @@ namespace JMCR
 			int TextTop			= ClientSize.Height - MarginBottom - TextHeight + TextMargin;
 
 			int FontHeight		= ClientSize.Height / 20;
-			Font fnt			= new Font("HG正楷書体-PRO", FontHeight);
+			Font fnt			= new Font("HG正楷書体-PRO", FontHeight, FontStyle.Regular, GraphicsUnit.Pixel);
+
 			lblSchoolL.Font		= lblSchoolR.Font	= fnt;
 			lblNameL.Font		= lblNameR.Font		= fnt;
 			lblCarL.Font		= lblCarR.Font		= fnt;
@@ -94,18 +105,22 @@ namespace JMCR
 			//pctLeft
 			pctL.Left		= MarginWOut;
 			pctL.Width		= Center - MarginWIn - pctL.Left;
-			pctL.Top			= MarginTop;
-			pctL.Height		= lblSchoolL.Top - TextMargin - MarginTop;
+			pctL.Top		= lblL.Top + lblL.Height + 5;
+			pctL.Height		= lblSchoolL.Top - TextMargin - pctL.Top;
 
 			//pctRight
 			pctR.Left		= Center + MarginWIn;
 			pctR.Width		= pctL.Width;
-			pctR.Top		= MarginTop;
+			pctR.Top		= pctL.Top;
 			pctR.Height		= pctL.Height;
 
 			//pctVS
 			pctVS.Left		= Center - pctVS.Width / 2;
 			pctVS.Top		= pctL.Top + pctL.Height / 2 - pctVS.Height / 2;
+
+			//lblCount
+			lblCount.Left	= Center - lblCount.Width / 2;
+			lblCount.Top	= pctTitle.Top + pctTitle.Height + 20;
 
 			//pctTitle
 			pctTitle.Left	= Center - pctTitle.Width / 2;
@@ -113,9 +128,9 @@ namespace JMCR
 
 			//lblL,R
 			lblL.Left		= 0;
-			lblL.Top		= 0;
 			lblR.Left		= Width - lblR.Width;
-			lblR.Top		= 0;
+			lblL.Top		=  lblR.Top		= 0;
+			lblL.Height		=  lblR.Height	= FontHeight;
 
 			//Course1,2
 			pctCourse1.Left	= 0;
@@ -123,6 +138,18 @@ namespace JMCR
 			pctCourse2.Left	= Width - pctCourse2.Width;
 			pctCourse2.Top	= lblR.Height + 10;
 
+			lblL.Text		= frmData.SelectNoL.ToString();
+			lblR.Text		= frmData.SelectNoR.ToString();
+
+			pctWinL.Left	= pctL.Width/2 - pctWinL.Width/2;
+			pctWinL.Top		= pctL.Height/2 - pctWinL.Height/2;
+			pctWinR.Left	= pctR.Width/2 - pctWinR.Width/2;
+			pctWinR.Top		= pctR.Height/2 - pctWinR.Height/2;
+
+			axWindowsMediaPlayer1.Top = 0;
+			axWindowsMediaPlayer1.Left = 0;
+			axWindowsMediaPlayer1.Width = Width;
+			axWindowsMediaPlayer1.Height = Height;
 		}
 
 		private void frmTournament_Resize(object sender, EventArgs e)
@@ -134,20 +161,9 @@ namespace JMCR
 		{
 		}
 
-		private void button1_Click(object sender, EventArgs e)
-		{
-			frmData.ShowDialog();
-			lblL.Text	= frmData.SelectNoL.ToString();
-			lblR.Text	= frmData.SelectNoR.ToString();
-		}
-
-
 		private void pctVS_Click(object sender, EventArgs e)
 		{
-			frmData.ShowDialog();
-			lblL.Text	= frmData.SelectNoL.ToString();
-			lblR.Text	= frmData.SelectNoR.ToString();
-
+			ShowData();
 		}
 
 		private void lblL_TextChanged(object sender, EventArgs e)
@@ -194,6 +210,7 @@ namespace JMCR
 				lblNameR.Text = "";
 				lblCarR.Text = "";
 			}
+
 		}
 
 		private void frmPair_KeyDown(object sender, KeyEventArgs e)
@@ -205,34 +222,107 @@ namespace JMCR
 						frmData.dataGridView1.Focus();
 					}
 					break;
+
 				case Keys.E:
 					this.FormBorderStyle = FormBorderStyle.Sizable;
 					this.WindowState = FormWindowState.Normal;
 					break;
+
 				case Keys.Escape:
 					this.FormBorderStyle = FormBorderStyle.Sizable;
 					this.WindowState = FormWindowState.Normal;
-				//	this.Close();
-					break;
-				case Keys.J:
-					if(frmData.PairNoNow > 0) frmData.PairNoNow--;
-					frmData.SelectNoL = frmData.DataPair[frmData.PairNoNow, 0];
-					frmData.SelectNoR = frmData.DataPair[frmData.PairNoNow, 1];
 
-					lblL.Text	= frmData.SelectNoL.ToString();
-					lblR.Text	= frmData.SelectNoR.ToString();
 					break;
-				case Keys.K:
-					if(frmData.PairNoNow < frmData.DataPair_count - 1) frmData.PairNoNow++;
-					frmData.SelectNoL = frmData.DataPair[frmData.PairNoNow, 0];
-					frmData.SelectNoR = frmData.DataPair[frmData.PairNoNow, 1];
+				case Keys.Up:
+					GoPrev();
+					break;
 
-					lblL.Text	= frmData.SelectNoL.ToString();
-					lblR.Text	= frmData.SelectNoR.ToString();
+				case Keys.Down:
+					GoNext();
 					break;
+
+				case Keys.Left:
+					pctWinL.Visible = true;
+					pctWinR.Visible = false;
+					break;
+	
+				case Keys.Right:
+					pctWinL.Visible = false;
+					pctWinR.Visible = true;
+					break;
+	
 			}
 
 		}
 
+		private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+		{
+			switch (e.newState){
+				case (int)WMPLib.WMPPlayState.wmppsStopped:
+					//停止時
+					break;
+
+				case (int)WMPLib.WMPPlayState.wmppsPlaying:
+					//再生時
+					break;
+
+				case (int)WMPLib.WMPPlayState.wmppsMediaEnded:
+					//再生終了時
+				//	pctBackImage.Visible = true;
+					axWindowsMediaPlayer1.Visible = false;
+				//	pctL.Visible = pctR.Visible = true;
+					break;
+
+				default:
+					break;
+				}
+		}
+
+		private void pctBackImage_MouseClick(object sender, MouseEventArgs e)
+		{
+			switch(e.Button){
+				case MouseButtons.Left:
+					GoNext();
+					break;
+				case MouseButtons.Right:
+					ShowData();
+					break;
+			}
+		}
+
+		private void GoNext()
+		{
+		//	pctBackImage.Visible = false;
+		//	pctL.Visible = pctR.Visible = false;
+			axWindowsMediaPlayer1.Visible = true;
+			axWindowsMediaPlayer1.Ctlcontrols.play();
+			if(frmData.PairNoNow < frmData.DataPair_count - 1) frmData.PairNoNow++;
+			lblCount.Text = (frmData.PairNoNow+1).ToString();
+			frmData.SelectNoL = frmData.DataPair[frmData.PairNoNow, 0];
+			frmData.SelectNoR = frmData.DataPair[frmData.PairNoNow, 1];
+			lblL.Text	= frmData.SelectNoL.ToString();
+			lblR.Text	= frmData.SelectNoR.ToString();
+			pctWinL.Visible = false;
+			pctWinR.Visible = false;
+		}
+
+		private void GoPrev()
+		{
+			if(frmData.PairNoNow > 0) frmData.PairNoNow--;
+			lblCount.Text = (frmData.PairNoNow+1).ToString();
+			frmData.SelectNoL = frmData.DataPair[frmData.PairNoNow, 0];
+			frmData.SelectNoR = frmData.DataPair[frmData.PairNoNow, 1];
+			lblL.Text	= frmData.SelectNoL.ToString();
+			lblR.Text	= frmData.SelectNoR.ToString();
+			pctWinL.Visible = false;
+			pctWinR.Visible = false;
+		}
+
+		private void ShowData()
+		{
+			frmData.ShowDialog();
+			lblL.Text	= frmData.SelectNoL.ToString();
+			lblR.Text	= frmData.SelectNoR.ToString();
+		}
 	}
 }
