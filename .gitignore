@@ -4,12 +4,17 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # Build results
-[Bb]in/
+
+#[Bb]in/
+/JMCR/bin/*
+!/JMCR/bin/Release/
+/JMCR/bin/Release/*
+!/JMCR/bin/Release/*.exe
+
 [Oo]bj/
 [Ll]og/
 
 #無視しないファイル
-!./JMCR/bin/Release/JMCR.exe
-
+!*.exe
 
 #*.suo
