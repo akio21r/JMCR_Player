@@ -24,10 +24,7 @@ namespace JMCR
 		public frmPair()
 		{
 			InitializeComponent();
-		}
 
-		private void frmTournament_Load(object sender, EventArgs e)
-		{
 			//MediaPlayerの設定
 			axWindowsMediaPlayer1.settings.autoStart = false;
 			axWindowsMediaPlayer1.uiMode = "none";
@@ -65,6 +62,10 @@ namespace JMCR
 			pctR.Controls.Add(pctWinR);
 
 			lblCount.Text = (frmData.PairNoNow+1).ToString();
+		}
+
+		private void frmTournament_Load(object sender, EventArgs e)
+		{
 		}
 
 
@@ -172,7 +173,8 @@ namespace JMCR
 			int sel = frmData.SelectNoL;
 			for(n=0; n<frmData.meibo_count; n++){
 				if(sel == frmData.meibo[n].No){
-					pctL.ImageLocation = @"データ\" + sel.ToString("000") + ".jpg";
+				//	pctL.ImageLocation = @"データ\" + sel.ToString("000") + ".jpg";
+					pctL.ImageLocation = @"データ\" + frmData.meibo[n].Image;
 					lblL.Text		= sel.ToString();
 					lblSchoolL.Text	= frmData.meibo[n].School;
 					lblNameL.Text	= frmData.meibo[n].Name;
@@ -195,7 +197,8 @@ namespace JMCR
 			int sel = frmData.SelectNoR;
 			for(n=0; n<frmData.meibo_count; n++){
 				if(sel == frmData.meibo[n].No){
-					pctR.ImageLocation = @"データ\" + sel.ToString("000") + ".jpg";
+				//	pctR.ImageLocation = @"データ\" + sel.ToString("000") + ".jpg";
+					pctR.ImageLocation = @"データ\" + frmData.meibo[n].Image;
 					lblR.Text		= sel.ToString();
 					lblSchoolR.Text	= frmData.meibo[n].School;
 					lblNameR.Text	= frmData.meibo[n].Name;
@@ -229,9 +232,9 @@ namespace JMCR
 					break;
 
 				case Keys.Escape:
-					this.FormBorderStyle = FormBorderStyle.Sizable;
-					this.WindowState = FormWindowState.Normal;
-
+				//	this.FormBorderStyle = FormBorderStyle.Sizable;
+				//	this.WindowState = FormWindowState.Normal;
+					this.Close();
 					break;
 				case Keys.Up:
 					GoPrev();

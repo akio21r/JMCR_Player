@@ -19,6 +19,7 @@ namespace JMCR
 			public String	School;			// 学校名
 			public String	Name;			// 選手名
 			public String	Car;			// カーネーム
+			public String	Image;			// 写真のファイルネーム
 		}
 		public static tMeibo[] meibo = new tMeibo[MAX_MEIBO];
 		public static int meibo_count;		// 名簿データの数
@@ -33,7 +34,7 @@ namespace JMCR
 	
 		//--------------------------------------------------------------
 		//
-		public static DataTable table		= new DataTable("Table");
+//		public static DataTable table		= new DataTable("Table");
 
 		public frmData()
 		{
@@ -49,11 +50,12 @@ namespace JMCR
 		// 名簿データの読み込み
 		private void CSVFileLoad_Meibo()
 		{
-            // カラム名の追加
-            frmData.table.Columns.Add("No");
-            frmData.table.Columns.Add("学校");
-            frmData.table.Columns.Add("氏名");
-            frmData.table.Columns.Add("カーネーム");
+			// カラム名の追加
+		//	table.Columns.Add("No");
+		//	table.Columns.Add("学校");
+		//	table.Columns.Add("氏名");
+		//	table.Columns.Add("カーネーム");
+		//	table.Columns.Add("写真");
 	
 			// CSVファイルの読み込み
 			string line;
@@ -68,21 +70,21 @@ namespace JMCR
 				meibo[meibo_count].School	= field[1];
 				meibo[meibo_count].Name		= field[2];
 				meibo[meibo_count].Car		= field[3];
+				meibo[meibo_count].Image	= field[4];
 	
 				// データを追加
-				frmData.table.Rows.Add(
-					meibo[meibo_count].No.ToString("000"),
-					meibo[meibo_count].School,
-					meibo[meibo_count].Name,
-					meibo[meibo_count].Car);
+			//	frmData.table.Rows.Add(
+			//		meibo[meibo_count].No.ToString("000"),
+			//		meibo[meibo_count].School,
+			//		meibo[meibo_count].Name,
+			//		meibo[meibo_count].Car,
+			//		meibo[meibo_count].Image);
 	
 			}
 			
 			reader.Close();
-		
-	
-		
-            dataGridView1.DataSource = frmData.table;
+
+		//	dataGridView1.DataSource = frmData.table;
 		}
 
 		// 対戦データの読み込み

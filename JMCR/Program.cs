@@ -15,7 +15,7 @@ namespace JMCR
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new frmPair());
+			Application.Run(new frmMain());
 		}
 	}
 }
