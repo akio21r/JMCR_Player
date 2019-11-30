@@ -185,6 +185,7 @@
 			this.pctTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctTitle.TabIndex = 17;
 			this.pctTitle.TabStop = false;
+			this.pctTitle.Click += new System.EventHandler(this.pctTitle_Click);
 			// 
 			// pctVS
 			// 
@@ -351,7 +352,6 @@
 			this.Name = "frmPair";
 			this.Text = "決勝トーナメント";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-			this.Load += new System.EventHandler(this.frmTournament_Load);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPair_KeyDown);
 			this.Resize += new System.EventHandler(this.frmTournament_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();

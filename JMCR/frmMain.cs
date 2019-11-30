@@ -30,5 +30,11 @@ namespace JMCR
 			f.ShowDialog();
 		}
 
+		private void frmMain_Resize(object sender, EventArgs e)
+		{
+			pctKame.Left = this.ClientSize.Width - pctKame.Width;
+			pctKame.Top  = this.ClientSize.Height - pctKame.Height;
+		}
+
 	}
 }

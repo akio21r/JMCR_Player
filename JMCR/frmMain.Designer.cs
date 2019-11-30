@@ -29,8 +29,7 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-			this.btnYosen = new System.Windows.Forms.Button();
-			this.btnTournament = new System.Windows.Forms.Button();
+			this.btnPair = new System.Windows.Forms.Button();
 			this.btnTeam = new System.Windows.Forms.Button();
 			this.pctKame = new System.Windows.Forms.PictureBox();
 			this.pctBackImage = new System.Windows.Forms.PictureBox();
@@ -39,31 +38,21 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// btnYosen
+			// btnPair
 			// 
-			this.btnYosen.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.btnYosen.Location = new System.Drawing.Point(32, 137);
-			this.btnYosen.Name = "btnYosen";
-			this.btnYosen.Size = new System.Drawing.Size(259, 52);
-			this.btnYosen.TabIndex = 0;
-			this.btnYosen.Text = "予選";
-			this.btnYosen.UseVisualStyleBackColor = true;
-			// 
-			// btnTournament
-			// 
-			this.btnTournament.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.btnTournament.Location = new System.Drawing.Point(32, 232);
-			this.btnTournament.Name = "btnTournament";
-			this.btnTournament.Size = new System.Drawing.Size(259, 52);
-			this.btnTournament.TabIndex = 1;
-			this.btnTournament.Text = "決勝トーナメント";
-			this.btnTournament.UseVisualStyleBackColor = true;
-			this.btnTournament.Click += new System.EventHandler(this.btnTournament_Click);
+			this.btnPair.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnPair.Location = new System.Drawing.Point(32, 95);
+			this.btnPair.Name = "btnPair";
+			this.btnPair.Size = new System.Drawing.Size(259, 52);
+			this.btnPair.TabIndex = 1;
+			this.btnPair.Text = "予選・決勝トーナメント";
+			this.btnPair.UseVisualStyleBackColor = true;
+			this.btnPair.Click += new System.EventHandler(this.btnTournament_Click);
 			// 
 			// btnTeam
 			// 
 			this.btnTeam.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.btnTeam.Location = new System.Drawing.Point(32, 327);
+			this.btnTeam.Location = new System.Drawing.Point(32, 178);
 			this.btnTeam.Name = "btnTeam";
 			this.btnTeam.Size = new System.Drawing.Size(259, 52);
 			this.btnTeam.TabIndex = 2;
@@ -97,13 +86,13 @@
 			// 
 			this.lblTitle.AutoSize = true;
 			this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-			this.lblTitle.Font = new System.Drawing.Font("HG正楷書体-PRO", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblTitle.Font = new System.Drawing.Font("メイリオ", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblTitle.ForeColor = System.Drawing.Color.Yellow;
 			this.lblTitle.Location = new System.Drawing.Point(12, 9);
 			this.lblTitle.Name = "lblTitle";
-			this.lblTitle.Size = new System.Drawing.Size(498, 37);
+			this.lblTitle.Size = new System.Drawing.Size(542, 55);
 			this.lblTitle.TabIndex = 5;
-			this.lblTitle.Text = "ジャパンマイコンカーラリー";
+			this.lblTitle.Text = "ジャパン・マイコンカーラリー";
 			// 
 			// frmMain
 			// 
@@ -114,11 +103,11 @@
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.pctKame);
 			this.Controls.Add(this.btnTeam);
-			this.Controls.Add(this.btnTournament);
-			this.Controls.Add(this.btnYosen);
+			this.Controls.Add(this.btnPair);
 			this.Controls.Add(this.pctBackImage);
 			this.Name = "frmMain";
 			this.Text = "frmMain";
+			this.Resize += new System.EventHandler(this.frmMain_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.pctKame)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).EndInit();
 			this.ResumeLayout(false);
@@ -128,8 +117,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button btnYosen;
-		private System.Windows.Forms.Button btnTournament;
+		private System.Windows.Forms.Button btnPair;
 		private System.Windows.Forms.Button btnTeam;
 		private System.Windows.Forms.PictureBox pctKame;
 		private System.Windows.Forms.PictureBox pctBackImage;

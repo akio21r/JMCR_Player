@@ -134,7 +134,7 @@
 			// 
 			this.pct2.BackColor = System.Drawing.Color.Transparent;
 			this.pct2.Image = ((System.Drawing.Image)(resources.GetObject("pct2.Image")));
-			this.pct2.Location = new System.Drawing.Point(398, 70);
+			this.pct2.Location = new System.Drawing.Point(398, 72);
 			this.pct2.Name = "pct2";
 			this.pct2.Size = new System.Drawing.Size(120, 63);
 			this.pct2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -145,7 +145,7 @@
 			// 
 			this.pct3.BackColor = System.Drawing.Color.Transparent;
 			this.pct3.Image = ((System.Drawing.Image)(resources.GetObject("pct3.Image")));
-			this.pct3.Location = new System.Drawing.Point(784, 70);
+			this.pct3.Location = new System.Drawing.Point(784, 72);
 			this.pct3.Name = "pct3";
 			this.pct3.Size = new System.Drawing.Size(119, 62);
 			this.pct3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -157,11 +157,13 @@
 			this.txtNo1.BackColor = System.Drawing.Color.DarkSlateGray;
 			this.txtNo1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.txtNo1.ForeColor = System.Drawing.Color.White;
-			this.txtNo1.Location = new System.Drawing.Point(146, 106);
+			this.txtNo1.Location = new System.Drawing.Point(146, 88);
 			this.txtNo1.Name = "txtNo1";
-			this.txtNo1.Size = new System.Drawing.Size(104, 31);
+			this.txtNo1.Size = new System.Drawing.Size(151, 31);
 			this.txtNo1.TabIndex = 29;
+			this.txtNo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.txtNo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNo1_KeyPress);
+			this.txtNo1.Leave += new System.EventHandler(this.txtNo1_Leave);
 			// 
 			// pctTitle
 			// 
@@ -174,6 +176,7 @@
 			this.pctTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctTitle.TabIndex = 30;
 			this.pctTitle.TabStop = false;
+			this.pctTitle.Click += new System.EventHandler(this.pctTitle_Click);
 			// 
 			// lblCar2
 			// 
@@ -276,22 +279,26 @@
 			this.txtNo2.BackColor = System.Drawing.Color.DarkSlateGray;
 			this.txtNo2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.txtNo2.ForeColor = System.Drawing.Color.White;
-			this.txtNo2.Location = new System.Drawing.Point(524, 106);
+			this.txtNo2.Location = new System.Drawing.Point(524, 88);
 			this.txtNo2.Name = "txtNo2";
-			this.txtNo2.Size = new System.Drawing.Size(104, 31);
+			this.txtNo2.Size = new System.Drawing.Size(151, 31);
 			this.txtNo2.TabIndex = 42;
+			this.txtNo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.txtNo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNo2_KeyPress);
+			this.txtNo2.Leave += new System.EventHandler(this.txtNo2_Leave);
 			// 
 			// txtNo3
 			// 
 			this.txtNo3.BackColor = System.Drawing.Color.DarkSlateGray;
 			this.txtNo3.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.txtNo3.ForeColor = System.Drawing.Color.White;
-			this.txtNo3.Location = new System.Drawing.Point(909, 106);
+			this.txtNo3.Location = new System.Drawing.Point(909, 88);
 			this.txtNo3.Name = "txtNo3";
-			this.txtNo3.Size = new System.Drawing.Size(104, 31);
+			this.txtNo3.Size = new System.Drawing.Size(151, 31);
 			this.txtNo3.TabIndex = 43;
+			this.txtNo3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.txtNo3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNo3_KeyPress);
+			this.txtNo3.Leave += new System.EventHandler(this.txtNo3_Leave);
 			// 
 			// txtTeam
 			// 
@@ -332,8 +339,11 @@
 			this.Controls.Add(this.lblSchool1);
 			this.Controls.Add(this.pctFace1);
 			this.Controls.Add(this.pctBackImage);
+			this.KeyPreview = true;
 			this.Name = "frmTeam";
 			this.Text = "Form1";
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTeam_KeyDown);
+			this.Resize += new System.EventHandler(this.frmTeam_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pct1)).EndInit();

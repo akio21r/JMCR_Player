@@ -12,7 +12,7 @@ namespace JMCR
 	public partial class frmPair : Form
 	{
 
-		int		MarginWOut			= 20;
+		int		MarginW				= 20;
 		int		MarginWIn			= 100;
 		int		MarginTop			= 20;
 		int		MarginBottom		= 20;
@@ -20,6 +20,8 @@ namespace JMCR
 		int		TextMargin			= 20;
 
 		public frmData frmData = new frmData();
+
+	//	System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"素材\音\se_maoudamashii_explosion08.wav");
 
 		public frmPair()
 		{
@@ -50,6 +52,7 @@ namespace JMCR
 		//	pctBackImage.Controls.Add(pctCourse1);
 		//	pctBackImage.Controls.Add(pctCourse2);
 
+			pctBackImage.Controls.Add(pctTitle);
 			pctBackImage.Controls.Add(pctVS);
 			pctBackImage.Controls.Add(lblCount);
 
@@ -63,11 +66,6 @@ namespace JMCR
 
 			lblCount.Text = (frmData.PairNoNow+1).ToString();
 		}
-
-		private void frmTournament_Load(object sender, EventArgs e)
-		{
-		}
-
 
 		private void ResizeComponents()
 		{
@@ -86,25 +84,25 @@ namespace JMCR
 			lblL.Font			= lblR.Font			= fnt;
 
 			//lblCar
-			lblCarL.Left		= MarginWOut;
+			lblCarL.Left	= MarginW;
 			lblCarL.Top		= ClientSize.Height - MarginBottom - lblCarL.Height;
 			lblCarR.Left	= Center + MarginWIn;
 			lblCarR.Top		= lblCarL.Top;
 
 			//lblName
-			lblNameL.Left	= MarginWOut;
+			lblNameL.Left	= MarginW;
 			lblNameL.Top		= lblCarL.Top - TextMargin - lblNameL.Height;
 			lblNameR.Left	= lblCarR.Left;
 			lblNameR.Top	= lblNameL.Top;
 
 			//lblSchool
-			lblSchoolL.Left	= MarginWOut;
+			lblSchoolL.Left	= MarginW;
 			lblSchoolL.Top	= lblNameL.Top - TextMargin - lblSchoolL.Height;
 			lblSchoolR.Left	= lblCarR.Left;
 			lblSchoolR.Top	= lblSchoolL.Top;
 
 			//pctLeft
-			pctL.Left		= MarginWOut;
+			pctL.Left		= MarginW;
 			pctL.Width		= Center - MarginWIn - pctL.Left;
 			pctL.Top		= lblL.Top + lblL.Height + 5;
 			pctL.Height		= lblSchoolL.Top - TextMargin - pctL.Top;
@@ -126,6 +124,7 @@ namespace JMCR
 			//pctTitle
 			pctTitle.Left	= Center - pctTitle.Width / 2;
 			pctTitle.Top	= 0;
+			pctTitle.Height	= pctL.Top;
 
 			//lblL,R
 			lblL.Left		= 0;
@@ -164,7 +163,11 @@ namespace JMCR
 
 		private void pctVS_Click(object sender, EventArgs e)
 		{
-			ShowData();
+			String l,r;
+			l = lblL.Text;
+			r = lblR.Text;		/////////////////////////////////////////////////////////////////////////////////// ←　値が書き換わらない
+			lblL.Text = r;
+			lblR.Text = l;
 		}
 
 		private void lblL_TextChanged(object sender, EventArgs e)
@@ -295,8 +298,9 @@ namespace JMCR
 
 		private void GoNext()
 		{
-		//	pctBackImage.Visible = false;
-		//	pctL.Visible = pctR.Visible = false;
+			pctBackImage.Visible = false;
+			pctL.Visible = pctR.Visible = false;
+
 			axWindowsMediaPlayer1.Visible = true;
 			axWindowsMediaPlayer1.Ctlcontrols.play();
 			if(frmData.PairNoNow < frmData.DataPair_count - 1) frmData.PairNoNow++;
@@ -307,6 +311,8 @@ namespace JMCR
 			lblR.Text	= frmData.SelectNoR.ToString();
 			pctWinL.Visible = false;
 			pctWinR.Visible = false;
+			pctL.Visible = pctR.Visible = true;
+			pctBackImage.Visible = true;
 		}
 
 		private void GoPrev()
@@ -326,6 +332,11 @@ namespace JMCR
 			frmData.ShowDialog();
 			lblL.Text	= frmData.SelectNoL.ToString();
 			lblR.Text	= frmData.SelectNoR.ToString();
+		}
+
+		private void pctTitle_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }
