@@ -257,17 +257,17 @@ namespace JMCR
 
 		private void txtNo1_Leave(object sender, EventArgs e)
 		{
-			Show1();
+		//	Show1();
 		}
 
 		private void txtNo2_Leave(object sender, EventArgs e)
 		{
-			Show2();
+		//	Show2();
 		}
 
 		private void txtNo3_Leave(object sender, EventArgs e)
 		{
-			Show3();
+		//	Show3();
 		}
 
 		private void pctTitle_Click(object sender, EventArgs e)

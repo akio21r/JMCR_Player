@@ -18,9 +18,44 @@ namespace JMCR
 			pctBackImage.Controls.Add(lblTitle);
 		}
 
-		private void btnTournament_Click(object sender, EventArgs e)
+		private void frmMain_Resize(object sender, EventArgs e)
+		{
+			pctKame.Left = this.ClientSize.Width - pctKame.Width;
+			pctKame.Top  = this.ClientSize.Height - pctKame.Height;
+		}
+
+		private void btnYosenA_Click(object sender, EventArgs e)
 		{
 			frmPair f = new frmPair();
+			f.lblTitle.Text = "Advanced Class 予選";
+			f.ShowDialog();
+		}
+
+		private void btnKessyoA_Click(object sender, EventArgs e)
+		{
+			frmPair f = new frmPair();
+			f.lblTitle.Text = "Advanced Class 決勝トーナメント";
+			f.ShowDialog();
+		}
+
+		private void btnYosenB_Click(object sender, EventArgs e)
+		{
+			frmPair f = new frmPair();
+			f.lblTitle.Text = "Basic Class 予選";
+			f.ShowDialog();
+		}
+
+		private void btnKessyoB_Click(object sender, EventArgs e)
+		{
+			frmPair f = new frmPair();
+			f.lblTitle.Text = "Basic Class 決勝トーナメント";
+			f.ShowDialog();
+		}
+
+		private void btnKessyoC_Click(object sender, EventArgs e)
+		{
+			frmPair f = new frmPair();
+			f.lblTitle.Text = "Camera Class";
 			f.ShowDialog();
 		}
 
@@ -28,12 +63,6 @@ namespace JMCR
 		{
 			frmTeam f = new frmTeam();
 			f.ShowDialog();
-		}
-
-		private void frmMain_Resize(object sender, EventArgs e)
-		{
-			pctKame.Left = this.ClientSize.Width - pctKame.Width;
-			pctKame.Top  = this.ClientSize.Height - pctKame.Height;
 		}
 
 	}

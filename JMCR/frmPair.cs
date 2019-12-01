@@ -52,7 +52,7 @@ namespace JMCR
 		//	pctBackImage.Controls.Add(pctCourse1);
 		//	pctBackImage.Controls.Add(pctCourse2);
 
-			pctBackImage.Controls.Add(pctTitle);
+			pctBackImage.Controls.Add(lblTitle);
 			pctBackImage.Controls.Add(pctVS);
 			pctBackImage.Controls.Add(lblCount);
 
@@ -119,12 +119,12 @@ namespace JMCR
 
 			//lblCount
 			lblCount.Left	= Center - lblCount.Width / 2;
-			lblCount.Top	= pctTitle.Top + pctTitle.Height + 20;
+			lblCount.Top	= lblTitle.Top + lblTitle.Height + 20;
 
-			//pctTitle
-			pctTitle.Left	= Center - pctTitle.Width / 2;
-			pctTitle.Top	= 0;
-			pctTitle.Height	= pctL.Top;
+			//lblTitle
+			lblTitle.Left	= Center - lblTitle.Width / 2;
+			lblTitle.Top	= 0;
+			lblTitle.Height	= pctL.Top;
 
 			//lblL,R
 			lblL.Left		= 0;
@@ -166,6 +166,9 @@ namespace JMCR
 			String l,r;
 			l = lblL.Text;
 			r = lblR.Text;		/////////////////////////////////////////////////////////////////////////////////// ←　値が書き換わらない
+			frmData.SelectNoL = int.Parse(r);
+			frmData.SelectNoR = int.Parse(l);
+	
 			lblL.Text = r;
 			lblR.Text = l;
 		}
@@ -176,7 +179,6 @@ namespace JMCR
 			int sel = frmData.SelectNoL;
 			for(n=0; n<frmData.meibo_count; n++){
 				if(sel == frmData.meibo[n].No){
-				//	pctL.ImageLocation = @"データ\" + sel.ToString("000") + ".jpg";
 					pctL.ImageLocation = @"データ\" + frmData.meibo[n].Image;
 					lblL.Text		= sel.ToString();
 					lblSchoolL.Text	= frmData.meibo[n].School;
@@ -200,7 +202,6 @@ namespace JMCR
 			int sel = frmData.SelectNoR;
 			for(n=0; n<frmData.meibo_count; n++){
 				if(sel == frmData.meibo[n].No){
-				//	pctR.ImageLocation = @"データ\" + sel.ToString("000") + ".jpg";
 					pctR.ImageLocation = @"データ\" + frmData.meibo[n].Image;
 					lblR.Text		= sel.ToString();
 					lblSchoolR.Text	= frmData.meibo[n].School;
@@ -334,9 +335,24 @@ namespace JMCR
 			lblR.Text	= frmData.SelectNoR.ToString();
 		}
 
-		private void pctTitle_Click(object sender, EventArgs e)
+		private void lblTitle_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
+
+		private void lblL_Click(object sender, EventArgs e)
+		{
+			frmData.rdL.Checked = true;
+			frmData.ShowDialog();
+			lblL.Text	= frmData.SelectNoL.ToString();
+		}
+
+		private void lblR_Click(object sender, EventArgs e)
+		{
+			frmData.rdR.Checked = true;
+			frmData.ShowDialog();
+			lblR.Text	= frmData.SelectNoR.ToString();
+		}
+
 	}
 }

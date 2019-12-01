@@ -21,8 +21,9 @@ namespace JMCR
 			public String	Car;			// カーネーム
 			public String	Image;			// 写真のファイルネーム
 		}
-		public static tMeibo[] meibo = new tMeibo[MAX_MEIBO];
+		public static tMeibo[] meibo		= new tMeibo[MAX_MEIBO];
 		public static int meibo_count;		// 名簿データの数
+		public static DataTable table		= new DataTable("Table");
 
 		//--------------------------------------------------------------
 		// 対戦データ
@@ -34,33 +35,43 @@ namespace JMCR
 	
 		//--------------------------------------------------------------
 		//
-//		public static DataTable table		= new DataTable("Table");
 
 		public frmData()
 		{
 			InitializeComponent();
+		
 			CSVFileLoad_Meibo();
 			CSVFileLoad_Pair();
 		}
 
 		private void frmData_Load(object sender, EventArgs e)
 		{
+		//	CSVFileLoad_Meibo();
+		//	CSVFileLoad_Pair();
 		}
 
 		// 名簿データの読み込み
 		private void CSVFileLoad_Meibo()
 		{
-			// カラム名の追加
-		//	table.Columns.Add("No");
-		//	table.Columns.Add("学校");
-		//	table.Columns.Add("氏名");
-		//	table.Columns.Add("カーネーム");
-		//	table.Columns.Add("写真");
-	
 			// CSVファイルの読み込み
 			string line;
 			string[] field;
 			System.IO.StreamReader reader = new System.IO.StreamReader(@"データ\data.csv", Encoding.Default);
+
+			// カラム名の追加
+			if(table.Columns.Count == 0){
+				//空であれば列を追加
+				table.Columns.Add("No");
+				table.Columns.Add("学校");
+				table.Columns.Add("氏名");
+				table.Columns.Add("Car");
+				table.Columns.Add("写真");
+			}
+			else{
+				//空でなければデータを全てクリアする
+				table.Clear();
+			}
+	
 			for(meibo_count=0; !reader.EndOfStream; meibo_count++){
 				line = reader.ReadLine();
 				field = line.Split(',');
@@ -73,18 +84,18 @@ namespace JMCR
 				meibo[meibo_count].Image	= field[4];
 	
 				// データを追加
-			//	frmData.table.Rows.Add(
-			//		meibo[meibo_count].No.ToString("000"),
-			//		meibo[meibo_count].School,
-			//		meibo[meibo_count].Name,
-			//		meibo[meibo_count].Car,
-			//		meibo[meibo_count].Image);
+				frmData.table.Rows.Add(
+					meibo[meibo_count].No.ToString("000"),
+					meibo[meibo_count].School,
+					meibo[meibo_count].Name,
+					meibo[meibo_count].Car,
+					meibo[meibo_count].Image);
 	
 			}
 			
 			reader.Close();
 
-		//	dataGridView1.DataSource = frmData.table;
+			dataGridView1.DataSource = frmData.table;
 		}
 
 		// 対戦データの読み込み
@@ -116,29 +127,54 @@ namespace JMCR
 			SelectNoR = DataPair[0, 1];
 		}
 
-		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		private void lstDataPair_SelectedIndexChanged(object sender, EventArgs e)
 		{
-
+			int n = lstDataPair.SelectedIndex;
+			txtL.Text = DataPair[n, 0].ToString();
+			txtR.Text = DataPair[n, 1].ToString();
+		//	SelectNoL = DataPair[n, 0];
+		//	SelectNoR = DataPair[n, 1];
+			PairNoNow = n;
 		}
 
 		private void dataGridView1_SelectionChanged(object sender, EventArgs e)
 		{
-			lblL.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			if(dataGridView1.Rows.Count > 0){
+				if(rdL.Checked){
+					txtL.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+				//	SelectNoL = int.Parse(txtL.Text);
+				}
+				if(rdR.Checked){
+					txtR.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+				//	SelectNoR = int.Parse(txtR.Text);
+				}
+			}
 		}
 
-		private void lstDataPair_SelectedIndexChanged(object sender, EventArgs e)
+		private void dataGridView1_DoubleClick(object sender, EventArgs e)
 		{
-			int n = lstDataPair.SelectedIndex;
-			SelectNoL = DataPair[n, 0];
-			SelectNoR = DataPair[n, 1];
-			lblL.Text = DataPair[n, 0].ToString();
-			lblR.Text = DataPair[n, 1].ToString();
-			PairNoNow = n;
+			if(rdL.Checked){
+				txtL.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			//	SelectNoL = int.Parse(txtL.Text);
+			}
+			if(rdR.Checked){
+				txtR.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+			//	SelectNoR = int.Parse(txtR.Text);
+			}
+			this.Close();
 		}
 
+		private void txtL_TextChanged(object sender, EventArgs e)
+		{
+			if(txtL.Text != "")
+				SelectNoL = int.Parse(txtL.Text);
+		}
 
-
-
+		private void txtR_TextChanged(object sender, EventArgs e)
+		{
+			if(txtR.Text != "")
+				SelectNoR = int.Parse(txtR.Text);
+		}
 
 	}
 }

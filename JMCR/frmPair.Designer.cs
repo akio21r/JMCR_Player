@@ -29,8 +29,6 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPair));
-			this.txtL = new System.Windows.Forms.TextBox();
-			this.txtR = new System.Windows.Forms.TextBox();
 			this.lblSchoolL = new System.Windows.Forms.Label();
 			this.lblSchoolR = new System.Windows.Forms.Label();
 			this.lblNameL = new System.Windows.Forms.Label();
@@ -38,7 +36,6 @@
 			this.lblCarL = new System.Windows.Forms.Label();
 			this.lblCarR = new System.Windows.Forms.Label();
 			this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-			this.pctTitle = new System.Windows.Forms.PictureBox();
 			this.pctVS = new System.Windows.Forms.PictureBox();
 			this.pctR = new System.Windows.Forms.PictureBox();
 			this.pctL = new System.Windows.Forms.PictureBox();
@@ -50,8 +47,8 @@
 			this.lblCount = new System.Windows.Forms.Label();
 			this.pctWinL = new System.Windows.Forms.PictureBox();
 			this.pctWinR = new System.Windows.Forms.PictureBox();
+			this.lblTitle = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pctTitle)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctVS)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctR)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctL)).BeginInit();
@@ -61,36 +58,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctWinL)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctWinR)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// txtL
-			// 
-			this.txtL.BackColor = System.Drawing.Color.DarkBlue;
-			this.txtL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtL.Enabled = false;
-			this.txtL.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.txtL.ForeColor = System.Drawing.Color.Lime;
-			this.txtL.Location = new System.Drawing.Point(12, 12);
-			this.txtL.Name = "txtL";
-			this.txtL.ReadOnly = true;
-			this.txtL.Size = new System.Drawing.Size(177, 48);
-			this.txtL.TabIndex = 1;
-			this.txtL.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.txtL.Visible = false;
-			// 
-			// txtR
-			// 
-			this.txtR.BackColor = System.Drawing.Color.DarkBlue;
-			this.txtR.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtR.Enabled = false;
-			this.txtR.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.txtR.ForeColor = System.Drawing.Color.Lime;
-			this.txtR.Location = new System.Drawing.Point(982, 12);
-			this.txtR.Name = "txtR";
-			this.txtR.ReadOnly = true;
-			this.txtR.Size = new System.Drawing.Size(177, 48);
-			this.txtR.TabIndex = 1;
-			this.txtR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.txtR.Visible = false;
 			// 
 			// lblSchoolL
 			// 
@@ -174,19 +141,6 @@
 			this.axWindowsMediaPlayer1.TabIndex = 5;
 			this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);
 			// 
-			// pctTitle
-			// 
-			this.pctTitle.BackColor = System.Drawing.Color.Transparent;
-			this.pctTitle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.pctTitle.Image = ((System.Drawing.Image)(resources.GetObject("pctTitle.Image")));
-			this.pctTitle.Location = new System.Drawing.Point(168, 12);
-			this.pctTitle.Name = "pctTitle";
-			this.pctTitle.Size = new System.Drawing.Size(808, 93);
-			this.pctTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pctTitle.TabIndex = 17;
-			this.pctTitle.TabStop = false;
-			this.pctTitle.Click += new System.EventHandler(this.pctTitle_Click);
-			// 
 			// pctVS
 			// 
 			this.pctVS.BackColor = System.Drawing.Color.Transparent;
@@ -269,6 +223,7 @@
 			this.lblL.Text = "No";
 			this.lblL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.lblL.TextChanged += new System.EventHandler(this.lblL_TextChanged);
+			this.lblL.Click += new System.EventHandler(this.lblL_Click);
 			// 
 			// lblR
 			// 
@@ -281,6 +236,7 @@
 			this.lblR.Text = "No";
 			this.lblR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.lblR.TextChanged += new System.EventHandler(this.lblR_TextChanged);
+			this.lblR.Click += new System.EventHandler(this.lblR_Click);
 			// 
 			// lblCount
 			// 
@@ -321,12 +277,26 @@
 			this.pctWinR.TabStop = false;
 			this.pctWinR.Visible = false;
 			// 
+			// lblTitle
+			// 
+			this.lblTitle.AutoSize = true;
+			this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+			this.lblTitle.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblTitle.ForeColor = System.Drawing.Color.GreenYellow;
+			this.lblTitle.Location = new System.Drawing.Point(265, 12);
+			this.lblTitle.Name = "lblTitle";
+			this.lblTitle.Size = new System.Drawing.Size(652, 48);
+			this.lblTitle.TabIndex = 24;
+			this.lblTitle.Text = "アドバンストクラス決勝トーナメント";
+			this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
+			// 
 			// frmPair
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
 			this.ClientSize = new System.Drawing.Size(1115, 546);
+			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.axWindowsMediaPlayer1);
 			this.Controls.Add(this.pctWinR);
 			this.Controls.Add(this.lblCount);
@@ -334,7 +304,6 @@
 			this.Controls.Add(this.lblL);
 			this.Controls.Add(this.pctCourse2);
 			this.Controls.Add(this.pctCourse1);
-			this.Controls.Add(this.pctTitle);
 			this.Controls.Add(this.pctWinL);
 			this.Controls.Add(this.pctVS);
 			this.Controls.Add(this.lblCarR);
@@ -344,8 +313,6 @@
 			this.Controls.Add(this.lblNameL);
 			this.Controls.Add(this.lblSchoolL);
 			this.Controls.Add(this.pctR);
-			this.Controls.Add(this.txtR);
-			this.Controls.Add(this.txtL);
 			this.Controls.Add(this.pctL);
 			this.Controls.Add(this.pctBackImage);
 			this.KeyPreview = true;
@@ -355,7 +322,6 @@
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPair_KeyDown);
 			this.Resize += new System.EventHandler(this.frmTournament_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pctTitle)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctVS)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctR)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctL)).EndInit();
@@ -372,9 +338,7 @@
 		#endregion
 
 		public System.Windows.Forms.PictureBox pctL;
-		public System.Windows.Forms.TextBox txtL;
 		public System.Windows.Forms.PictureBox pctR;
-		public System.Windows.Forms.TextBox txtR;
 		public System.Windows.Forms.Label lblSchoolL;
 		public System.Windows.Forms.Label lblSchoolR;
 		public System.Windows.Forms.Label lblNameL;
@@ -384,14 +348,14 @@
 		private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
 		public System.Windows.Forms.PictureBox pctBackImage;
 		private System.Windows.Forms.PictureBox pctVS;
-		private System.Windows.Forms.PictureBox pctTitle;
 		private System.Windows.Forms.PictureBox pctCourse1;
 		private System.Windows.Forms.PictureBox pctCourse2;
-		private System.Windows.Forms.Label lblL;
-		private System.Windows.Forms.Label lblR;
+		public System.Windows.Forms.Label lblL;
+		public System.Windows.Forms.Label lblR;
 		private System.Windows.Forms.Label lblCount;
 		private System.Windows.Forms.PictureBox pctWinL;
 		private System.Windows.Forms.PictureBox pctWinR;
+		public System.Windows.Forms.Label lblTitle;
 	}
 }
 
