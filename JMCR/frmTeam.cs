@@ -54,10 +54,11 @@ namespace JMCR
 
 			int FontHeight		= ClientSize.Height / 20;
 			Font fnt			= new Font("HG正楷書体-PRO", FontHeight, FontStyle.Regular, GraphicsUnit.Pixel);
-			Font fnt2			= new Font("HG正楷書体-PRO", FontHeight*3/4, FontStyle.Regular, GraphicsUnit.Pixel);
+			Font fntS			= new Font("HG正楷書体-PRO", FontHeight*3/4, FontStyle.Regular, GraphicsUnit.Pixel);
+			Font fntL			= new Font("HG正楷書体-PRO", FontHeight*4/3, FontStyle.Regular, GraphicsUnit.Pixel);
 
-			lblSchool1.Font		= lblSchool2.Font	= lblSchool3.Font	= fnt2;
-			lblName1.Font		= lblName2.Font		= lblName3.Font		= fnt;
+			lblSchool1.Font		= lblSchool2.Font	= lblSchool3.Font	= fntS;
+			lblName1.Font		= lblName2.Font		= lblName3.Font		= fntL;
 			lblCar1.Font		= lblCar2.Font		= lblCar3.Font		= fnt;
 			txtNo1.Font			= txtNo2.Font		= txtNo3.Font		= fnt;
 
@@ -273,6 +274,32 @@ namespace JMCR
 		private void pctTitle_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void lblSchool1_Click(object sender, EventArgs e)
+		{
+			pctSchool.ImageLocation = @"学校紹介\" + lblSchool1.Text + ".jpg";
+			pctSchool.Dock = DockStyle.Fill;
+			pctSchool.Visible = true;
+		}
+
+		private void lblSchool2_Click(object sender, EventArgs e)
+		{
+			pctSchool.ImageLocation = @"学校紹介\" + lblSchool2.Text + ".jpg";
+			pctSchool.Dock = DockStyle.Fill;
+			pctSchool.Visible = true;
+		}
+
+		private void lblSchool3_Click(object sender, EventArgs e)
+		{
+			pctSchool.ImageLocation = @"学校紹介\" + lblSchool3.Text + ".jpg";
+			pctSchool.Dock = DockStyle.Fill;
+			pctSchool.Visible = true;
+		}
+
+		private void pctSchool_Click(object sender, EventArgs e)
+		{
+			pctSchool.Visible = false;
 		}
 
 	}

@@ -34,7 +34,7 @@ namespace JMCR
 		//	axWindowsMediaPlayer1.Dock = DockStyle.Fill;
 		//	axWindowsMediaPlayer1.fullScreen = true;
 		//	axWindowsMediaPlayer1.settings.setMode("loop", true);
-			axWindowsMediaPlayer1.URL = @"素材\NextChallenge.mp4";	//渡されたファイルURLを読み込み
+			axWindowsMediaPlayer1.URL = @"素材\NextChallenger.mp4";	//渡されたファイルURLを読み込み
 			axWindowsMediaPlayer1.Visible = false;
 
 			ResizeComponents();
@@ -77,9 +77,11 @@ namespace JMCR
 
 			int FontHeight		= ClientSize.Height / 20;
 			Font fnt			= new Font("HG正楷書体-PRO", FontHeight, FontStyle.Regular, GraphicsUnit.Pixel);
+			Font fntS			= new Font("HG正楷書体-PRO", FontHeight*3/4, FontStyle.Regular, GraphicsUnit.Pixel);
+			Font fntL			= new Font("HG正楷書体-PRO", FontHeight*4/3, FontStyle.Regular, GraphicsUnit.Pixel);
 
 			lblSchoolL.Font		= lblSchoolR.Font	= fnt;
-			lblNameL.Font		= lblNameR.Font		= fnt;
+			lblNameL.Font		= lblNameR.Font		= fntL;
 			lblCarL.Font		= lblCarR.Font		= fnt;
 			lblL.Font			= lblR.Font			= fnt;
 
@@ -165,9 +167,11 @@ namespace JMCR
 		{
 			String l,r;
 			l = lblL.Text;
-			r = lblR.Text;		/////////////////////////////////////////////////////////////////////////////////// ←　値が書き換わらない
-			frmData.SelectNoL = int.Parse(r);
-			frmData.SelectNoR = int.Parse(l);
+			r = lblR.Text;
+			if(r == "") frmData.SelectNoL = 0;
+			else        frmData.SelectNoL = int.Parse(r);
+			if(l == "") frmData.SelectNoR = 0;
+			else        frmData.SelectNoR = int.Parse(l);
 	
 			lblL.Text = r;
 			lblR.Text = l;
@@ -352,6 +356,41 @@ namespace JMCR
 			frmData.rdR.Checked = true;
 			frmData.ShowDialog();
 			lblR.Text	= frmData.SelectNoR.ToString();
+		}
+
+		private void lblSchoolL_Click(object sender, EventArgs e)
+		{
+			//
+			pctSchool.ImageLocation = @"学校紹介\" + lblSchoolL.Text + ".jpg";
+			pctSchool.Dock = DockStyle.Fill;
+			pctSchool.Visible = true;
+		}
+
+		private void lblSchoolR_Click(object sender, EventArgs e)
+		{
+			pctSchool.ImageLocation = @"学校紹介\" + lblSchoolR.Text + ".jpg";
+			pctSchool.Dock = DockStyle.Fill;
+			pctSchool.Visible = true;
+		}
+
+		private void pctSchool_Click(object sender, EventArgs e)
+		{
+			pctSchool.Visible = false;
+		}
+
+		private void pctL_Click(object sender, EventArgs e)
+		{
+			//
+			pctWinL.Visible = true;
+			pctWinR.Visible = false;
+
+		}
+
+		private void pctR_Click(object sender, EventArgs e)
+		{
+			//
+			pctWinL.Visible = false;
+			pctWinR.Visible = true;
 		}
 
 	}

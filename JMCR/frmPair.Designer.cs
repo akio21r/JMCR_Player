@@ -48,6 +48,7 @@
 			this.pctWinL = new System.Windows.Forms.PictureBox();
 			this.pctWinR = new System.Windows.Forms.PictureBox();
 			this.lblTitle = new System.Windows.Forms.Label();
+			this.pctSchool = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctVS)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctR)).BeginInit();
@@ -57,6 +58,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctCourse2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctWinL)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctWinR)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctSchool)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblSchoolL
@@ -70,6 +72,7 @@
 			this.lblSchoolL.Size = new System.Drawing.Size(82, 24);
 			this.lblSchoolL.TabIndex = 4;
 			this.lblSchoolL.Text = "高校名";
+			this.lblSchoolL.Click += new System.EventHandler(this.lblSchoolL_Click);
 			// 
 			// lblSchoolR
 			// 
@@ -82,6 +85,7 @@
 			this.lblSchoolR.Size = new System.Drawing.Size(82, 24);
 			this.lblSchoolR.TabIndex = 4;
 			this.lblSchoolR.Text = "高校名";
+			this.lblSchoolR.Click += new System.EventHandler(this.lblSchoolR_Click);
 			// 
 			// lblNameL
 			// 
@@ -163,6 +167,7 @@
 			this.pctR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pctR.TabIndex = 3;
 			this.pctR.TabStop = false;
+			this.pctR.Click += new System.EventHandler(this.pctR_Click);
 			// 
 			// pctL
 			// 
@@ -175,6 +180,7 @@
 			this.pctL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pctL.TabIndex = 0;
 			this.pctL.TabStop = false;
+			this.pctL.Click += new System.EventHandler(this.pctL_Click);
 			// 
 			// pctBackImage
 			// 
@@ -290,12 +296,27 @@
 			this.lblTitle.Text = "アドバンストクラス決勝トーナメント";
 			this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
 			// 
+			// pctSchool
+			// 
+			this.pctSchool.BackColor = System.Drawing.Color.Transparent;
+			this.pctSchool.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctSchool.ErrorImage = null;
+			this.pctSchool.Location = new System.Drawing.Point(807, 429);
+			this.pctSchool.Name = "pctSchool";
+			this.pctSchool.Size = new System.Drawing.Size(138, 105);
+			this.pctSchool.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pctSchool.TabIndex = 25;
+			this.pctSchool.TabStop = false;
+			this.pctSchool.Visible = false;
+			this.pctSchool.Click += new System.EventHandler(this.pctSchool_Click);
+			// 
 			// frmPair
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
 			this.ClientSize = new System.Drawing.Size(1115, 546);
+			this.Controls.Add(this.pctSchool);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.axWindowsMediaPlayer1);
 			this.Controls.Add(this.pctWinR);
@@ -330,6 +351,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctCourse2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctWinL)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctWinR)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctSchool)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -356,6 +378,7 @@
 		private System.Windows.Forms.PictureBox pctWinL;
 		private System.Windows.Forms.PictureBox pctWinR;
 		public System.Windows.Forms.Label lblTitle;
+		public System.Windows.Forms.PictureBox pctSchool;
 	}
 }
 

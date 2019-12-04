@@ -50,6 +50,7 @@
 			this.txtNo2 = new System.Windows.Forms.TextBox();
 			this.txtNo3 = new System.Windows.Forms.TextBox();
 			this.txtTeam = new System.Windows.Forms.TextBox();
+			this.pctSchool = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pct1)).BeginInit();
@@ -58,6 +59,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctTitle)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctSchool)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pctBackImage
@@ -106,6 +108,7 @@
 			this.lblSchool1.Size = new System.Drawing.Size(82, 24);
 			this.lblSchool1.TabIndex = 22;
 			this.lblSchool1.Text = "高校名";
+			this.lblSchool1.Click += new System.EventHandler(this.lblSchool1_Click);
 			// 
 			// pctFace1
 			// 
@@ -213,6 +216,7 @@
 			this.lblSchool2.Size = new System.Drawing.Size(82, 24);
 			this.lblSchool2.TabIndex = 33;
 			this.lblSchool2.Text = "高校名";
+			this.lblSchool2.Click += new System.EventHandler(this.lblSchool2_Click);
 			// 
 			// pctFace2
 			// 
@@ -261,6 +265,7 @@
 			this.lblSchool3.Size = new System.Drawing.Size(82, 24);
 			this.lblSchool3.TabIndex = 38;
 			this.lblSchool3.Text = "高校名";
+			this.lblSchool3.Click += new System.EventHandler(this.lblSchool3_Click);
 			// 
 			// pctFace3
 			// 
@@ -312,12 +317,26 @@
 			this.txtTeam.Text = "九州地区";
 			this.txtTeam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
+			// pctSchool
+			// 
+			this.pctSchool.BackColor = System.Drawing.Color.Transparent;
+			this.pctSchool.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctSchool.ErrorImage = null;
+			this.pctSchool.Location = new System.Drawing.Point(661, 423);
+			this.pctSchool.Name = "pctSchool";
+			this.pctSchool.Size = new System.Drawing.Size(74, 65);
+			this.pctSchool.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pctSchool.TabIndex = 45;
+			this.pctSchool.TabStop = false;
+			this.pctSchool.Click += new System.EventHandler(this.pctSchool_Click);
+			// 
 			// frmTeam
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
 			this.ClientSize = new System.Drawing.Size(1098, 598);
+			this.Controls.Add(this.pctSchool);
 			this.Controls.Add(this.txtTeam);
 			this.Controls.Add(this.txtNo3);
 			this.Controls.Add(this.txtNo2);
@@ -352,6 +371,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctTitle)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctSchool)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -380,5 +400,6 @@
 		private System.Windows.Forms.TextBox txtNo2;
 		private System.Windows.Forms.TextBox txtNo3;
 		private System.Windows.Forms.TextBox txtTeam;
+		public System.Windows.Forms.PictureBox pctSchool;
 	}
 }
