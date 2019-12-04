@@ -328,6 +328,7 @@
 			this.pctSchool.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pctSchool.TabIndex = 45;
 			this.pctSchool.TabStop = false;
+			this.pctSchool.Visible = false;
 			this.pctSchool.Click += new System.EventHandler(this.pctSchool_Click);
 			// 
 			// frmTeam

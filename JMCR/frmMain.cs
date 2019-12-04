@@ -16,7 +16,11 @@ namespace JMCR
 			InitializeComponent();
 			pctBackImage.Controls.Add(pctKame);
 			pctBackImage.Controls.Add(lblTitle);
-		}
+
+			//全画面表示
+			this.FormBorderStyle = FormBorderStyle.None;
+			this.WindowState = FormWindowState.Maximized;
+	}
 
 		private void frmMain_Resize(object sender, EventArgs e)
 		{
@@ -63,6 +67,28 @@ namespace JMCR
 		{
 			frmTeam f = new frmTeam();
 			f.ShowDialog();
+		}
+
+		private void pctKame_Click(object sender, EventArgs e)
+		{
+			pctPoster.ImageLocation = @"素材\ポスターs.png";
+			pctPoster.Dock = DockStyle.Fill;
+			pctPoster.Visible = true;
+		}
+
+		private void pctPoster_Click(object sender, EventArgs e)
+		{
+			pctPoster.Visible = false;
+		}
+
+		private void lblTitle_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void btnClose_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 
 	}

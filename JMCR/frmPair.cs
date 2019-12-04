@@ -58,6 +58,7 @@ namespace JMCR
 
 		//	axWindowsMediaPlayer1.Controls.Add(lblVS);
 
+			//全画面表示
 			this.FormBorderStyle = FormBorderStyle.None;
 			this.WindowState = FormWindowState.Maximized;
 

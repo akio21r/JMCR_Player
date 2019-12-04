@@ -38,8 +38,12 @@
 			this.btnYosenB = new System.Windows.Forms.Button();
 			this.btnKessyoB = new System.Windows.Forms.Button();
 			this.btnKessyoC = new System.Windows.Forms.Button();
+			this.pctPoster = new System.Windows.Forms.PictureBox();
+			this.btnClose = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pctKame)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctPoster)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnKessyoA
@@ -74,6 +78,7 @@
 			this.pctKame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
 			this.pctKame.TabIndex = 3;
 			this.pctKame.TabStop = false;
+			this.pctKame.Click += new System.EventHandler(this.pctKame_Click);
 			// 
 			// pctBackImage
 			// 
@@ -97,6 +102,7 @@
 			this.lblTitle.Size = new System.Drawing.Size(802, 55);
 			this.lblTitle.TabIndex = 5;
 			this.lblTitle.Text = "ジャパン・マイコンカーラリー2020 全国大会";
+			this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
 			// 
 			// btnYosenA
 			// 
@@ -142,12 +148,47 @@
 			this.btnKessyoC.UseVisualStyleBackColor = true;
 			this.btnKessyoC.Click += new System.EventHandler(this.btnKessyoC_Click);
 			// 
+			// pctPoster
+			// 
+			this.pctPoster.Location = new System.Drawing.Point(398, 344);
+			this.pctPoster.Name = "pctPoster";
+			this.pctPoster.Size = new System.Drawing.Size(100, 50);
+			this.pctPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pctPoster.TabIndex = 10;
+			this.pctPoster.TabStop = false;
+			this.pctPoster.Visible = false;
+			this.pctPoster.Click += new System.EventHandler(this.pctPoster_Click);
+			// 
+			// btnClose
+			// 
+			this.btnClose.Location = new System.Drawing.Point(34, 510);
+			this.btnClose.Name = "btnClose";
+			this.btnClose.Size = new System.Drawing.Size(60, 51);
+			this.btnClose.TabIndex = 11;
+			this.btnClose.Text = "終了";
+			this.btnClose.UseVisualStyleBackColor = true;
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.Color.Transparent;
+			this.label1.ForeColor = System.Drawing.Color.White;
+			this.label1.Location = new System.Drawing.Point(97, 529);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(196, 12);
+			this.label1.TabIndex = 12;
+			this.label1.Text = "それぞれ、タイトル文字のクリックでも終了";
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Teal;
+			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(914, 573);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.btnClose);
+			this.Controls.Add(this.pctPoster);
 			this.Controls.Add(this.btnKessyoC);
 			this.Controls.Add(this.btnKessyoB);
 			this.Controls.Add(this.btnYosenB);
@@ -162,6 +203,7 @@
 			this.Resize += new System.EventHandler(this.frmMain_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.pctKame)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctPoster)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -178,5 +220,8 @@
 		private System.Windows.Forms.Button btnYosenB;
 		private System.Windows.Forms.Button btnKessyoB;
 		private System.Windows.Forms.Button btnKessyoC;
+		private System.Windows.Forms.PictureBox pctPoster;
+		private System.Windows.Forms.Button btnClose;
+		private System.Windows.Forms.Label label1;
 	}
 }
