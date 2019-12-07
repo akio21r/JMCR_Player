@@ -19,7 +19,7 @@ namespace JMCR
 
 		public frmData frmData = new frmData();
 
-		System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"素材\音\don-1.wav");
+		System.Media.SoundPlayer player = new System.Media.SoundPlayer(frmMain.wavFileName_Don);
 		public frmTeam()
 		{
 			InitializeComponent();
@@ -175,7 +175,7 @@ namespace JMCR
 			for(n=0; n<frmData.meibo_count; n++){
 				if(sel == frmData.meibo[n].No){
 					player.Play();
-					pctFace1.ImageLocation = @"データ\" + frmData.meibo[n].Image;
+					pctFace1.ImageLocation = frmMain.imgFolder_Face + frmData.meibo[n].Image;
 					lblSchool1.Text		= frmData.meibo[n].School;
 					lblName1.Text		= frmData.meibo[n].Name;
 					lblCar1.Text		= frmData.meibo[n].Car;
@@ -200,7 +200,7 @@ namespace JMCR
 			for(n=0; n<frmData.meibo_count; n++){
 				if(sel == frmData.meibo[n].No){
 					player.Play();
-					pctFace2.ImageLocation = @"データ\" + frmData.meibo[n].Image;
+					pctFace2.ImageLocation = frmMain.imgFolder_Face + frmData.meibo[n].Image;
 					lblSchool2.Text		= frmData.meibo[n].School;
 					lblName2.Text		= frmData.meibo[n].Name;
 					lblCar2.Text		= frmData.meibo[n].Car;
@@ -225,7 +225,7 @@ namespace JMCR
 			for(n=0; n<frmData.meibo_count; n++){
 				if(sel == frmData.meibo[n].No){
 					player.Play();
-					pctFace3.ImageLocation = @"データ\" + frmData.meibo[n].Image;
+					pctFace3.ImageLocation = frmMain.imgFolder_Face + frmData.meibo[n].Image;
 					lblSchool3.Text		= frmData.meibo[n].School;
 					lblName3.Text		= frmData.meibo[n].Name;
 					lblCar3.Text		= frmData.meibo[n].Car;
@@ -278,21 +278,21 @@ namespace JMCR
 
 		private void lblSchool1_Click(object sender, EventArgs e)
 		{
-			pctSchool.ImageLocation = @"学校紹介\" + lblSchool1.Text + ".jpg";
+			pctSchool.ImageLocation = frmMain.imgFolder_School + lblSchool1.Text + ".jpg";
 			pctSchool.Dock = DockStyle.Fill;
 			pctSchool.Visible = true;
 		}
 
 		private void lblSchool2_Click(object sender, EventArgs e)
 		{
-			pctSchool.ImageLocation = @"学校紹介\" + lblSchool2.Text + ".jpg";
+			pctSchool.ImageLocation = frmMain.imgFolder_School + lblSchool2.Text + ".jpg";
 			pctSchool.Dock = DockStyle.Fill;
 			pctSchool.Visible = true;
 		}
 
 		private void lblSchool3_Click(object sender, EventArgs e)
 		{
-			pctSchool.ImageLocation = @"学校紹介\" + lblSchool3.Text + ".jpg";
+			pctSchool.ImageLocation = frmMain.imgFolder_School + lblSchool3.Text + ".jpg";
 			pctSchool.Dock = DockStyle.Fill;
 			pctSchool.Visible = true;
 		}

@@ -21,8 +21,6 @@ namespace JMCR
 
 		public frmData frmData = new frmData();
 
-	//	System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"素材\音\se_maoudamashii_explosion08.wav");
-
 		public frmPair()
 		{
 			InitializeComponent();
@@ -34,7 +32,7 @@ namespace JMCR
 		//	axWindowsMediaPlayer1.Dock = DockStyle.Fill;
 		//	axWindowsMediaPlayer1.fullScreen = true;
 		//	axWindowsMediaPlayer1.settings.setMode("loop", true);
-			axWindowsMediaPlayer1.URL = @"素材\NextChallenger.mp4";	//渡されたファイルURLを読み込み
+			axWindowsMediaPlayer1.URL = frmMain.movFileName_Next;	//渡されたファイルURLを読み込み
 			axWindowsMediaPlayer1.Visible = false;
 
 			ResizeComponents();
@@ -184,7 +182,7 @@ namespace JMCR
 			int sel = frmData.SelectNoL;
 			for(n=0; n<frmData.meibo_count; n++){
 				if(sel == frmData.meibo[n].No){
-					pctL.ImageLocation = @"データ\" + frmData.meibo[n].Image;
+					pctL.ImageLocation = frmMain.imgFolder_Face + frmData.meibo[n].Image;
 					lblL.Text		= sel.ToString();
 					lblSchoolL.Text	= frmData.meibo[n].School;
 					lblNameL.Text	= frmData.meibo[n].Name;
@@ -207,7 +205,7 @@ namespace JMCR
 			int sel = frmData.SelectNoR;
 			for(n=0; n<frmData.meibo_count; n++){
 				if(sel == frmData.meibo[n].No){
-					pctR.ImageLocation = @"データ\" + frmData.meibo[n].Image;
+					pctR.ImageLocation = frmMain.imgFolder_Face + frmData.meibo[n].Image;
 					lblR.Text		= sel.ToString();
 					lblSchoolR.Text	= frmData.meibo[n].School;
 					lblNameR.Text	= frmData.meibo[n].Name;
@@ -362,14 +360,14 @@ namespace JMCR
 		private void lblSchoolL_Click(object sender, EventArgs e)
 		{
 			//
-			pctSchool.ImageLocation = @"学校紹介\" + lblSchoolL.Text + ".jpg";
+			pctSchool.ImageLocation = frmMain.imgFolder_School + lblSchoolL.Text + ".jpg";
 			pctSchool.Dock = DockStyle.Fill;
 			pctSchool.Visible = true;
 		}
 
 		private void lblSchoolR_Click(object sender, EventArgs e)
 		{
-			pctSchool.ImageLocation = @"学校紹介\" + lblSchoolR.Text + ".jpg";
+			pctSchool.ImageLocation = frmMain.imgFolder_School + lblSchoolR.Text + ".jpg";
 			pctSchool.Dock = DockStyle.Fill;
 			pctSchool.Visible = true;
 		}

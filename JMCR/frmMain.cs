@@ -11,6 +11,14 @@ namespace JMCR
 {
 	public partial class frmMain : Form
 	{
+		//データの場所
+		public const String imgFolder_Face		= @"データ\選手\";
+		public const String imgFolder_School	= @"データ\学校\";
+		public const String wavFileName_Don		= @"素材\音\don-1.wav";
+		public const String movFileName_Next	= @"素材\NextChallenger.mp4";
+
+
+
 		public frmMain()
 		{
 			InitializeComponent();
