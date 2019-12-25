@@ -56,7 +56,7 @@ namespace JMCR
 			// CSVファイルの読み込み
 			string line;
 			string[] field;
-			System.IO.StreamReader reader = new System.IO.StreamReader(@"データ\data.csv", Encoding.Default);
+			System.IO.StreamReader reader = new System.IO.StreamReader(frmMain.dataMeibo, Encoding.Default);
 
 			// カラム名の追加
 			if(table.Columns.Count == 0){
@@ -99,7 +99,7 @@ namespace JMCR
 		}
 
 		// 対戦データの読み込み
-		private void CSVFileLoad_Pair()
+		public void CSVFileLoad_Pair()
 		{
 			// CSVファイルの読み込み
 			string line;

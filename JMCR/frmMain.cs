@@ -16,8 +16,8 @@ namespace JMCR
 		public const String imgFolder_School	= @"データ\学校\";
 		public const String wavFileName_Don		= @"素材\音\don-1.wav";
 		public const String movFileName_Next	= @"素材\NextChallenger.mp4";
-
-
+		public const String imgFileName_Poster	= @"素材\ポスターs.png";
+		public const String dataMeibo			= @"データ\名簿.csv";
 
 		public frmMain()
 		{
@@ -36,38 +36,37 @@ namespace JMCR
 			pctKame.Top  = this.ClientSize.Height - pctKame.Height;
 		}
 
-		private void btnYosenA_Click(object sender, EventArgs e)
+		private void btnPair_Click(object sender, EventArgs e)
 		{
 			frmPair f = new frmPair();
-			f.lblTitle.Text = "Advanced Class 予選";
-			f.ShowDialog();
-		}
 
-		private void btnKessyoA_Click(object sender, EventArgs e)
-		{
-			frmPair f = new frmPair();
-			f.lblTitle.Text = "Advanced Class 決勝トーナメント";
-			f.ShowDialog();
-		}
+			if(sender.Equals(btnYosenA1)){
+				f.lblTitle.Text = "Advanced Class 予選 １走目";
+			}
+			else if(sender.Equals(btnYosenA2)){
+				f.lblTitle.Text = "Advanced Class 予選 ２走目";
+			}
+			else if(sender.Equals(btnKessyoA)){
+				f.lblTitle.Text = "Advanced Class 決勝トーナメント";
+			}
 
-		private void btnYosenB_Click(object sender, EventArgs e)
-		{
-			frmPair f = new frmPair();
-			f.lblTitle.Text = "Basic Class 予選";
-			f.ShowDialog();
-		}
+			if(sender.Equals(btnYosenB1)){
+				f.lblTitle.Text = "Basic Class 予選 １走目";
+			}
+			else if(sender.Equals(btnYosenB2)){
+				f.lblTitle.Text = "Basic Class 予選 ２走目";
+			}
+			else if(sender.Equals(btnKessyoB)){
+				f.lblTitle.Text = "Basic Class 決勝トーナメント";
+			}
 
-		private void btnKessyoB_Click(object sender, EventArgs e)
-		{
-			frmPair f = new frmPair();
-			f.lblTitle.Text = "Basic Class 決勝トーナメント";
-			f.ShowDialog();
-		}
+			if(sender.Equals(btnC1)){
+				f.lblTitle.Text = "Camera Class １走目";
+			}
+			else if(sender.Equals(btnC2)){
+				f.lblTitle.Text = "Camera Class ２走目";
+			}
 
-		private void btnKessyoC_Click(object sender, EventArgs e)
-		{
-			frmPair f = new frmPair();
-			f.lblTitle.Text = "Camera Class";
 			f.ShowDialog();
 		}
 
@@ -79,7 +78,7 @@ namespace JMCR
 
 		private void pctKame_Click(object sender, EventArgs e)
 		{
-			pctPoster.ImageLocation = @"素材\ポスターs.png";
+			pctPoster.ImageLocation = imgFileName_Poster;
 			pctPoster.Dock = DockStyle.Fill;
 			pctPoster.Visible = true;
 		}

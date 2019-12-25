@@ -248,7 +248,7 @@ namespace JMCR
 					break;
 
 				case Keys.Down:
-					GoNext();
+					GoNext(false);
 					break;
 
 				case Keys.Left:
@@ -292,7 +292,7 @@ namespace JMCR
 		{
 			switch(e.Button){
 				case MouseButtons.Left:
-					GoNext();
+					GoNext(true);
 					break;
 				case MouseButtons.Right:
 					ShowData();
@@ -300,13 +300,15 @@ namespace JMCR
 			}
 		}
 
-		private void GoNext()
+		private void GoNext(bool movie)
 		{
-			pctBackImage.Visible = false;
-			pctL.Visible = pctR.Visible = false;
+			if(movie){
+				pctBackImage.Visible = false;
+				pctL.Visible = pctR.Visible = false;
 
-			axWindowsMediaPlayer1.Visible = true;
-			axWindowsMediaPlayer1.Ctlcontrols.play();
+				axWindowsMediaPlayer1.Visible = true;
+				axWindowsMediaPlayer1.Ctlcontrols.play();
+			}
 			if(frmData.PairNoNow < frmData.DataPair_count - 1) frmData.PairNoNow++;
 			lblCount.Text = (frmData.PairNoNow+1).ToString();
 			frmData.SelectNoL = frmData.DataPair[frmData.PairNoNow, 0];

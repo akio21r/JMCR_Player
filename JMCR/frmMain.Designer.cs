@@ -34,13 +34,16 @@
 			this.pctKame = new System.Windows.Forms.PictureBox();
 			this.pctBackImage = new System.Windows.Forms.PictureBox();
 			this.lblTitle = new System.Windows.Forms.Label();
-			this.btnYosenA = new System.Windows.Forms.Button();
-			this.btnYosenB = new System.Windows.Forms.Button();
+			this.btnYosenA1 = new System.Windows.Forms.Button();
+			this.btnYosenB1 = new System.Windows.Forms.Button();
 			this.btnKessyoB = new System.Windows.Forms.Button();
-			this.btnKessyoC = new System.Windows.Forms.Button();
+			this.btnC1 = new System.Windows.Forms.Button();
 			this.pctPoster = new System.Windows.Forms.PictureBox();
 			this.btnClose = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
+			this.btnYosenA2 = new System.Windows.Forms.Button();
+			this.btnYosenB2 = new System.Windows.Forms.Button();
+			this.btnC2 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pctKame)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctPoster)).BeginInit();
@@ -49,18 +52,18 @@
 			// btnKessyoA
 			// 
 			this.btnKessyoA.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.btnKessyoA.Location = new System.Drawing.Point(299, 112);
+			this.btnKessyoA.Location = new System.Drawing.Point(34, 228);
 			this.btnKessyoA.Name = "btnKessyoA";
-			this.btnKessyoA.Size = new System.Drawing.Size(259, 52);
+			this.btnKessyoA.Size = new System.Drawing.Size(199, 52);
 			this.btnKessyoA.TabIndex = 1;
-			this.btnKessyoA.Text = "Advanced Class 決勝";
+			this.btnKessyoA.Text = "Ａクラス決勝";
 			this.btnKessyoA.UseVisualStyleBackColor = true;
-			this.btnKessyoA.Click += new System.EventHandler(this.btnKessyoA_Click);
+			this.btnKessyoA.Click += new System.EventHandler(this.btnPair_Click);
 			// 
 			// btnTeam
 			// 
 			this.btnTeam.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.btnTeam.Location = new System.Drawing.Point(34, 376);
+			this.btnTeam.Location = new System.Drawing.Point(34, 353);
 			this.btnTeam.Name = "btnTeam";
 			this.btnTeam.Size = new System.Drawing.Size(259, 52);
 			this.btnTeam.TabIndex = 2;
@@ -104,53 +107,53 @@
 			this.lblTitle.Text = "ジャパン・マイコンカーラリー2020 全国大会";
 			this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
 			// 
-			// btnYosenA
+			// btnYosenA1
 			// 
-			this.btnYosenA.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.btnYosenA.Location = new System.Drawing.Point(34, 112);
-			this.btnYosenA.Name = "btnYosenA";
-			this.btnYosenA.Size = new System.Drawing.Size(259, 52);
-			this.btnYosenA.TabIndex = 6;
-			this.btnYosenA.Text = "Advanced Class 予選";
-			this.btnYosenA.UseVisualStyleBackColor = true;
-			this.btnYosenA.Click += new System.EventHandler(this.btnYosenA_Click);
+			this.btnYosenA1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnYosenA1.Location = new System.Drawing.Point(34, 112);
+			this.btnYosenA1.Name = "btnYosenA1";
+			this.btnYosenA1.Size = new System.Drawing.Size(199, 52);
+			this.btnYosenA1.TabIndex = 6;
+			this.btnYosenA1.Text = "Ａクラス予選１";
+			this.btnYosenA1.UseVisualStyleBackColor = true;
+			this.btnYosenA1.Click += new System.EventHandler(this.btnPair_Click);
 			// 
-			// btnYosenB
+			// btnYosenB1
 			// 
-			this.btnYosenB.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.btnYosenB.Location = new System.Drawing.Point(34, 200);
-			this.btnYosenB.Name = "btnYosenB";
-			this.btnYosenB.Size = new System.Drawing.Size(259, 52);
-			this.btnYosenB.TabIndex = 7;
-			this.btnYosenB.Text = "Basic Class 予選";
-			this.btnYosenB.UseVisualStyleBackColor = true;
-			this.btnYosenB.Click += new System.EventHandler(this.btnYosenB_Click);
+			this.btnYosenB1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnYosenB1.Location = new System.Drawing.Point(280, 112);
+			this.btnYosenB1.Name = "btnYosenB1";
+			this.btnYosenB1.Size = new System.Drawing.Size(199, 52);
+			this.btnYosenB1.TabIndex = 7;
+			this.btnYosenB1.Text = "Ｂクラス予選１";
+			this.btnYosenB1.UseVisualStyleBackColor = true;
+			this.btnYosenB1.Click += new System.EventHandler(this.btnPair_Click);
 			// 
 			// btnKessyoB
 			// 
 			this.btnKessyoB.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.btnKessyoB.Location = new System.Drawing.Point(299, 200);
+			this.btnKessyoB.Location = new System.Drawing.Point(280, 228);
 			this.btnKessyoB.Name = "btnKessyoB";
-			this.btnKessyoB.Size = new System.Drawing.Size(259, 52);
+			this.btnKessyoB.Size = new System.Drawing.Size(199, 52);
 			this.btnKessyoB.TabIndex = 8;
-			this.btnKessyoB.Text = "Basic Class 決勝";
+			this.btnKessyoB.Text = "Ｂクラス決勝";
 			this.btnKessyoB.UseVisualStyleBackColor = true;
-			this.btnKessyoB.Click += new System.EventHandler(this.btnKessyoB_Click);
+			this.btnKessyoB.Click += new System.EventHandler(this.btnPair_Click);
 			// 
-			// btnKessyoC
+			// btnC1
 			// 
-			this.btnKessyoC.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.btnKessyoC.Location = new System.Drawing.Point(34, 288);
-			this.btnKessyoC.Name = "btnKessyoC";
-			this.btnKessyoC.Size = new System.Drawing.Size(259, 52);
-			this.btnKessyoC.TabIndex = 9;
-			this.btnKessyoC.Text = "Camera Class";
-			this.btnKessyoC.UseVisualStyleBackColor = true;
-			this.btnKessyoC.Click += new System.EventHandler(this.btnKessyoC_Click);
+			this.btnC1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnC1.Location = new System.Drawing.Point(554, 112);
+			this.btnC1.Name = "btnC1";
+			this.btnC1.Size = new System.Drawing.Size(199, 52);
+			this.btnC1.TabIndex = 9;
+			this.btnC1.Text = "Ｃクラス１走目";
+			this.btnC1.UseVisualStyleBackColor = true;
+			this.btnC1.Click += new System.EventHandler(this.btnPair_Click);
 			// 
 			// pctPoster
 			// 
-			this.pctPoster.Location = new System.Drawing.Point(398, 344);
+			this.pctPoster.Location = new System.Drawing.Point(379, 392);
 			this.pctPoster.Name = "pctPoster";
 			this.pctPoster.Size = new System.Drawing.Size(100, 50);
 			this.pctPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -180,19 +183,55 @@
 			this.label1.TabIndex = 12;
 			this.label1.Text = "それぞれ、タイトル文字のクリックでも終了";
 			// 
+			// btnYosenA2
+			// 
+			this.btnYosenA2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnYosenA2.Location = new System.Drawing.Point(34, 170);
+			this.btnYosenA2.Name = "btnYosenA2";
+			this.btnYosenA2.Size = new System.Drawing.Size(199, 52);
+			this.btnYosenA2.TabIndex = 6;
+			this.btnYosenA2.Text = "Ａクラス予選２";
+			this.btnYosenA2.UseVisualStyleBackColor = true;
+			this.btnYosenA2.Click += new System.EventHandler(this.btnPair_Click);
+			// 
+			// btnYosenB2
+			// 
+			this.btnYosenB2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnYosenB2.Location = new System.Drawing.Point(280, 170);
+			this.btnYosenB2.Name = "btnYosenB2";
+			this.btnYosenB2.Size = new System.Drawing.Size(199, 52);
+			this.btnYosenB2.TabIndex = 7;
+			this.btnYosenB2.Text = "Ｂクラス予選２";
+			this.btnYosenB2.UseVisualStyleBackColor = true;
+			this.btnYosenB2.Click += new System.EventHandler(this.btnPair_Click);
+			// 
+			// btnC2
+			// 
+			this.btnC2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.btnC2.Location = new System.Drawing.Point(554, 170);
+			this.btnC2.Name = "btnC2";
+			this.btnC2.Size = new System.Drawing.Size(199, 52);
+			this.btnC2.TabIndex = 9;
+			this.btnC2.Text = "Ｃクラス２走目";
+			this.btnC2.UseVisualStyleBackColor = true;
+			this.btnC2.Click += new System.EventHandler(this.btnPair_Click);
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(914, 573);
+			this.Controls.Add(this.pctPoster);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnClose);
-			this.Controls.Add(this.pctPoster);
-			this.Controls.Add(this.btnKessyoC);
+			this.Controls.Add(this.btnC2);
+			this.Controls.Add(this.btnC1);
 			this.Controls.Add(this.btnKessyoB);
-			this.Controls.Add(this.btnYosenB);
-			this.Controls.Add(this.btnYosenA);
+			this.Controls.Add(this.btnYosenB2);
+			this.Controls.Add(this.btnYosenB1);
+			this.Controls.Add(this.btnYosenA2);
+			this.Controls.Add(this.btnYosenA1);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.pctKame);
 			this.Controls.Add(this.btnTeam);
@@ -216,12 +255,15 @@
 		private System.Windows.Forms.PictureBox pctKame;
 		private System.Windows.Forms.PictureBox pctBackImage;
 		private System.Windows.Forms.Label lblTitle;
-		private System.Windows.Forms.Button btnYosenA;
-		private System.Windows.Forms.Button btnYosenB;
+		private System.Windows.Forms.Button btnYosenA1;
+		private System.Windows.Forms.Button btnYosenB1;
 		private System.Windows.Forms.Button btnKessyoB;
-		private System.Windows.Forms.Button btnKessyoC;
+		private System.Windows.Forms.Button btnC1;
 		private System.Windows.Forms.PictureBox pctPoster;
 		private System.Windows.Forms.Button btnClose;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button btnYosenA2;
+		private System.Windows.Forms.Button btnYosenB2;
+		private System.Windows.Forms.Button btnC2;
 	}
 }
