@@ -394,5 +394,10 @@ namespace JMCR
 			pctWinR.Visible = true;
 		}
 
+		private void frmPair_Shown(object sender, EventArgs e)
+		{
+			lblCount.Text = (frmMain.PairNoNow+1).ToString();
+		}
+
 	}
 }

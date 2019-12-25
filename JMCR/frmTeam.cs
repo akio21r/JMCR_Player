@@ -17,6 +17,7 @@ namespace JMCR
 		int		TextNameHeightPer	= 20;
 		int		TextMargin			= 20;
 
+		int NoArea = 0;		//エリアNo.		1:北海道 ～ 9:九州
 		public frmData frmData = new frmData();
 
 		System.Media.SoundPlayer player = new System.Media.SoundPlayer(frmMain.wavFileName_Don);
@@ -63,7 +64,8 @@ namespace JMCR
 			txtNo1.Font			= txtNo2.Font		= txtNo3.Font		= fnt;
 
 			//txtTeam
-			txtTeam.Left		= Width - txtTeam.Width;
+			txtArea.Left		= Width - txtArea.Width;
+			lstArea.Left		= Width - lstArea.Width;
 
 
 
@@ -95,7 +97,7 @@ namespace JMCR
 			pct1.Left			= Left1;
 			pct2.Left			= Left2;
 			pct3.Left			= Left3;
-			pct1.Top			= txtTeam.Top + txtTeam.Height + 10;
+			pct1.Top			= txtArea.Top + txtArea.Height + 10;
 			pct2.Top			= pct1.Top;
 			pct3.Top			= pct1.Top;
 
@@ -300,6 +302,25 @@ namespace JMCR
 		private void pctSchool_Click(object sender, EventArgs e)
 		{
 			pctSchool.Visible = false;
+		}
+
+		private void txtArea_Click(object sender, EventArgs e)
+		{
+			lstArea.Visible = true;
+		}
+
+		private void lstArea_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			NoArea = lstArea.SelectedIndex + 1;
+			txtArea.Text = lstArea.SelectedItem.ToString();
+			lstArea.Visible = false;
+
+			txtNo1.Text = frmMain.tableTeam[NoArea,0].ToString();
+			txtNo2.Text = frmMain.tableTeam[NoArea,1].ToString();
+			txtNo3.Text = frmMain.tableTeam[NoArea,2].ToString();
+			Show1();
+			Show2();
+			Show3();
 		}
 
 	}

@@ -65,6 +65,7 @@
 			// 
 			this.lblSchoolL.AutoSize = true;
 			this.lblSchoolL.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblSchoolL.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblSchoolL.Font = new System.Drawing.Font("MS UI Gothic", 18F);
 			this.lblSchoolL.ForeColor = System.Drawing.Color.Yellow;
 			this.lblSchoolL.Location = new System.Drawing.Point(13, 433);
@@ -78,6 +79,7 @@
 			// 
 			this.lblSchoolR.AutoSize = true;
 			this.lblSchoolR.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblSchoolR.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblSchoolR.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblSchoolR.ForeColor = System.Drawing.Color.Yellow;
 			this.lblSchoolR.Location = new System.Drawing.Point(610, 433);
@@ -149,6 +151,7 @@
 			// 
 			this.pctVS.BackColor = System.Drawing.Color.Transparent;
 			this.pctVS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctVS.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pctVS.Image = ((System.Drawing.Image)(resources.GetObject("pctVS.Image")));
 			this.pctVS.Location = new System.Drawing.Point(418, 156);
 			this.pctVS.Name = "pctVS";
@@ -161,6 +164,7 @@
 			// pctR
 			// 
 			this.pctR.BackColor = System.Drawing.Color.Transparent;
+			this.pctR.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pctR.Location = new System.Drawing.Point(614, 121);
 			this.pctR.Name = "pctR";
 			this.pctR.Size = new System.Drawing.Size(422, 305);
@@ -173,6 +177,7 @@
 			// 
 			this.pctL.BackColor = System.Drawing.Color.Transparent;
 			this.pctL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctL.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pctL.ErrorImage = null;
 			this.pctL.Location = new System.Drawing.Point(12, 121);
 			this.pctL.Name = "pctL";
@@ -201,7 +206,7 @@
 			this.pctCourse1.Image = ((System.Drawing.Image)(resources.GetObject("pctCourse1.Image")));
 			this.pctCourse1.Location = new System.Drawing.Point(12, 30);
 			this.pctCourse1.Name = "pctCourse1";
-			this.pctCourse1.Size = new System.Drawing.Size(58, 196);
+			this.pctCourse1.Size = new System.Drawing.Size(108, 315);
 			this.pctCourse1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctCourse1.TabIndex = 18;
 			this.pctCourse1.TabStop = false;
@@ -220,6 +225,7 @@
 			// 
 			// lblL
 			// 
+			this.lblL.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblL.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblL.ForeColor = System.Drawing.Color.Chartreuse;
 			this.lblL.Location = new System.Drawing.Point(44, 38);
@@ -233,6 +239,7 @@
 			// 
 			// lblR
 			// 
+			this.lblR.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblR.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblR.ForeColor = System.Drawing.Color.Chartreuse;
 			this.lblR.Location = new System.Drawing.Point(911, 38);
@@ -287,6 +294,7 @@
 			// 
 			this.lblTitle.AutoSize = true;
 			this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+			this.lblTitle.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblTitle.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblTitle.ForeColor = System.Drawing.Color.GreenYellow;
 			this.lblTitle.Location = new System.Drawing.Point(265, 12);
@@ -340,6 +348,7 @@
 			this.Name = "frmPair";
 			this.Text = "決勝トーナメント";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Shown += new System.EventHandler(this.frmPair_Shown);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPair_KeyDown);
 			this.Resize += new System.EventHandler(this.frmTournament_Resize);
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();

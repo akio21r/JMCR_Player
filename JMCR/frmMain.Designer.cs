@@ -74,6 +74,7 @@
 			// pctKame
 			// 
 			this.pctKame.BackColor = System.Drawing.Color.Transparent;
+			this.pctKame.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pctKame.Image = ((System.Drawing.Image)(resources.GetObject("pctKame.Image")));
 			this.pctKame.Location = new System.Drawing.Point(680, 271);
 			this.pctKame.Name = "pctKame";
@@ -98,6 +99,7 @@
 			// 
 			this.lblTitle.AutoSize = true;
 			this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+			this.lblTitle.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblTitle.Font = new System.Drawing.Font("メイリオ", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblTitle.ForeColor = System.Drawing.Color.Yellow;
 			this.lblTitle.Location = new System.Drawing.Point(12, 9);

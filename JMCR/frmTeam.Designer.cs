@@ -49,8 +49,9 @@
 			this.pctFace3 = new System.Windows.Forms.PictureBox();
 			this.txtNo2 = new System.Windows.Forms.TextBox();
 			this.txtNo3 = new System.Windows.Forms.TextBox();
-			this.txtTeam = new System.Windows.Forms.TextBox();
+			this.txtArea = new System.Windows.Forms.TextBox();
 			this.pctSchool = new System.Windows.Forms.PictureBox();
+			this.lstArea = new System.Windows.Forms.ListBox();
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pct1)).BeginInit();
@@ -101,6 +102,7 @@
 			// 
 			this.lblSchool1.AutoSize = true;
 			this.lblSchool1.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblSchool1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblSchool1.Font = new System.Drawing.Font("MS UI Gothic", 18F);
 			this.lblSchool1.ForeColor = System.Drawing.Color.Yellow;
 			this.lblSchool1.Location = new System.Drawing.Point(8, 464);
@@ -172,6 +174,7 @@
 			// 
 			this.pctTitle.BackColor = System.Drawing.Color.Transparent;
 			this.pctTitle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctTitle.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pctTitle.Image = ((System.Drawing.Image)(resources.GetObject("pctTitle.Image")));
 			this.pctTitle.Location = new System.Drawing.Point(12, 12);
 			this.pctTitle.Name = "pctTitle";
@@ -209,6 +212,7 @@
 			// 
 			this.lblSchool2.AutoSize = true;
 			this.lblSchool2.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblSchool2.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblSchool2.Font = new System.Drawing.Font("MS UI Gothic", 18F);
 			this.lblSchool2.ForeColor = System.Drawing.Color.Yellow;
 			this.lblSchool2.Location = new System.Drawing.Point(394, 464);
@@ -258,6 +262,7 @@
 			// 
 			this.lblSchool3.AutoSize = true;
 			this.lblSchool3.BackColor = System.Drawing.Color.MidnightBlue;
+			this.lblSchool3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblSchool3.Font = new System.Drawing.Font("MS UI Gothic", 18F);
 			this.lblSchool3.ForeColor = System.Drawing.Color.Yellow;
 			this.lblSchool3.Location = new System.Drawing.Point(781, 464);
@@ -305,17 +310,19 @@
 			this.txtNo3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNo3_KeyPress);
 			this.txtNo3.Leave += new System.EventHandler(this.txtNo3_Leave);
 			// 
-			// txtTeam
+			// txtArea
 			// 
-			this.txtTeam.BackColor = System.Drawing.Color.Teal;
-			this.txtTeam.Font = new System.Drawing.Font("HG正楷書体-PRO", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.txtTeam.ForeColor = System.Drawing.Color.Yellow;
-			this.txtTeam.Location = new System.Drawing.Point(639, 12);
-			this.txtTeam.Name = "txtTeam";
-			this.txtTeam.Size = new System.Drawing.Size(447, 55);
-			this.txtTeam.TabIndex = 44;
-			this.txtTeam.Text = "九州地区";
-			this.txtTeam.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtArea.BackColor = System.Drawing.Color.Teal;
+			this.txtArea.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.txtArea.Font = new System.Drawing.Font("HG正楷書体-PRO", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.txtArea.ForeColor = System.Drawing.Color.Yellow;
+			this.txtArea.Location = new System.Drawing.Point(639, 12);
+			this.txtArea.Name = "txtArea";
+			this.txtArea.Size = new System.Drawing.Size(447, 55);
+			this.txtArea.TabIndex = 44;
+			this.txtArea.Text = "地区";
+			this.txtArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.txtArea.Click += new System.EventHandler(this.txtArea_Click);
 			// 
 			// pctSchool
 			// 
@@ -331,14 +338,40 @@
 			this.pctSchool.Visible = false;
 			this.pctSchool.Click += new System.EventHandler(this.pctSchool_Click);
 			// 
+			// lstArea
+			// 
+			this.lstArea.BackColor = System.Drawing.Color.Teal;
+			this.lstArea.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.lstArea.Font = new System.Drawing.Font("HG正楷書体-PRO", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lstArea.ForeColor = System.Drawing.Color.Yellow;
+			this.lstArea.FormattingEnabled = true;
+			this.lstArea.ItemHeight = 35;
+			this.lstArea.Items.AddRange(new object[] {
+            "北海道地区",
+            "東北地区",
+            "関東地区",
+            "北信越地区",
+            "東海地区",
+            "近畿地区",
+            "中国地区",
+            "四国地区",
+            "九州地区"});
+			this.lstArea.Location = new System.Drawing.Point(671, 73);
+			this.lstArea.Name = "lstArea";
+			this.lstArea.Size = new System.Drawing.Size(258, 354);
+			this.lstArea.TabIndex = 46;
+			this.lstArea.Visible = false;
+			this.lstArea.SelectedIndexChanged += new System.EventHandler(this.lstArea_SelectedIndexChanged);
+			// 
 			// frmTeam
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
 			this.ClientSize = new System.Drawing.Size(1098, 598);
+			this.Controls.Add(this.lstArea);
 			this.Controls.Add(this.pctSchool);
-			this.Controls.Add(this.txtTeam);
+			this.Controls.Add(this.txtArea);
 			this.Controls.Add(this.txtNo3);
 			this.Controls.Add(this.txtNo2);
 			this.Controls.Add(this.lblCar3);
@@ -400,7 +433,8 @@
 		public System.Windows.Forms.PictureBox pctFace3;
 		private System.Windows.Forms.TextBox txtNo2;
 		private System.Windows.Forms.TextBox txtNo3;
-		private System.Windows.Forms.TextBox txtTeam;
+		private System.Windows.Forms.TextBox txtArea;
 		public System.Windows.Forms.PictureBox pctSchool;
+		private System.Windows.Forms.ListBox lstArea;
 	}
 }
