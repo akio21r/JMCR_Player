@@ -251,6 +251,10 @@ namespace JMCR
 					GoNext(false);
 					break;
 
+				case Keys.Space:
+					GoNext(true);
+					break;
+
 				case Keys.Left:
 					pctWinL.Visible = true;
 					pctWinR.Visible = false;

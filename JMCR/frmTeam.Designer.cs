@@ -52,6 +52,9 @@
 			this.txtArea = new System.Windows.Forms.TextBox();
 			this.pctSchool = new System.Windows.Forms.PictureBox();
 			this.lstArea = new System.Windows.Forms.ListBox();
+			this.pctWin1 = new System.Windows.Forms.PictureBox();
+			this.pctWin2 = new System.Windows.Forms.PictureBox();
+			this.pctWin3 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pct1)).BeginInit();
@@ -61,6 +64,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctFace2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctSchool)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctWin1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctWin2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctWin3)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pctBackImage
@@ -116,6 +122,7 @@
 			// 
 			this.pctFace1.BackColor = System.Drawing.Color.Transparent;
 			this.pctFace1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctFace1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pctFace1.ErrorImage = null;
 			this.pctFace1.Location = new System.Drawing.Point(12, 143);
 			this.pctFace1.Name = "pctFace1";
@@ -123,6 +130,7 @@
 			this.pctFace1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pctFace1.TabIndex = 21;
 			this.pctFace1.TabStop = false;
+			this.pctFace1.Click += new System.EventHandler(this.pctFace1_Click);
 			// 
 			// pct1
 			// 
@@ -226,6 +234,7 @@
 			// 
 			this.pctFace2.BackColor = System.Drawing.Color.Transparent;
 			this.pctFace2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctFace2.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pctFace2.ErrorImage = null;
 			this.pctFace2.Location = new System.Drawing.Point(398, 143);
 			this.pctFace2.Name = "pctFace2";
@@ -233,6 +242,7 @@
 			this.pctFace2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pctFace2.TabIndex = 32;
 			this.pctFace2.TabStop = false;
+			this.pctFace2.Click += new System.EventHandler(this.pctFace2_Click);
 			// 
 			// lblCar3
 			// 
@@ -276,6 +286,7 @@
 			// 
 			this.pctFace3.BackColor = System.Drawing.Color.Transparent;
 			this.pctFace3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctFace3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pctFace3.ErrorImage = null;
 			this.pctFace3.Location = new System.Drawing.Point(784, 143);
 			this.pctFace3.Name = "pctFace3";
@@ -283,6 +294,7 @@
 			this.pctFace3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pctFace3.TabIndex = 37;
 			this.pctFace3.TabStop = false;
+			this.pctFace3.Click += new System.EventHandler(this.pctFace3_Click);
 			// 
 			// txtNo2
 			// 
@@ -363,12 +375,60 @@
 			this.lstArea.Visible = false;
 			this.lstArea.SelectedIndexChanged += new System.EventHandler(this.lstArea_SelectedIndexChanged);
 			// 
+			// pctWin1
+			// 
+			this.pctWin1.BackColor = System.Drawing.Color.Transparent;
+			this.pctWin1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctWin1.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pctWin1.Image = ((System.Drawing.Image)(resources.GetObject("pctWin1.Image")));
+			this.pctWin1.Location = new System.Drawing.Point(17, 209);
+			this.pctWin1.Name = "pctWin1";
+			this.pctWin1.Size = new System.Drawing.Size(303, 181);
+			this.pctWin1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctWin1.TabIndex = 47;
+			this.pctWin1.TabStop = false;
+			this.pctWin1.Visible = false;
+			this.pctWin1.Click += new System.EventHandler(this.pctWin1_Click);
+			// 
+			// pctWin2
+			// 
+			this.pctWin2.BackColor = System.Drawing.Color.Transparent;
+			this.pctWin2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctWin2.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pctWin2.Image = ((System.Drawing.Image)(resources.GetObject("pctWin2.Image")));
+			this.pctWin2.Location = new System.Drawing.Point(398, 221);
+			this.pctWin2.Name = "pctWin2";
+			this.pctWin2.Size = new System.Drawing.Size(303, 181);
+			this.pctWin2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctWin2.TabIndex = 47;
+			this.pctWin2.TabStop = false;
+			this.pctWin2.Visible = false;
+			this.pctWin2.Click += new System.EventHandler(this.pctWin2_Click);
+			// 
+			// pctWin3
+			// 
+			this.pctWin3.BackColor = System.Drawing.Color.Transparent;
+			this.pctWin3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pctWin3.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pctWin3.Image = ((System.Drawing.Image)(resources.GetObject("pctWin3.Image")));
+			this.pctWin3.Location = new System.Drawing.Point(795, 221);
+			this.pctWin3.Name = "pctWin3";
+			this.pctWin3.Size = new System.Drawing.Size(303, 181);
+			this.pctWin3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctWin3.TabIndex = 47;
+			this.pctWin3.TabStop = false;
+			this.pctWin3.Visible = false;
+			this.pctWin3.Click += new System.EventHandler(this.pctWin3_Click);
+			// 
 			// frmTeam
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
 			this.ClientSize = new System.Drawing.Size(1098, 598);
+			this.Controls.Add(this.pctWin3);
+			this.Controls.Add(this.pctWin2);
+			this.Controls.Add(this.pctWin1);
 			this.Controls.Add(this.lstArea);
 			this.Controls.Add(this.pctSchool);
 			this.Controls.Add(this.txtArea);
@@ -406,6 +466,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.pctFace2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctSchool)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctWin1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctWin2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctWin3)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -436,5 +499,8 @@
 		private System.Windows.Forms.TextBox txtArea;
 		public System.Windows.Forms.PictureBox pctSchool;
 		private System.Windows.Forms.ListBox lstArea;
+		private System.Windows.Forms.PictureBox pctWin1;
+		private System.Windows.Forms.PictureBox pctWin2;
+		private System.Windows.Forms.PictureBox pctWin3;
 	}
 }

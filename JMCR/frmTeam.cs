@@ -123,7 +123,16 @@ namespace JMCR
 			pctFace2.Height		= pctFace1.Height;
 			pctFace3.Height		= pctFace1.Height;
 
-
+			//Win
+			pctFace1.Controls.Add(pctWin1);
+			pctFace2.Controls.Add(pctWin2);
+			pctFace3.Controls.Add(pctWin3);
+			pctWin1.Left		= pctFace1.Width/2 - pctWin1.Width/2;
+			pctWin1.Top			= pctFace1.Height/2 - pctWin1.Height/2;
+			pctWin2.Left		= pctFace2.Width/2 - pctWin2.Width/2;
+			pctWin2.Top			= pctFace2.Height/2 - pctWin2.Height/2;
+			pctWin3.Left		= pctFace3.Width/2 - pctWin3.Width/2;
+			pctWin3.Top			= pctFace3.Height/2 - pctWin3.Height/2;
 
 			//pctTitle
 		//	pctTitle.Left	= Center - pctTitle.Width / 2;
@@ -321,6 +330,39 @@ namespace JMCR
 			Show1();
 			Show2();
 			Show3();
+			pctWin1.Visible = false;
+			pctWin2.Visible = false;
+			pctWin3.Visible = false;
+		}
+
+		private void pctFace1_Click(object sender, EventArgs e)
+		{
+			pctWin1.Visible = !pctWin1.Visible;
+		}
+
+		private void pctFace2_Click(object sender, EventArgs e)
+		{
+			pctWin2.Visible = !pctWin2.Visible;
+		}
+
+		private void pctFace3_Click(object sender, EventArgs e)
+		{
+			pctWin3.Visible = !pctWin3.Visible;
+		}
+
+		private void pctWin1_Click(object sender, EventArgs e)
+		{
+			pctWin1.Visible = false;
+		}
+
+		private void pctWin2_Click(object sender, EventArgs e)
+		{
+			pctWin2.Visible = false;
+		}
+
+		private void pctWin3_Click(object sender, EventArgs e)
+		{
+			pctWin3.Visible = false;
 		}
 
 	}
