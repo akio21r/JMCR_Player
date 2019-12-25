@@ -19,6 +19,32 @@ namespace JMCR
 		public const String imgFileName_Poster	= @"素材\ポスターs.png";
 		public const String dataMeibo			= @"データ\名簿.csv";
 
+		//--------------------------------------------------------------
+		// 名簿データ
+		const int	MAX_MEIBO	= 2000;		// 名簿データの最大個数
+		public struct tMeibo{
+			public int		No;				// ゼッケン番号
+			public String	School;			// 学校名
+			public String	Name;			// 選手名
+			public String	Car;			// カーネーム
+			public String	Image;			// 写真のファイルネーム
+		}
+		public static tMeibo[] meibo		= new tMeibo[MAX_MEIBO];
+		public static int meibo_count;		// 名簿データの数
+		public static DataTable table		= new DataTable("Table");
+
+		//--------------------------------------------------------------
+		// 対戦データ
+//		public static String[,] strDataPair	= new String[1000, 2];		//対戦表
+		public static int[,] DataPair		= new int[MAX_MEIBO, 2];	//対戦表
+		public static int DataPair_count;	// 対戦表データの数
+		public static int PairNoNow = 0;	// 対戦表の現在位置
+		public static int SelectNoL, SelectNoR;
+
+	
+		
+		
+		//--------------------------------------------------------------
 		public frmMain()
 		{
 			InitializeComponent();

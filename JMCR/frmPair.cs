@@ -63,7 +63,7 @@ namespace JMCR
 			pctL.Controls.Add(pctWinL);
 			pctR.Controls.Add(pctWinR);
 
-			lblCount.Text = (frmData.PairNoNow+1).ToString();
+			lblCount.Text = (frmMain.PairNoNow+1).ToString();
 		}
 
 		private void ResizeComponents()
@@ -139,8 +139,8 @@ namespace JMCR
 			pctCourse2.Left	= Width - pctCourse2.Width;
 			pctCourse2.Top	= lblR.Height + 10;
 
-			lblL.Text		= frmData.SelectNoL.ToString();
-			lblR.Text		= frmData.SelectNoR.ToString();
+			lblL.Text		= frmMain.SelectNoL.ToString();
+			lblR.Text		= frmMain.SelectNoR.ToString();
 
 			pctWinL.Left	= pctL.Width/2 - pctWinL.Width/2;
 			pctWinL.Top		= pctL.Height/2 - pctWinL.Height/2;
@@ -167,10 +167,10 @@ namespace JMCR
 			String l,r;
 			l = lblL.Text;
 			r = lblR.Text;
-			if(r == "") frmData.SelectNoL = 0;
-			else        frmData.SelectNoL = int.Parse(r);
-			if(l == "") frmData.SelectNoR = 0;
-			else        frmData.SelectNoR = int.Parse(l);
+			if(r == "") frmMain.SelectNoL = 0;
+			else        frmMain.SelectNoL = int.Parse(r);
+			if(l == "") frmMain.SelectNoR = 0;
+			else        frmMain.SelectNoR = int.Parse(l);
 	
 			lblL.Text = r;
 			lblR.Text = l;
@@ -179,18 +179,18 @@ namespace JMCR
 		private void lblL_TextChanged(object sender, EventArgs e)
 		{
 			int n;
-			int sel = frmData.SelectNoL;
-			for(n=0; n<frmData.meibo_count; n++){
-				if(sel == frmData.meibo[n].No){
-					pctL.ImageLocation = frmMain.imgFolder_Face + frmData.meibo[n].Image;
+			int sel = frmMain.SelectNoL;
+			for(n=0; n<frmMain.meibo_count; n++){
+				if(sel == frmMain.meibo[n].No){
+					pctL.ImageLocation = frmMain.imgFolder_Face + frmMain.meibo[n].Image;
 					lblL.Text		= sel.ToString();
-					lblSchoolL.Text	= frmData.meibo[n].School;
-					lblNameL.Text	= frmData.meibo[n].Name;
-					lblCarL.Text		= frmData.meibo[n].Car;
+					lblSchoolL.Text	= frmMain.meibo[n].School;
+					lblNameL.Text	= frmMain.meibo[n].Name;
+					lblCarL.Text		= frmMain.meibo[n].Car;
 					break;
 				}
 			}
-			if(n == frmData.meibo_count){		//データがなかったとき
+			if(n == frmMain.meibo_count){		//データがなかったとき
 				pctL.ImageLocation = "";
 				lblL.Text = "";
 				lblSchoolL.Text = "";
@@ -202,18 +202,18 @@ namespace JMCR
 		private void lblR_TextChanged(object sender, EventArgs e)
 		{
 			int n;
-			int sel = frmData.SelectNoR;
-			for(n=0; n<frmData.meibo_count; n++){
-				if(sel == frmData.meibo[n].No){
-					pctR.ImageLocation = frmMain.imgFolder_Face + frmData.meibo[n].Image;
+			int sel = frmMain.SelectNoR;
+			for(n=0; n<frmMain.meibo_count; n++){
+				if(sel == frmMain.meibo[n].No){
+					pctR.ImageLocation = frmMain.imgFolder_Face + frmMain.meibo[n].Image;
 					lblR.Text		= sel.ToString();
-					lblSchoolR.Text	= frmData.meibo[n].School;
-					lblNameR.Text	= frmData.meibo[n].Name;
-					lblCarR.Text	= frmData.meibo[n].Car;
+					lblSchoolR.Text	= frmMain.meibo[n].School;
+					lblNameR.Text	= frmMain.meibo[n].Name;
+					lblCarR.Text	= frmMain.meibo[n].Car;
 					break;
 				}
 			}
-			if(n == frmData.meibo_count){		//データがなかったとき
+			if(n == frmMain.meibo_count){		//データがなかったとき
 				pctR.ImageLocation = "";
 				lblR.Text = "";
 				lblSchoolR.Text = "";
@@ -309,12 +309,12 @@ namespace JMCR
 				axWindowsMediaPlayer1.Visible = true;
 				axWindowsMediaPlayer1.Ctlcontrols.play();
 			}
-			if(frmData.PairNoNow < frmData.DataPair_count - 1) frmData.PairNoNow++;
-			lblCount.Text = (frmData.PairNoNow+1).ToString();
-			frmData.SelectNoL = frmData.DataPair[frmData.PairNoNow, 0];
-			frmData.SelectNoR = frmData.DataPair[frmData.PairNoNow, 1];
-			lblL.Text	= frmData.SelectNoL.ToString();
-			lblR.Text	= frmData.SelectNoR.ToString();
+			if(frmMain.PairNoNow < frmMain.DataPair_count - 1) frmMain.PairNoNow++;
+			lblCount.Text = (frmMain.PairNoNow+1).ToString();
+			frmMain.SelectNoL = frmMain.DataPair[frmMain.PairNoNow, 0];
+			frmMain.SelectNoR = frmMain.DataPair[frmMain.PairNoNow, 1];
+			lblL.Text	= frmMain.SelectNoL.ToString();
+			lblR.Text	= frmMain.SelectNoR.ToString();
 			pctWinL.Visible = false;
 			pctWinR.Visible = false;
 			pctL.Visible = pctR.Visible = true;
@@ -323,12 +323,12 @@ namespace JMCR
 
 		private void GoPrev()
 		{
-			if(frmData.PairNoNow > 0) frmData.PairNoNow--;
-			lblCount.Text = (frmData.PairNoNow+1).ToString();
-			frmData.SelectNoL = frmData.DataPair[frmData.PairNoNow, 0];
-			frmData.SelectNoR = frmData.DataPair[frmData.PairNoNow, 1];
-			lblL.Text	= frmData.SelectNoL.ToString();
-			lblR.Text	= frmData.SelectNoR.ToString();
+			if(frmMain.PairNoNow > 0) frmMain.PairNoNow--;
+			lblCount.Text = (frmMain.PairNoNow+1).ToString();
+			frmMain.SelectNoL = frmMain.DataPair[frmMain.PairNoNow, 0];
+			frmMain.SelectNoR = frmMain.DataPair[frmMain.PairNoNow, 1];
+			lblL.Text	= frmMain.SelectNoL.ToString();
+			lblR.Text	= frmMain.SelectNoR.ToString();
 			pctWinL.Visible = false;
 			pctWinR.Visible = false;
 		}
@@ -336,8 +336,8 @@ namespace JMCR
 		private void ShowData()
 		{
 			frmData.ShowDialog();
-			lblL.Text	= frmData.SelectNoL.ToString();
-			lblR.Text	= frmData.SelectNoR.ToString();
+			lblL.Text	= frmMain.SelectNoL.ToString();
+			lblR.Text	= frmMain.SelectNoR.ToString();
 		}
 
 		private void lblTitle_Click(object sender, EventArgs e)
@@ -349,14 +349,14 @@ namespace JMCR
 		{
 			frmData.rdL.Checked = true;
 			frmData.ShowDialog();
-			lblL.Text	= frmData.SelectNoL.ToString();
+			lblL.Text	= frmMain.SelectNoL.ToString();
 		}
 
 		private void lblR_Click(object sender, EventArgs e)
 		{
 			frmData.rdR.Checked = true;
 			frmData.ShowDialog();
-			lblR.Text	= frmData.SelectNoR.ToString();
+			lblR.Text	= frmMain.SelectNoR.ToString();
 		}
 
 		private void lblSchoolL_Click(object sender, EventArgs e)

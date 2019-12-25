@@ -172,17 +172,17 @@ namespace JMCR
 				sel = 0;
 			else
 				sel = int.Parse(txtNo1.Text);
-			for(n=0; n<frmData.meibo_count; n++){
-				if(sel == frmData.meibo[n].No){
+			for(n=0; n<frmMain.meibo_count; n++){
+				if(sel == frmMain.meibo[n].No){
 					player.Play();
-					pctFace1.ImageLocation = frmMain.imgFolder_Face + frmData.meibo[n].Image;
-					lblSchool1.Text		= frmData.meibo[n].School;
-					lblName1.Text		= frmData.meibo[n].Name;
-					lblCar1.Text		= frmData.meibo[n].Car;
+					pctFace1.ImageLocation = frmMain.imgFolder_Face + frmMain.meibo[n].Image;
+					lblSchool1.Text		= frmMain.meibo[n].School;
+					lblName1.Text		= frmMain.meibo[n].Name;
+					lblCar1.Text		= frmMain.meibo[n].Car;
 					break;
 				}
 			}
-			if(n == frmData.meibo_count){		//データがなかったとき
+			if(n == frmMain.meibo_count){		//データがなかったとき
 				pctFace1.ImageLocation	= "";
 				lblSchool1.Text			= "";
 				lblName1.Text			= "";
@@ -197,17 +197,17 @@ namespace JMCR
 				sel = 0;
 			else
 				sel = int.Parse(txtNo2.Text);
-			for(n=0; n<frmData.meibo_count; n++){
-				if(sel == frmData.meibo[n].No){
+			for(n=0; n<frmMain.meibo_count; n++){
+				if(sel == frmMain.meibo[n].No){
 					player.Play();
-					pctFace2.ImageLocation = frmMain.imgFolder_Face + frmData.meibo[n].Image;
-					lblSchool2.Text		= frmData.meibo[n].School;
-					lblName2.Text		= frmData.meibo[n].Name;
-					lblCar2.Text		= frmData.meibo[n].Car;
+					pctFace2.ImageLocation = frmMain.imgFolder_Face + frmMain.meibo[n].Image;
+					lblSchool2.Text		= frmMain.meibo[n].School;
+					lblName2.Text		= frmMain.meibo[n].Name;
+					lblCar2.Text		= frmMain.meibo[n].Car;
 					break;
 				}
 			}
-			if(n == frmData.meibo_count){		//データがなかったとき
+			if(n == frmMain.meibo_count){		//データがなかったとき
 				pctFace2.ImageLocation	= "";
 				lblSchool2.Text			= "";
 				lblName2.Text			= "";
@@ -222,17 +222,17 @@ namespace JMCR
 				sel = 0;
 			else
 				sel = int.Parse(txtNo3.Text);
-			for(n=0; n<frmData.meibo_count; n++){
-				if(sel == frmData.meibo[n].No){
+			for(n=0; n<frmMain.meibo_count; n++){
+				if(sel == frmMain.meibo[n].No){
 					player.Play();
-					pctFace3.ImageLocation = frmMain.imgFolder_Face + frmData.meibo[n].Image;
-					lblSchool3.Text		= frmData.meibo[n].School;
-					lblName3.Text		= frmData.meibo[n].Name;
-					lblCar3.Text		= frmData.meibo[n].Car;
+					pctFace3.ImageLocation = frmMain.imgFolder_Face + frmMain.meibo[n].Image;
+					lblSchool3.Text		= frmMain.meibo[n].School;
+					lblName3.Text		= frmMain.meibo[n].Name;
+					lblCar3.Text		= frmMain.meibo[n].Car;
 					break;
 				}
 			}
-			if(n == frmData.meibo_count){		//データがなかったとき
+			if(n == frmMain.meibo_count){		//データがなかったとき
 				pctFace3.ImageLocation	= "";
 				lblSchool3.Text			= "";
 				lblName3.Text			= "";
