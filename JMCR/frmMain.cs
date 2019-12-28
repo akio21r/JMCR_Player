@@ -14,7 +14,7 @@ namespace JMCR
 		//ファイル名、フォルダ名
 		public const String imgFolder_Face		= @"データ\選手\";
 		public const String imgFolder_School	= @"データ\学校\";
-		public const String wavFileName_Don		= @"素材\音\don-1.wav";
+		public const String wavFileName_Don		= @"素材\don-1.wav";
 		public const String movFileName_Next	= @"素材\NextChallenger.mp4";
 		public const String imgFileName_Poster	= @"素材\ポスターs.png";
 		public const String dataMeibo			= @"データ\名簿.csv";

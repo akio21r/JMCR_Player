@@ -206,7 +206,7 @@
 			this.pctCourse1.Image = ((System.Drawing.Image)(resources.GetObject("pctCourse1.Image")));
 			this.pctCourse1.Location = new System.Drawing.Point(12, 30);
 			this.pctCourse1.Name = "pctCourse1";
-			this.pctCourse1.Size = new System.Drawing.Size(108, 315);
+			this.pctCourse1.Size = new System.Drawing.Size(99, 382);
 			this.pctCourse1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctCourse1.TabIndex = 18;
 			this.pctCourse1.TabStop = false;
@@ -216,9 +216,9 @@
 			this.pctCourse2.BackColor = System.Drawing.Color.Black;
 			this.pctCourse2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.pctCourse2.Image = ((System.Drawing.Image)(resources.GetObject("pctCourse2.Image")));
-			this.pctCourse2.Location = new System.Drawing.Point(993, 38);
+			this.pctCourse2.Location = new System.Drawing.Point(1004, 30);
 			this.pctCourse2.Name = "pctCourse2";
-			this.pctCourse2.Size = new System.Drawing.Size(58, 196);
+			this.pctCourse2.Size = new System.Drawing.Size(99, 382);
 			this.pctCourse2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctCourse2.TabIndex = 19;
 			this.pctCourse2.TabStop = false;
