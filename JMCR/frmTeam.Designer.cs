@@ -55,6 +55,7 @@
 			this.pctWin1 = new System.Windows.Forms.PictureBox();
 			this.pctWin2 = new System.Windows.Forms.PictureBox();
 			this.pctWin3 = new System.Windows.Forms.PictureBox();
+			this.lblCourse = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctFace1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pct1)).BeginInit();
@@ -328,9 +329,9 @@
 			this.txtArea.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.txtArea.Font = new System.Drawing.Font("HG正楷書体-PRO", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.txtArea.ForeColor = System.Drawing.Color.Yellow;
-			this.txtArea.Location = new System.Drawing.Point(639, 12);
+			this.txtArea.Location = new System.Drawing.Point(681, 12);
 			this.txtArea.Name = "txtArea";
-			this.txtArea.Size = new System.Drawing.Size(447, 55);
+			this.txtArea.Size = new System.Drawing.Size(405, 55);
 			this.txtArea.TabIndex = 44;
 			this.txtArea.Text = "地区";
 			this.txtArea.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -420,12 +421,28 @@
 			this.pctWin3.Visible = false;
 			this.pctWin3.Click += new System.EventHandler(this.pctWin3_Click);
 			// 
+			// lblCourse
+			// 
+			this.lblCourse.AutoSize = true;
+			this.lblCourse.BackColor = System.Drawing.Color.Blue;
+			this.lblCourse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.lblCourse.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.lblCourse.Font = new System.Drawing.Font("ＭＳ ゴシック", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblCourse.ForeColor = System.Drawing.Color.Yellow;
+			this.lblCourse.Location = new System.Drawing.Point(430, 15);
+			this.lblCourse.Name = "lblCourse";
+			this.lblCourse.Size = new System.Drawing.Size(214, 50);
+			this.lblCourse.TabIndex = 48;
+			this.lblCourse.Text = "１コース";
+			this.lblCourse.Click += new System.EventHandler(this.lblCourse_Click);
+			// 
 			// frmTeam
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
 			this.ClientSize = new System.Drawing.Size(1098, 598);
+			this.Controls.Add(this.lblCourse);
 			this.Controls.Add(this.pctWin3);
 			this.Controls.Add(this.pctWin2);
 			this.Controls.Add(this.pctWin1);
@@ -502,5 +519,6 @@
 		private System.Windows.Forms.PictureBox pctWin1;
 		private System.Windows.Forms.PictureBox pctWin2;
 		private System.Windows.Forms.PictureBox pctWin3;
+		private System.Windows.Forms.Label lblCourse;
 	}
 }

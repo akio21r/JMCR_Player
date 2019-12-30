@@ -49,6 +49,7 @@ namespace JMCR
 		public static int DataPair_count;	// 対戦表データの数
 		public static int PairNoNow = 0;	// 対戦表の現在位置
 		public static int SelectNoL, SelectNoR;
+		public static String filename;
 
 		//--------------------------------------------------------------
 		// 地区対抗団体戦出場選手
@@ -142,25 +143,25 @@ namespace JMCR
 			string[] field;
 			System.IO.StreamReader reader = new System.IO.StreamReader(filename, Encoding.Default);
 			frmData.lstDataPair.Items.Clear();
-			for(frmMain.DataPair_count=0; !reader.EndOfStream; frmMain.DataPair_count++){
+			for(DataPair_count=0; !reader.EndOfStream; DataPair_count++){
 				line = reader.ReadLine();
 				field = line.Split(',');
 
 				// 対戦データ
-				frmMain.DataPair[frmMain.DataPair_count, 0] = int.Parse(field[0]);
-				frmMain.DataPair[frmMain.DataPair_count, 1] = int.Parse(field[1]);
+				DataPair[DataPair_count, 0] = int.Parse(field[0]);
+				DataPair[DataPair_count, 1] = int.Parse(field[1]);
 
 				// String[,]
 			//	strDataPair[n, 0] = DataPair[n, 0].ToString("000");
 			//	strDataPair[n, 1] = DataPair[n, 1].ToString("000");
 
 				// ListBox
-				frmData.lstDataPair.Items.Add(	frmMain.DataPair[frmMain.DataPair_count, 0].ToString("000") + '\t'
-										+ frmMain.DataPair[frmMain.DataPair_count, 1].ToString("000"));
+				frmData.lstDataPair.Items.Add(	DataPair[DataPair_count, 0].ToString("000") + '\t'
+										+ DataPair[DataPair_count, 1].ToString("000"));
 			}
 			reader.Close();
-			frmMain.SelectNoL = frmMain.DataPair[0, 0];
-			frmMain.SelectNoR = frmMain.DataPair[0, 1];
+			SelectNoL = DataPair[0, 0];
+			SelectNoR = DataPair[0, 1];
 			PairNoNow = 0;
 		}
 
@@ -193,36 +194,44 @@ namespace JMCR
 		{
 			frmPair f = new frmPair();
 			if(sender.Equals(btnYosenA1)){
+				filename = dataA1;
 				CSVFileLoad_Pair(dataA1);
 				f.lblTitle.Text = "Advanced Class 予選 １走目";
 			}
 			else if(sender.Equals(btnYosenA2)){
+				filename = dataA2;
 				CSVFileLoad_Pair(dataA2);
 				f.lblTitle.Text = "Advanced Class 予選 ２走目";
 			}
 			else if(sender.Equals(btnKessyoA)){
+				filename = dataA3;
 				CSVFileLoad_Pair(dataA3);
 				f.lblTitle.Text = "Advanced Class 決勝トーナメント";
 			}
 
 			if(sender.Equals(btnYosenB1)){
+				filename = dataB1;
 				CSVFileLoad_Pair(dataB1);
 				f.lblTitle.Text = "Basic Class 予選 １走目";
 			}
 			else if(sender.Equals(btnYosenB2)){
+				filename = dataB2;
 				CSVFileLoad_Pair(dataB2);
 				f.lblTitle.Text = "Basic Class 予選 ２走目";
 			}
 			else if(sender.Equals(btnKessyoB)){
+				filename = dataB3;
 				CSVFileLoad_Pair(dataB3);
 				f.lblTitle.Text = "Basic Class 決勝トーナメント";
 			}
 
 			if(sender.Equals(btnC1)){
+				filename = dataC1;
 				CSVFileLoad_Pair(dataC1);
 				f.lblTitle.Text = "Camera Class １走目";
 			}
 			else if(sender.Equals(btnC2)){
+				filename = dataC2;
 				CSVFileLoad_Pair(dataC2);
 				f.lblTitle.Text = "Camera Class ２走目";
 			}

@@ -33,15 +33,17 @@
 			this.txtL = new System.Windows.Forms.TextBox();
 			this.txtR = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnCancel = new System.Windows.Forms.Button();
+			this.label4 = new System.Windows.Forms.Label();
+			this.btnSave = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.txtNo = new System.Windows.Forms.TextBox();
 			this.rdR = new System.Windows.Forms.RadioButton();
 			this.rdL = new System.Windows.Forms.RadioButton();
 			this.btnOK = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.btnAdvanced = new System.Windows.Forms.Button();
-			this.btnBasic = new System.Windows.Forms.Button();
-			this.btnCamera = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -52,11 +54,12 @@
 			this.lstDataPair.Dock = System.Windows.Forms.DockStyle.Right;
 			this.lstDataPair.FormattingEnabled = true;
 			this.lstDataPair.ItemHeight = 12;
-			this.lstDataPair.Location = new System.Drawing.Point(560, 0);
+			this.lstDataPair.Location = new System.Drawing.Point(526, 0);
 			this.lstDataPair.Name = "lstDataPair";
-			this.lstDataPair.Size = new System.Drawing.Size(87, 563);
+			this.lstDataPair.Size = new System.Drawing.Size(121, 563);
 			this.lstDataPair.TabIndex = 15;
 			this.lstDataPair.SelectedIndexChanged += new System.EventHandler(this.lstDataPair_SelectedIndexChanged);
+			this.lstDataPair.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstDataPair_MouseDoubleClick);
 			// 
 			// dataGridView1
 			// 
@@ -67,13 +70,12 @@
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-			this.dataGridView1.MultiSelect = false;
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
 			this.dataGridView1.RowTemplate.Height = 21;
 			this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dataGridView1.ShowEditingIcon = false;
-			this.dataGridView1.Size = new System.Drawing.Size(560, 464);
+			this.dataGridView1.Size = new System.Drawing.Size(526, 470);
 			this.dataGridView1.TabIndex = 17;
 			this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
 			this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
@@ -83,7 +85,7 @@
 			this.txtL.BackColor = System.Drawing.Color.Teal;
 			this.txtL.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.txtL.ForeColor = System.Drawing.Color.White;
-			this.txtL.Location = new System.Drawing.Point(35, 12);
+			this.txtL.Location = new System.Drawing.Point(65, 24);
 			this.txtL.Name = "txtL";
 			this.txtL.Size = new System.Drawing.Size(98, 31);
 			this.txtL.TabIndex = 19;
@@ -95,7 +97,7 @@
 			this.txtR.BackColor = System.Drawing.Color.Teal;
 			this.txtR.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.txtR.ForeColor = System.Drawing.Color.White;
-			this.txtR.Location = new System.Drawing.Point(179, 12);
+			this.txtR.Location = new System.Drawing.Point(169, 24);
 			this.txtR.Name = "txtR";
 			this.txtR.Size = new System.Drawing.Size(98, 31);
 			this.txtR.TabIndex = 20;
@@ -104,9 +106,11 @@
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.btnCamera);
-			this.panel1.Controls.Add(this.btnBasic);
-			this.panel1.Controls.Add(this.btnAdvanced);
+			this.panel1.Controls.Add(this.btnCancel);
+			this.panel1.Controls.Add(this.label4);
+			this.panel1.Controls.Add(this.btnSave);
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Controls.Add(this.txtNo);
 			this.panel1.Controls.Add(this.rdR);
 			this.panel1.Controls.Add(this.rdL);
 			this.panel1.Controls.Add(this.btnOK);
@@ -117,13 +121,62 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(560, 99);
+			this.panel1.Size = new System.Drawing.Size(526, 93);
 			this.panel1.TabIndex = 23;
+			// 
+			// btnCancel
+			// 
+			this.btnCancel.Location = new System.Drawing.Point(273, 61);
+			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(103, 26);
+			this.btnCancel.TabIndex = 35;
+			this.btnCancel.Text = "キャンセル";
+			this.btnCancel.UseVisualStyleBackColor = true;
+			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(385, 33);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(141, 12);
+			this.label4.TabIndex = 34;
+			this.label4.Text = "ダブルクリックで左右入替　→";
+			// 
+			// btnSave
+			// 
+			this.btnSave.Location = new System.Drawing.Point(431, 3);
+			this.btnSave.Name = "btnSave";
+			this.btnSave.Size = new System.Drawing.Size(95, 27);
+			this.btnSave.TabIndex = 33;
+			this.btnSave.Text = "保存　→";
+			this.btnSave.UseVisualStyleBackColor = true;
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(12, 9);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(21, 12);
+			this.label3.TabIndex = 32;
+			this.label3.Text = "No.";
+			// 
+			// txtNo
+			// 
+			this.txtNo.BackColor = System.Drawing.Color.Teal;
+			this.txtNo.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.txtNo.ForeColor = System.Drawing.Color.White;
+			this.txtNo.Location = new System.Drawing.Point(12, 24);
+			this.txtNo.Name = "txtNo";
+			this.txtNo.Size = new System.Drawing.Size(47, 31);
+			this.txtNo.TabIndex = 31;
+			this.txtNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// rdR
 			// 
 			this.rdR.AutoSize = true;
-			this.rdR.Location = new System.Drawing.Point(179, 49);
+			this.rdR.Location = new System.Drawing.Point(169, 61);
 			this.rdR.Name = "rdR";
 			this.rdR.Size = new System.Drawing.Size(57, 16);
 			this.rdR.TabIndex = 27;
@@ -135,7 +188,7 @@
 			// 
 			this.rdL.AutoSize = true;
 			this.rdL.Checked = true;
-			this.rdL.Location = new System.Drawing.Point(35, 49);
+			this.rdL.Location = new System.Drawing.Point(65, 61);
 			this.rdL.Name = "rdL";
 			this.rdL.Size = new System.Drawing.Size(57, 16);
 			this.rdL.TabIndex = 26;
@@ -146,17 +199,18 @@
 			// btnOK
 			// 
 			this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.btnOK.Location = new System.Drawing.Point(283, 3);
+			this.btnOK.Location = new System.Drawing.Point(273, 9);
 			this.btnOK.Name = "btnOK";
-			this.btnOK.Size = new System.Drawing.Size(103, 62);
+			this.btnOK.Size = new System.Drawing.Size(103, 46);
 			this.btnOK.TabIndex = 25;
 			this.btnOK.Text = "選択";
 			this.btnOK.UseVisualStyleBackColor = true;
+			this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(156, 26);
+			this.label2.Location = new System.Drawing.Point(167, 9);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(17, 12);
 			this.label2.TabIndex = 24;
@@ -165,7 +219,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 26);
+			this.label1.Location = new System.Drawing.Point(63, 9);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(17, 12);
 			this.label1.TabIndex = 23;
@@ -175,37 +229,10 @@
 			// 
 			this.panel2.Controls.Add(this.dataGridView1);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel2.Location = new System.Drawing.Point(0, 99);
+			this.panel2.Location = new System.Drawing.Point(0, 93);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(560, 464);
+			this.panel2.Size = new System.Drawing.Size(526, 470);
 			this.panel2.TabIndex = 24;
-			// 
-			// btnAdvanced
-			// 
-			this.btnAdvanced.Location = new System.Drawing.Point(407, 11);
-			this.btnAdvanced.Name = "btnAdvanced";
-			this.btnAdvanced.Size = new System.Drawing.Size(75, 23);
-			this.btnAdvanced.TabIndex = 28;
-			this.btnAdvanced.Text = "Advanced";
-			this.btnAdvanced.UseVisualStyleBackColor = true;
-			// 
-			// btnBasic
-			// 
-			this.btnBasic.Location = new System.Drawing.Point(407, 40);
-			this.btnBasic.Name = "btnBasic";
-			this.btnBasic.Size = new System.Drawing.Size(75, 23);
-			this.btnBasic.TabIndex = 29;
-			this.btnBasic.Text = "Basic";
-			this.btnBasic.UseVisualStyleBackColor = true;
-			// 
-			// btnCamera
-			// 
-			this.btnCamera.Location = new System.Drawing.Point(407, 69);
-			this.btnCamera.Name = "btnCamera";
-			this.btnCamera.Size = new System.Drawing.Size(75, 23);
-			this.btnCamera.TabIndex = 30;
-			this.btnCamera.Text = "Camera";
-			this.btnCamera.UseVisualStyleBackColor = true;
 			// 
 			// frmData
 			// 
@@ -240,8 +267,10 @@
 		private System.Windows.Forms.Button btnOK;
 		public System.Windows.Forms.RadioButton rdR;
 		public System.Windows.Forms.RadioButton rdL;
-		private System.Windows.Forms.Button btnBasic;
-		private System.Windows.Forms.Button btnAdvanced;
-		private System.Windows.Forms.Button btnCamera;
+		private System.Windows.Forms.Label label3;
+		public System.Windows.Forms.TextBox txtNo;
+		private System.Windows.Forms.Button btnSave;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Button btnCancel;
 	}
 }

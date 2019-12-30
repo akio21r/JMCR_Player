@@ -53,6 +53,7 @@ namespace JMCR
 			pctBackImage.Controls.Add(lblTitle);
 			pctBackImage.Controls.Add(pctVS);
 			pctBackImage.Controls.Add(lblCount);
+			pctBackImage.Controls.Add(lblCount2);
 
 		//	axWindowsMediaPlayer1.Controls.Add(lblVS);
 
@@ -92,7 +93,7 @@ namespace JMCR
 
 			//lblName
 			lblNameL.Left	= MarginW;
-			lblNameL.Top		= lblCarL.Top - TextMargin - lblNameL.Height;
+			lblNameL.Top	= lblCarL.Top - TextMargin - lblNameL.Height;
 			lblNameR.Left	= lblCarR.Left;
 			lblNameR.Top	= lblNameL.Top;
 
@@ -119,8 +120,10 @@ namespace JMCR
 			pctVS.Top		= pctL.Top + pctL.Height / 2 - pctVS.Height / 2;
 
 			//lblCount
+			lblCount2.Left	= Center - lblCount2.Width / 2;
+			lblCount2.Top	= lblTitle.Top + lblTitle.Height + 20;
 			lblCount.Left	= Center - lblCount.Width / 2;
-			lblCount.Top	= lblTitle.Top + lblTitle.Height + 20;
+			lblCount.Top	= lblCount2.Top + lblCount2.Height;
 
 			//lblTitle
 			lblTitle.Left	= Center - lblTitle.Width / 2;
@@ -130,10 +133,16 @@ namespace JMCR
 			//lblL,R
 			lblL.Left		= 0;
 			lblR.Left		= Width - lblR.Width;
-			lblL.Top		=  lblR.Top		= 0;
-			lblL.Height		=  lblR.Height	= FontHeight;
+			lblL.Top		= lblR.Top		= 0;
+			lblL.Height		= lblR.Height	= FontHeight;
 
 			//Course1,2
+			lblCourse1.Left	= lblTitle.Left - lblCourse1.Width - 20;
+			lblCourse1.Top	= lblTitle.Top;
+			lblCourse2.Left	= lblTitle.Left + lblTitle.Width + 20;
+			lblCourse2.Top	= lblTitle.Top;
+
+
 			pctCourse1.Left	= 0;
 			pctCourse1.Top	= lblL.Height + 10;
 			pctCourse2.Left	= Width - pctCourse2.Width;
@@ -400,6 +409,12 @@ namespace JMCR
 
 		private void frmPair_Shown(object sender, EventArgs e)
 		{
+			lblCount.Text = (frmMain.PairNoNow+1).ToString();
+		}
+
+		private void lblCount_Click(object sender, EventArgs e)
+		{
+			ShowData();
 			lblCount.Text = (frmMain.PairNoNow+1).ToString();
 		}
 

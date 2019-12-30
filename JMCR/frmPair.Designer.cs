@@ -49,6 +49,9 @@
 			this.pctWinR = new System.Windows.Forms.PictureBox();
 			this.lblTitle = new System.Windows.Forms.Label();
 			this.pctSchool = new System.Windows.Forms.PictureBox();
+			this.lblCount2 = new System.Windows.Forms.Label();
+			this.lblCourse1 = new System.Windows.Forms.Label();
+			this.lblCourse2 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctVS)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctR)).BeginInit();
@@ -254,14 +257,16 @@
 			// lblCount
 			// 
 			this.lblCount.BackColor = System.Drawing.Color.Transparent;
+			this.lblCount.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblCount.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblCount.ForeColor = System.Drawing.Color.Chartreuse;
-			this.lblCount.Location = new System.Drawing.Point(422, 108);
+			this.lblCount.Location = new System.Drawing.Point(422, 156);
 			this.lblCount.Name = "lblCount";
 			this.lblCount.Size = new System.Drawing.Size(200, 51);
 			this.lblCount.TabIndex = 22;
 			this.lblCount.Text = "1";
 			this.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblCount.Click += new System.EventHandler(this.lblCount_Click);
 			// 
 			// pctWinL
 			// 
@@ -318,16 +323,57 @@
 			this.pctSchool.Visible = false;
 			this.pctSchool.Click += new System.EventHandler(this.pctSchool_Click);
 			// 
+			// lblCount2
+			// 
+			this.lblCount2.BackColor = System.Drawing.Color.Transparent;
+			this.lblCount2.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.lblCount2.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblCount2.ForeColor = System.Drawing.Color.Chartreuse;
+			this.lblCount2.Location = new System.Drawing.Point(422, 102);
+			this.lblCount2.Name = "lblCount2";
+			this.lblCount2.Size = new System.Drawing.Size(200, 51);
+			this.lblCount2.TabIndex = 22;
+			this.lblCount2.Text = "レースNo.";
+			this.lblCount2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblCount2.Click += new System.EventHandler(this.lblCount_Click);
+			// 
+			// lblCourse1
+			// 
+			this.lblCourse1.AutoSize = true;
+			this.lblCourse1.BackColor = System.Drawing.Color.Blue;
+			this.lblCourse1.Font = new System.Drawing.Font("ＭＳ ゴシック", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblCourse1.ForeColor = System.Drawing.Color.Yellow;
+			this.lblCourse1.Location = new System.Drawing.Point(283, 76);
+			this.lblCourse1.Name = "lblCourse1";
+			this.lblCourse1.Size = new System.Drawing.Size(212, 48);
+			this.lblCourse1.TabIndex = 26;
+			this.lblCourse1.Text = "１コース";
+			// 
+			// lblCourse2
+			// 
+			this.lblCourse2.AutoSize = true;
+			this.lblCourse2.BackColor = System.Drawing.Color.Red;
+			this.lblCourse2.Font = new System.Drawing.Font("ＭＳ ゴシック", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblCourse2.ForeColor = System.Drawing.Color.Yellow;
+			this.lblCourse2.Location = new System.Drawing.Point(716, 76);
+			this.lblCourse2.Name = "lblCourse2";
+			this.lblCourse2.Size = new System.Drawing.Size(212, 48);
+			this.lblCourse2.TabIndex = 26;
+			this.lblCourse2.Text = "２コース";
+			// 
 			// frmPair
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MidnightBlue;
 			this.ClientSize = new System.Drawing.Size(1115, 546);
+			this.Controls.Add(this.lblCourse2);
+			this.Controls.Add(this.lblCourse1);
 			this.Controls.Add(this.pctSchool);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.axWindowsMediaPlayer1);
 			this.Controls.Add(this.pctWinR);
+			this.Controls.Add(this.lblCount2);
 			this.Controls.Add(this.lblCount);
 			this.Controls.Add(this.lblR);
 			this.Controls.Add(this.lblL);
@@ -388,6 +434,9 @@
 		private System.Windows.Forms.PictureBox pctWinR;
 		public System.Windows.Forms.Label lblTitle;
 		public System.Windows.Forms.PictureBox pctSchool;
+		private System.Windows.Forms.Label lblCount2;
+		private System.Windows.Forms.Label lblCourse1;
+		private System.Windows.Forms.Label lblCourse2;
 	}
 }
 

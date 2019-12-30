@@ -17,7 +17,8 @@ namespace JMCR
 		int		TextNameHeightPer	= 20;
 		int		TextMargin			= 20;
 
-		int NoArea = 0;		//エリアNo.		1:北海道 ～ 9:九州
+		int NoArea = 0;			// エリアNo.		1:北海道 ～ 9:九州
+		bool Course = false;	// false = 1コース, true = 2コース
 		public frmData frmData = new frmData();
 
 		System.Media.SoundPlayer player = new System.Media.SoundPlayer(frmMain.wavFileName_Don);
@@ -365,5 +366,19 @@ namespace JMCR
 			pctWin3.Visible = false;
 		}
 
+		private void lblCourse_Click(object sender, EventArgs e)
+		{
+			if(Course){			// false = 1コース, true = 2コース
+				Course = false;
+				lblCourse.BackColor = Color.Blue;
+				lblCourse.Text = "１コース";
+			}
+			else{
+				Course = true;
+				lblCourse.BackColor = Color.Red;
+				lblCourse.Text = "２コース";
+			}
+
+		}
 	}
 }
