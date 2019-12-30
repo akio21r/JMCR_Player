@@ -35,13 +35,10 @@
 			this.lblNameR = new System.Windows.Forms.Label();
 			this.lblCarL = new System.Windows.Forms.Label();
 			this.lblCarR = new System.Windows.Forms.Label();
-			this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
 			this.pctVS = new System.Windows.Forms.PictureBox();
 			this.pctR = new System.Windows.Forms.PictureBox();
 			this.pctL = new System.Windows.Forms.PictureBox();
 			this.pctBackImage = new System.Windows.Forms.PictureBox();
-			this.pctCourse1 = new System.Windows.Forms.PictureBox();
-			this.pctCourse2 = new System.Windows.Forms.PictureBox();
 			this.lblL = new System.Windows.Forms.Label();
 			this.lblR = new System.Windows.Forms.Label();
 			this.lblCount = new System.Windows.Forms.Label();
@@ -52,16 +49,15 @@
 			this.lblCount2 = new System.Windows.Forms.Label();
 			this.lblCourse1 = new System.Windows.Forms.Label();
 			this.lblCourse2 = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+			this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
 			((System.ComponentModel.ISupportInitialize)(this.pctVS)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctR)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctL)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pctCourse1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pctCourse2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctWinL)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctWinR)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctSchool)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblSchoolL
@@ -140,16 +136,6 @@
 			this.lblCarR.TabIndex = 4;
 			this.lblCarR.Text = "カーネーム";
 			// 
-			// axWindowsMediaPlayer1
-			// 
-			this.axWindowsMediaPlayer1.Enabled = true;
-			this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(383, 335);
-			this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-			this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-			this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(221, 164);
-			this.axWindowsMediaPlayer1.TabIndex = 5;
-			this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);
-			// 
 			// pctVS
 			// 
 			this.pctVS.BackColor = System.Drawing.Color.Transparent;
@@ -201,30 +187,6 @@
 			this.pctBackImage.TabIndex = 15;
 			this.pctBackImage.TabStop = false;
 			this.pctBackImage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pctBackImage_MouseClick);
-			// 
-			// pctCourse1
-			// 
-			this.pctCourse1.BackColor = System.Drawing.Color.Black;
-			this.pctCourse1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.pctCourse1.Image = ((System.Drawing.Image)(resources.GetObject("pctCourse1.Image")));
-			this.pctCourse1.Location = new System.Drawing.Point(12, 30);
-			this.pctCourse1.Name = "pctCourse1";
-			this.pctCourse1.Size = new System.Drawing.Size(99, 382);
-			this.pctCourse1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pctCourse1.TabIndex = 18;
-			this.pctCourse1.TabStop = false;
-			// 
-			// pctCourse2
-			// 
-			this.pctCourse2.BackColor = System.Drawing.Color.Black;
-			this.pctCourse2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.pctCourse2.Image = ((System.Drawing.Image)(resources.GetObject("pctCourse2.Image")));
-			this.pctCourse2.Location = new System.Drawing.Point(1004, 30);
-			this.pctCourse2.Name = "pctCourse2";
-			this.pctCourse2.Size = new System.Drawing.Size(99, 382);
-			this.pctCourse2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pctCourse2.TabIndex = 19;
-			this.pctCourse2.TabStop = false;
 			// 
 			// lblL
 			// 
@@ -361,6 +323,16 @@
 			this.lblCourse2.TabIndex = 26;
 			this.lblCourse2.Text = "２コース";
 			// 
+			// axWindowsMediaPlayer1
+			// 
+			this.axWindowsMediaPlayer1.Enabled = true;
+			this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(383, 335);
+			this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+			this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+			this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(221, 164);
+			this.axWindowsMediaPlayer1.TabIndex = 5;
+			this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);
+			// 
 			// frmPair
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -377,8 +349,6 @@
 			this.Controls.Add(this.lblCount);
 			this.Controls.Add(this.lblR);
 			this.Controls.Add(this.lblL);
-			this.Controls.Add(this.pctCourse2);
-			this.Controls.Add(this.pctCourse1);
 			this.Controls.Add(this.pctWinL);
 			this.Controls.Add(this.pctVS);
 			this.Controls.Add(this.lblCarR);
@@ -397,16 +367,14 @@
 			this.Shown += new System.EventHandler(this.frmPair_Shown);
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPair_KeyDown);
 			this.Resize += new System.EventHandler(this.frmTournament_Resize);
-			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctVS)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctR)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctL)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctBackImage)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pctCourse1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pctCourse2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctWinL)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctWinR)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctSchool)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -425,8 +393,6 @@
 		private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
 		public System.Windows.Forms.PictureBox pctBackImage;
 		private System.Windows.Forms.PictureBox pctVS;
-		private System.Windows.Forms.PictureBox pctCourse1;
-		private System.Windows.Forms.PictureBox pctCourse2;
 		public System.Windows.Forms.Label lblL;
 		public System.Windows.Forms.Label lblR;
 		private System.Windows.Forms.Label lblCount;

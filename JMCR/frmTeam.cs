@@ -35,6 +35,7 @@ namespace JMCR
 			pctBackImage.Controls.Add(pctFace1);
 			pctBackImage.Controls.Add(pctFace2);
 			pctBackImage.Controls.Add(pctFace3);
+			pctBackImage.Controls.Add(lblCourse);
 		}
 
 		private void frmTeam_Resize(object sender, EventArgs e)

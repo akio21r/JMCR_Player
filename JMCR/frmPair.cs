@@ -55,6 +55,9 @@ namespace JMCR
 			pctBackImage.Controls.Add(lblCount);
 			pctBackImage.Controls.Add(lblCount2);
 
+			pctBackImage.Controls.Add(lblCourse1);
+			pctBackImage.Controls.Add(lblCourse2);
+
 		//	axWindowsMediaPlayer1.Controls.Add(lblVS);
 
 			//全画面表示
@@ -141,12 +144,6 @@ namespace JMCR
 			lblCourse1.Top	= lblTitle.Top;
 			lblCourse2.Left	= lblTitle.Left + lblTitle.Width + 20;
 			lblCourse2.Top	= lblTitle.Top;
-
-
-			pctCourse1.Left	= 0;
-			pctCourse1.Top	= lblL.Height + 10;
-			pctCourse2.Left	= Width - pctCourse2.Width;
-			pctCourse2.Top	= lblR.Height + 10;
 
 			lblL.Text		= frmMain.SelectNoL.ToString();
 			lblR.Text		= frmMain.SelectNoR.ToString();
