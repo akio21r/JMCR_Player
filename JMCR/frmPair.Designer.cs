@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPair));
 			this.lblSchoolL = new System.Windows.Forms.Label();
 			this.lblSchoolR = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
 			this.lblCourse1 = new System.Windows.Forms.Label();
 			this.lblCourse2 = new System.Windows.Forms.Label();
 			this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.pctVS)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctR)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pctL)).BeginInit();
@@ -333,6 +335,11 @@
 			this.axWindowsMediaPlayer1.TabIndex = 5;
 			this.axWindowsMediaPlayer1.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.axWindowsMediaPlayer1_PlayStateChange);
 			// 
+			// timer1
+			// 
+			this.timer1.Interval = 10000;
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+			// 
 			// frmPair
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -403,6 +410,7 @@
 		private System.Windows.Forms.Label lblCount2;
 		private System.Windows.Forms.Label lblCourse1;
 		private System.Windows.Forms.Label lblCourse2;
+		private System.Windows.Forms.Timer timer1;
 	}
 }
 

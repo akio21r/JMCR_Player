@@ -18,6 +18,8 @@ namespace JMCR
 		int		MarginBottom		= 10;
 		int		TextNameHeightPer	= 20;
 		int		TextMargin			= 10;
+		bool	pctSchoolLeft		= true;
+
 
 		public frmData frmData = new frmData();
 
@@ -68,6 +70,9 @@ namespace JMCR
 			pctR.Controls.Add(pctWinR);
 
 			lblCount.Text = (frmMain.PairNoNow+1).ToString();
+
+			timer1.Interval		= frmMain.setTimerSchool;
+
 		}
 
 		private void ResizeComponents()
@@ -376,6 +381,8 @@ namespace JMCR
 			pctSchool.ImageLocation = frmMain.imgFolder_School + lblSchoolL.Text + ".jpg";
 			pctSchool.Dock = DockStyle.Fill;
 			pctSchool.Visible = true;
+			pctSchoolLeft = true;
+			timer1.Enabled = true;
 		}
 
 		private void lblSchoolR_Click(object sender, EventArgs e)
@@ -383,11 +390,14 @@ namespace JMCR
 			pctSchool.ImageLocation = frmMain.imgFolder_School + lblSchoolR.Text + ".jpg";
 			pctSchool.Dock = DockStyle.Fill;
 			pctSchool.Visible = true;
+			pctSchoolLeft = false;
+			timer1.Enabled = true;
 		}
 
 		private void pctSchool_Click(object sender, EventArgs e)
 		{
 			pctSchool.Visible = false;
+			timer1.Enabled = false;
 		}
 
 		private void pctL_Click(object sender, EventArgs e)
@@ -416,5 +426,18 @@ namespace JMCR
 			lblCount.Text = (frmMain.PairNoNow+1).ToString();
 		}
 
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			if(pctSchool.Visible){
+				if(pctSchoolLeft){
+					pctSchool.ImageLocation = frmMain.imgFolder_School + lblSchoolR.Text + ".jpg";
+					pctSchoolLeft = false;
+				}
+				else{
+					pctSchool.ImageLocation = frmMain.imgFolder_School + lblSchoolL.Text + ".jpg";
+					pctSchoolLeft = true;
+				}
+			}
+		}
 	}
 }

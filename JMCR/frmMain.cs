@@ -12,6 +12,7 @@ namespace JMCR
 	public partial class frmMain : Form
 	{
 		//ファイル名、フォルダ名
+		public const String fileSetting			= @"データ\設定.csv";
 		public const String imgFolder_Face		= @"データ\選手\";
 		public const String imgFolder_School	= @"データ\学校\";
 		public const String wavFileName_Don		= @"素材\don-1.wav";
@@ -68,6 +69,10 @@ namespace JMCR
 			//  9   , 九州地区
 		
 		//--------------------------------------------------------------
+		// 各種設定
+		public static int setTimerSchool	= 10000;		//frmPair画面での出場校切替時間
+
+		//--------------------------------------------------------------
 		public frmData frmData = new frmData();
 
 		
@@ -85,6 +90,9 @@ namespace JMCR
 
 			//名簿データの読み込み
 			CSVFileLoad_Meibo();
+
+			//設定ファイルの読み込み
+			CSVFileLoad_Setting();
 		}
 
 		//--------------------------------------------------------------
@@ -191,6 +199,21 @@ namespace JMCR
 			reader.Close();
 		}
 
+		// 設定の読み込み
+		public void CSVFileLoad_Setting()
+		{
+			string line;
+			string[] field;
+			System.IO.StreamReader reader = new System.IO.StreamReader(fileSetting, Encoding.Default);
+			for (int n = 1; !reader.EndOfStream; n++)
+			{
+				line = reader.ReadLine();
+				field = line.Split(',');
+				if (field[0] == "timer1")
+					setTimerSchool = int.Parse(field[1]);
+			}
+			reader.Close();
+		}
 
 
 		private void frmMain_Resize(object sender, EventArgs e)
