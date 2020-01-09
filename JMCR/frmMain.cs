@@ -36,7 +36,9 @@ namespace JMCR
 			public String	School;			// 学校名
 			public String	Name;			// 選手名
 			public String	Car;			// カーネーム
-			public String	Image;			// 写真のファイルネーム
+			public String	Image;          // 写真のファイルネーム
+			public String	Past1;          // 昨年の成績
+			public String	Past2;			// 一昨年の成績
 		}
 		public static tMeibo[] meibo		= new tMeibo[MAX_MEIBO];
 		public static int meibo_count;		// 名簿データの数
@@ -102,6 +104,8 @@ namespace JMCR
 				frmMain.table.Columns.Add("氏名");
 				frmMain.table.Columns.Add("Car");
 				frmMain.table.Columns.Add("写真");
+				frmMain.table.Columns.Add("昨年");
+				frmMain.table.Columns.Add("一昨年");
 			}
 			else{
 				//空でなければデータを全てクリアする
@@ -118,14 +122,19 @@ namespace JMCR
 				frmMain.meibo[frmMain.meibo_count].Name		= field[2];
 				frmMain.meibo[frmMain.meibo_count].Car		= field[3];
 				frmMain.meibo[frmMain.meibo_count].Image	= field[4];
-	
+				frmMain.meibo[frmMain.meibo_count].Past1	= field[5];
+				frmMain.meibo[frmMain.meibo_count].Past2	= field[6];
+
 				// データを追加
 				frmMain.table.Rows.Add(
 					frmMain.meibo[frmMain.meibo_count].No.ToString("000"),
 					frmMain.meibo[frmMain.meibo_count].School,
 					frmMain.meibo[frmMain.meibo_count].Name,
 					frmMain.meibo[frmMain.meibo_count].Car,
-					frmMain.meibo[frmMain.meibo_count].Image);
+					frmMain.meibo[frmMain.meibo_count].Image,
+					frmMain.meibo[frmMain.meibo_count].Past1,
+					frmMain.meibo[frmMain.meibo_count].Past2
+				);
 	
 			}
 			
@@ -196,44 +205,52 @@ namespace JMCR
 			if(sender.Equals(btnYosenA1)){
 				filename = dataA1;
 				CSVFileLoad_Pair(dataA1);
-				f.lblTitle.Text = "Advanced Class 予選 １走目";
+			//	f.lblTitle.Text = "Advanced Class 予選 １走目";
+				f.lblTitle.Text = "Ａクラス予選１走目";
 			}
 			else if(sender.Equals(btnYosenA2)){
 				filename = dataA2;
 				CSVFileLoad_Pair(dataA2);
-				f.lblTitle.Text = "Advanced Class 予選 ２走目";
+			//	f.lblTitle.Text = "Advanced Class 予選 ２走目";
+				f.lblTitle.Text = "Ａクラス予選２走目";
 			}
 			else if(sender.Equals(btnKessyoA)){
 				filename = dataA3;
 				CSVFileLoad_Pair(dataA3);
-				f.lblTitle.Text = "Advanced Class 決勝トーナメント";
+			//	f.lblTitle.Text = "Advanced Class 決勝トーナメント";
+				f.lblTitle.Text = "Ａクラス決勝トーナメント";
 			}
 
 			if(sender.Equals(btnYosenB1)){
 				filename = dataB1;
 				CSVFileLoad_Pair(dataB1);
-				f.lblTitle.Text = "Basic Class 予選 １走目";
+			//	f.lblTitle.Text = "Basic Class 予選 １走目";
+				f.lblTitle.Text = "Ｂクラス予選１走目";
 			}
 			else if(sender.Equals(btnYosenB2)){
 				filename = dataB2;
 				CSVFileLoad_Pair(dataB2);
-				f.lblTitle.Text = "Basic Class 予選 ２走目";
+			//	f.lblTitle.Text = "Basic Class 予選 ２走目";
+				f.lblTitle.Text = "Ｂクラス予選２走目";
 			}
 			else if(sender.Equals(btnKessyoB)){
 				filename = dataB3;
 				CSVFileLoad_Pair(dataB3);
-				f.lblTitle.Text = "Basic Class 決勝トーナメント";
+			//	f.lblTitle.Text = "Basic Class 決勝トーナメント";
+				f.lblTitle.Text = "Ｂクラス決勝トーナメント";
 			}
 
 			if(sender.Equals(btnC1)){
 				filename = dataC1;
 				CSVFileLoad_Pair(dataC1);
-				f.lblTitle.Text = "Camera Class １走目";
+			//	f.lblTitle.Text = "Camera Class １走目";
+				f.lblTitle.Text = "Ｃクラス１走目";
 			}
 			else if(sender.Equals(btnC2)){
 				filename = dataC2;
 				CSVFileLoad_Pair(dataC2);
-				f.lblTitle.Text = "Camera Class ２走目";
+			//	f.lblTitle.Text = "Camera Class ２走目";
+				f.lblTitle.Text = "Ｃクラス２走目";
 			}
 
 			f.ShowDialog();

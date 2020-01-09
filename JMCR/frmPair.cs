@@ -12,12 +12,12 @@ namespace JMCR
 	public partial class frmPair : Form
 	{
 
-		int		MarginW				= 20;
+		int		MarginW				= 10;
 		int		MarginWIn			= 100;
-		int		MarginTop			= 20;
-		int		MarginBottom		= 20;
+		int		MarginTop			= 10;
+		int		MarginBottom		= 10;
 		int		TextNameHeightPer	= 20;
-		int		TextMargin			= 20;
+		int		TextMargin			= 10;
 
 		public frmData frmData = new frmData();
 
@@ -86,8 +86,29 @@ namespace JMCR
 			lblSchoolL.Font		= lblSchoolR.Font	= fnt;
 			lblNameL.Font		= lblNameR.Font		= fntL;
 			lblCarL.Font		= lblCarR.Font		= fnt;
-			lblL.Font			= lblR.Font			= fnt;
+		//	lblL.Font			= lblR.Font			= fnt;
 
+			//lblTitle
+			lblTitle.Left	= Center - lblTitle.Width / 2;
+			lblTitle.Top	= 0;
+		//	lblTitle.Height	= pctL.Top;
+
+			//lblL,R
+			lblL.Left		= 0;
+			lblR.Left		= Width - lblR.Width;
+			lblL.Top		= lblR.Top		= 0;
+		//	lblL.Height		= lblR.Height	= FontHeight;
+			lblL.Text		= frmMain.SelectNoL.ToString();
+			lblR.Text		= frmMain.SelectNoR.ToString();
+
+			//Course1,2
+			lblCourse1.Left	= lblTitle.Left - lblCourse1.Width - 20;
+			lblCourse1.Top	= lblTitle.Top;
+			lblCourse2.Left	= lblTitle.Left + lblTitle.Width + 20;
+			lblCourse2.Top	= lblTitle.Top;
+
+
+	
 			//lblCar
 			lblCarL.Left	= MarginW;
 			lblCarL.Top		= ClientSize.Height - MarginBottom - lblCarL.Height;
@@ -109,7 +130,7 @@ namespace JMCR
 			//pctLeft
 			pctL.Left		= MarginW;
 			pctL.Width		= Center - MarginWIn - pctL.Left;
-			pctL.Top		= lblL.Top + lblL.Height + 5;
+			pctL.Top		= lblTitle.Top + lblTitle.Height + 5;
 			pctL.Height		= lblSchoolL.Top - TextMargin - pctL.Top;
 
 			//pctRight
@@ -127,26 +148,6 @@ namespace JMCR
 			lblCount2.Top	= lblTitle.Top + lblTitle.Height + 20;
 			lblCount.Left	= Center - lblCount.Width / 2;
 			lblCount.Top	= lblCount2.Top + lblCount2.Height;
-
-			//lblTitle
-			lblTitle.Left	= Center - lblTitle.Width / 2;
-			lblTitle.Top	= 0;
-			lblTitle.Height	= pctL.Top;
-
-			//lblL,R
-			lblL.Left		= 0;
-			lblR.Left		= Width - lblR.Width;
-			lblL.Top		= lblR.Top		= 0;
-			lblL.Height		= lblR.Height	= FontHeight;
-
-			//Course1,2
-			lblCourse1.Left	= lblTitle.Left - lblCourse1.Width - 20;
-			lblCourse1.Top	= lblTitle.Top;
-			lblCourse2.Left	= lblTitle.Left + lblTitle.Width + 20;
-			lblCourse2.Top	= lblTitle.Top;
-
-			lblL.Text		= frmMain.SelectNoL.ToString();
-			lblR.Text		= frmMain.SelectNoR.ToString();
 
 			pctWinL.Left	= pctL.Width/2 - pctWinL.Width/2;
 			pctWinL.Top		= pctL.Height/2 - pctWinL.Height/2;

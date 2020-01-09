@@ -195,9 +195,9 @@
 			this.lblL.ForeColor = System.Drawing.Color.Chartreuse;
 			this.lblL.Location = new System.Drawing.Point(44, 38);
 			this.lblL.Name = "lblL";
-			this.lblL.Size = new System.Drawing.Size(200, 51);
+			this.lblL.Size = new System.Drawing.Size(118, 51);
 			this.lblL.TabIndex = 20;
-			this.lblL.Text = "No";
+			this.lblL.Text = "888";
 			this.lblL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.lblL.TextChanged += new System.EventHandler(this.lblL_TextChanged);
 			this.lblL.Click += new System.EventHandler(this.lblL_Click);
@@ -207,11 +207,11 @@
 			this.lblR.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.lblR.Font = new System.Drawing.Font("MS UI Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblR.ForeColor = System.Drawing.Color.Chartreuse;
-			this.lblR.Location = new System.Drawing.Point(911, 38);
+			this.lblR.Location = new System.Drawing.Point(966, 12);
 			this.lblR.Name = "lblR";
-			this.lblR.Size = new System.Drawing.Size(200, 51);
+			this.lblR.Size = new System.Drawing.Size(118, 51);
 			this.lblR.TabIndex = 21;
-			this.lblR.Text = "No";
+			this.lblR.Text = "888";
 			this.lblR.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.lblR.TextChanged += new System.EventHandler(this.lblR_TextChanged);
 			this.lblR.Click += new System.EventHandler(this.lblR_Click);
@@ -305,7 +305,7 @@
 			this.lblCourse1.BackColor = System.Drawing.Color.Blue;
 			this.lblCourse1.Font = new System.Drawing.Font("ＭＳ ゴシック", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblCourse1.ForeColor = System.Drawing.Color.Yellow;
-			this.lblCourse1.Location = new System.Drawing.Point(283, 76);
+			this.lblCourse1.Location = new System.Drawing.Point(204, 60);
 			this.lblCourse1.Name = "lblCourse1";
 			this.lblCourse1.Size = new System.Drawing.Size(212, 48);
 			this.lblCourse1.TabIndex = 26;

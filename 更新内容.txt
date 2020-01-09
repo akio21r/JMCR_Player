@@ -1,1 +1,1 @@
-pctCourse 削除、代わりにLabelで色つきで表示
+frmPairのレイアウト微調整
