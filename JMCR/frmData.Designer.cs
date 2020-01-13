@@ -129,9 +129,9 @@
 			// 
 			// btnToPair
 			// 
-			this.btnToPair.Location = new System.Drawing.Point(404, 61);
+			this.btnToPair.Location = new System.Drawing.Point(404, 48);
 			this.btnToPair.Name = "btnToPair";
-			this.btnToPair.Size = new System.Drawing.Size(122, 25);
+			this.btnToPair.Size = new System.Drawing.Size(122, 38);
 			this.btnToPair.TabIndex = 36;
 			this.btnToPair.Text = "対戦表へ反映　→";
 			this.btnToPair.UseVisualStyleBackColor = true;

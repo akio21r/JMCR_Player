@@ -177,7 +177,6 @@
 			this.txtNo1.TabIndex = 29;
 			this.txtNo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.txtNo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNo1_KeyPress);
-			this.txtNo1.Leave += new System.EventHandler(this.txtNo1_Leave);
 			// 
 			// pctTitle
 			// 
@@ -308,7 +307,6 @@
 			this.txtNo2.TabIndex = 42;
 			this.txtNo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.txtNo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNo2_KeyPress);
-			this.txtNo2.Leave += new System.EventHandler(this.txtNo2_Leave);
 			// 
 			// txtNo3
 			// 
@@ -321,7 +319,6 @@
 			this.txtNo3.TabIndex = 43;
 			this.txtNo3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.txtNo3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNo3_KeyPress);
-			this.txtNo3.Leave += new System.EventHandler(this.txtNo3_Leave);
 			// 
 			// txtArea
 			// 

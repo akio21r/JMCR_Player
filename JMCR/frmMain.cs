@@ -1,4 +1,7 @@
-﻿using System;
+﻿//======================================================================
+// タイトル画面
+//======================================================================
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +14,7 @@ namespace JMCR
 {
 	public partial class frmMain : Form
 	{
+		//--------------------------------------------------------------
 		//ファイル名、フォルダ名
 		public const String fileSetting			= @"データ\設定.csv";
 		public const String imgFolder_Face		= @"データ\選手\";
@@ -41,13 +45,12 @@ namespace JMCR
 			public String	Past1;          // 昨年の成績
 			public String	Past2;			// 一昨年の成績
 		}
-		public static tMeibo[] meibo		= new tMeibo[MAX_MEIBO];
+		public static tMeibo[] meibo	= new tMeibo[MAX_MEIBO];
 		public static int meibo_count;		// 名簿データの数
-		public static DataTable table		= new DataTable("Table");
+		public static DataTable table	= new DataTable("Table");
 
 		//--------------------------------------------------------------
 		// 対戦データ
-//		public static String[,] strDataPair	= new String[1000, 2];		//対戦表
 		public static int[,] DataPair	= new int[MAX_MEIBO, 2];	//対戦表
 		public static int DataPair_count;	// 対戦表データの数
 		public static int PairNoNow = 0;	// 対戦表の現在位置
@@ -75,9 +78,8 @@ namespace JMCR
 		//--------------------------------------------------------------
 		public frmData frmData = new frmData();
 
-		
-		
 		//--------------------------------------------------------------
+		// コンストラクタ
 		public frmMain()
 		{
 			InitializeComponent();
@@ -152,6 +154,7 @@ namespace JMCR
 		}
 
 
+		//--------------------------------------------------------------
 		// 対戦データの読み込み
 		public void CSVFileLoad_Pair(String filename)
 		{
@@ -168,10 +171,6 @@ namespace JMCR
 				DataPair[DataPair_count, 0] = int.Parse(field[0]);
 				DataPair[DataPair_count, 1] = int.Parse(field[1]);
 
-				// String[,]
-			//	strDataPair[n, 0] = DataPair[n, 0].ToString("000");
-			//	strDataPair[n, 1] = DataPair[n, 1].ToString("000");
-
 				// ListBox
 				frmData.lstDataPair.Items.Add(	DataPair[DataPair_count, 0].ToString("000") + '\t'
 										+ DataPair[DataPair_count, 1].ToString("000"));
@@ -182,6 +181,7 @@ namespace JMCR
 			PairNoNow = 0;
 		}
 
+		//--------------------------------------------------------------
 		// 地区対抗団体戦CSVデータの読み込み
 		public void CSVFileLoad_Team()
 		{
@@ -199,6 +199,7 @@ namespace JMCR
 			reader.Close();
 		}
 
+		//--------------------------------------------------------------
 		// 設定の読み込み
 		public void CSVFileLoad_Setting()
 		{
@@ -216,69 +217,64 @@ namespace JMCR
 		}
 
 
+		//--------------------------------------------------------------
 		private void frmMain_Resize(object sender, EventArgs e)
 		{
 			pctKame.Left = this.ClientSize.Width - pctKame.Width;
 			pctKame.Top  = this.ClientSize.Height - pctKame.Height;
 		}
 
+		//--------------------------------------------------------------
 		private void btnPair_Click(object sender, EventArgs e)
 		{
 			frmPair f = new frmPair();
 			if(sender.Equals(btnYosenA1)){
 				filename = dataA1;
 				CSVFileLoad_Pair(dataA1);
-			//	f.lblTitle.Text = "Advanced Class 予選 １走目";
 				f.lblTitle.Text = "Ａクラス予選１走目";
 			}
 			else if(sender.Equals(btnYosenA2)){
 				filename = dataA2;
 				CSVFileLoad_Pair(dataA2);
-			//	f.lblTitle.Text = "Advanced Class 予選 ２走目";
 				f.lblTitle.Text = "Ａクラス予選２走目";
 			}
 			else if(sender.Equals(btnKessyoA)){
 				filename = dataA3;
 				CSVFileLoad_Pair(dataA3);
-			//	f.lblTitle.Text = "Advanced Class 決勝トーナメント";
 				f.lblTitle.Text = "Ａクラス決勝トーナメント";
 			}
 
 			if(sender.Equals(btnYosenB1)){
 				filename = dataB1;
 				CSVFileLoad_Pair(dataB1);
-			//	f.lblTitle.Text = "Basic Class 予選 １走目";
 				f.lblTitle.Text = "Ｂクラス予選１走目";
 			}
 			else if(sender.Equals(btnYosenB2)){
 				filename = dataB2;
 				CSVFileLoad_Pair(dataB2);
-			//	f.lblTitle.Text = "Basic Class 予選 ２走目";
 				f.lblTitle.Text = "Ｂクラス予選２走目";
 			}
 			else if(sender.Equals(btnKessyoB)){
 				filename = dataB3;
 				CSVFileLoad_Pair(dataB3);
-			//	f.lblTitle.Text = "Basic Class 決勝トーナメント";
 				f.lblTitle.Text = "Ｂクラス決勝トーナメント";
 			}
 
 			if(sender.Equals(btnC1)){
 				filename = dataC1;
 				CSVFileLoad_Pair(dataC1);
-			//	f.lblTitle.Text = "Camera Class １走目";
 				f.lblTitle.Text = "Ｃクラス１走目";
 			}
 			else if(sender.Equals(btnC2)){
 				filename = dataC2;
 				CSVFileLoad_Pair(dataC2);
-			//	f.lblTitle.Text = "Camera Class ２走目";
 				f.lblTitle.Text = "Ｃクラス２走目";
 			}
 
 			f.ShowDialog();
 		}
 
+		//--------------------------------------------------------------
 		private void btnTeam_Click(object sender, EventArgs e)
 		{
 			CSVFileLoad_Team();
@@ -286,6 +282,7 @@ namespace JMCR
 			f.ShowDialog();
 		}
 
+		//--------------------------------------------------------------
 		private void pctKame_Click(object sender, EventArgs e)
 		{
 			pctPoster.ImageLocation = imgFileName_Poster;
@@ -293,16 +290,19 @@ namespace JMCR
 			pctPoster.Visible = true;
 		}
 
+		//--------------------------------------------------------------
 		private void pctPoster_Click(object sender, EventArgs e)
 		{
 			pctPoster.Visible = false;
 		}
 
+		//--------------------------------------------------------------
 		private void lblTitle_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
 
+		//--------------------------------------------------------------
 		private void btnClose_Click(object sender, EventArgs e)
 		{
 			this.Close();

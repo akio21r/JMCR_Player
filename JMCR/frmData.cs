@@ -1,4 +1,7 @@
-﻿using System;
+﻿//======================================================================
+// データ操作画面
+//======================================================================
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,24 +14,21 @@ namespace JMCR
 {
 	public partial class frmData : Form
 	{
-	
 		//--------------------------------------------------------------
-		//
 		int initNo, initL, initR;		//データ画面が表示されたときの初期値
 
 
+		//--------------------------------------------------------------
+		// コンストラクタ
 		public frmData()
 		{
 			InitializeComponent();
-		
-		//	CSVFileLoad_Meibo();
-		//	CSVFileLoad_Pair();
 		}
 
+		//--------------------------------------------------------------
+		// フォームが読み込まれたとき
 		private void frmData_Load(object sender, EventArgs e)
 		{
-		//	CSVFileLoad_Meibo();
-		//	CSVFileLoad_Pair();
 			dataGridView1.DataSource = frmMain.table;
 
 			//データ画面が表示されたときの初期値を記録しておく
@@ -46,6 +46,19 @@ namespace JMCR
 			setTextBox();
 		}
 
+		//--------------------------------------------------------------
+		// 対戦リストの選択行が変更された時は、TextBoxにセットすると同時に名簿も選択しておく
+		private void lstDataPair_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			int n = lstDataPair.SelectedIndex;
+			if(n>=0){
+				frmMain.PairNoNow = n;
+				setTextBox();
+			}
+		}
+
+		//--------------------------------------------------------------
+		// 対戦リストの選択行が変更された時は、TextBoxにセットすると同時に名簿も選択しておく
 		private void setTextBox()
 		{
 			int n = frmMain.PairNoNow;
@@ -64,6 +77,8 @@ namespace JMCR
 			}
 		}
 
+		//--------------------------------------------------------------
+		// キャンセルボタンが押されたら、ゼッケンNoを元に戻す
 		private void btnCancel_Click(object sender, EventArgs e)
 		{
 			frmMain.PairNoNow	= initNo;
@@ -72,15 +87,8 @@ namespace JMCR
 			this.Close();
 		}
 
-		private void lstDataPair_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			int n = lstDataPair.SelectedIndex;
-			if(n>=0){
-				frmMain.PairNoNow = n;
-				setTextBox();
-			}
-		}
-
+		//--------------------------------------------------------------
+		// 対戦リストをダブルクリックしたら左右を入れ替える
 		private void lstDataPair_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
 			int n = lstDataPair.SelectedIndex;
@@ -95,6 +103,7 @@ namespace JMCR
 			lstDataPair.SelectedIndex = n;
 		}
 
+		//--------------------------------------------------------------
 		private void dataGridView1_SelectionChanged(object sender, EventArgs e)
 		{
 /*			if(dataGridView1.Rows.Count > 0){
@@ -122,6 +131,8 @@ namespace JMCR
 			this.Close();
 */		}
 
+		//--------------------------------------------------------------
+		// ゼッケンNo.テキストボックスを変更したら、内部変数を更新する。
 		private void txtL_TextChanged(object sender, EventArgs e)
 		{
 			if(txtL.Text != ""){
@@ -136,6 +147,8 @@ namespace JMCR
 			}
 		}
 
+		//--------------------------------------------------------------
+		// 対戦リストをクリックしたら、テキストボックスに値をセット
 		private void btnToPair_Click(object sender, EventArgs e)
 		{
 			int n = lstDataPair.SelectedIndex;
@@ -151,9 +164,9 @@ namespace JMCR
 
 		private void btnOK_Click(object sender, EventArgs e)
 		{
-
 		}
 
+		//--------------------------------------------------------------
 		// 対戦データの書き込み
 		private void btnSave_Click(object sender, EventArgs e)
 		{
@@ -168,7 +181,6 @@ namespace JMCR
 
 			MessageBox.Show( frmMain.filename + "に保存しました", "CSVファイルへの対戦表保存");
 		}
-
 
 	}
 }

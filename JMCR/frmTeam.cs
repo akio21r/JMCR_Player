@@ -1,4 +1,7 @@
-﻿using System;
+﻿//======================================================================
+// 地区対抗団体戦の出走者表示画面
+//======================================================================
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,17 +14,22 @@ namespace JMCR
 {
 	public partial class frmTeam : Form
 	{
+		//--------------------------------------------------------------
+		// 各種変数
 		int		MarginW				= 20;
 		int		MarginTop			= 20;
 		int		MarginBottom		= 20;
 		int		TextNameHeightPer	= 20;
 		int		TextMargin			= 20;
 
-		int NoArea = 0;			// エリアNo.		1:北海道 ～ 9:九州
+		int NoArea = 0;			// エリアNo.	1:北海道 ～ 9:九州
 		bool Course = false;	// false = 1コース, true = 2コース
 		public frmData frmData = new frmData();
 
 		System.Media.SoundPlayer player = new System.Media.SoundPlayer(frmMain.wavFileName_Don);
+
+		//--------------------------------------------------------------
+		// コンストラクタ
 		public frmTeam()
 		{
 			InitializeComponent();
@@ -38,11 +46,14 @@ namespace JMCR
 			pctBackImage.Controls.Add(lblCourse);
 		}
 
+		//--------------------------------------------------------------
 		private void frmTeam_Resize(object sender, EventArgs e)
 		{
 			ResizeComponents();
 		}
 
+		//--------------------------------------------------------------
+		// 画面リサイズ時の配置調整
 		private void ResizeComponents()
 		{
 			int Width			= ClientSize.Width;
@@ -135,15 +146,10 @@ namespace JMCR
 			pctWin2.Top			= pctFace2.Height/2 - pctWin2.Height/2;
 			pctWin3.Left		= pctFace3.Width/2 - pctWin3.Width/2;
 			pctWin3.Top			= pctFace3.Height/2 - pctWin3.Height/2;
-
-			//pctTitle
-		//	pctTitle.Left	= Center - pctTitle.Width / 2;
-		//	pctTitle.Top	= 0;
-		//	pctTitle.Height	= pct1.Top;
-
-
 		}
 
+		//--------------------------------------------------------------
+		// ゼッケンNo.テキストボックスでキーが押された時
 		private void txtNo1_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if(e.KeyChar == (char)Keys.Enter){
@@ -154,7 +160,6 @@ namespace JMCR
 				e.Handled = true;
 			}
 		}
-
 
 		private void txtNo2_KeyPress(object sender, KeyPressEventArgs e)
 		{
@@ -178,6 +183,8 @@ namespace JMCR
 			}
 		}
 
+		//--------------------------------------------------------------
+		// 先鋒表示
 		private void Show1()
 		{
 			int n, sel;
@@ -203,6 +210,7 @@ namespace JMCR
 			}
 		}
 
+		// 中堅表示
 		private void Show2()
 		{
 			int n, sel;
@@ -228,6 +236,7 @@ namespace JMCR
 			}
 		}
 
+		// 大将表示
 		private void Show3()
 		{
 			int n, sel;
@@ -253,6 +262,8 @@ namespace JMCR
 			}
 		}
 
+		//--------------------------------------------------------------
+		// キーが押されたとき
 		private void frmTeam_KeyDown(object sender, KeyEventArgs e)
 		{
 			switch(e.KeyCode){
@@ -262,33 +273,20 @@ namespace JMCR
 					break;
 
 				case Keys.Escape:
-				//	this.FormBorderStyle = FormBorderStyle.Sizable;
-				//	this.WindowState = FormWindowState.Normal;
 					this.Close();
 					break;
 			}
 		}
 
-		private void txtNo1_Leave(object sender, EventArgs e)
-		{
-		//	Show1();
-		}
-
-		private void txtNo2_Leave(object sender, EventArgs e)
-		{
-		//	Show2();
-		}
-
-		private void txtNo3_Leave(object sender, EventArgs e)
-		{
-		//	Show3();
-		}
-
+		//--------------------------------------------------------------
+		// タイトル画面クリックで閉じる
 		private void pctTitle_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
 
+		//--------------------------------------------------------------
+		// 学校名クリックで学校紹介画像表示
 		private void lblSchool1_Click(object sender, EventArgs e)
 		{
 			pctSchool.ImageLocation = frmMain.imgFolder_School + lblSchool1.Text + ".jpg";
@@ -310,16 +308,22 @@ namespace JMCR
 			pctSchool.Visible = true;
 		}
 
+		//--------------------------------------------------------------
+		// 学校紹介画像クリックで閉じる
 		private void pctSchool_Click(object sender, EventArgs e)
 		{
 			pctSchool.Visible = false;
 		}
 
+		//--------------------------------------------------------------
+		// 地区名クリックで地区名選択リストボックス表示
 		private void txtArea_Click(object sender, EventArgs e)
 		{
 			lstArea.Visible = true;
 		}
 
+		//--------------------------------------------------------------
+		// 地区名選択リストボックス
 		private void lstArea_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			NoArea = lstArea.SelectedIndex + 1;
@@ -337,6 +341,8 @@ namespace JMCR
 			pctWin3.Visible = false;
 		}
 
+		//--------------------------------------------------------------
+		// 個人写真クリックで「WIN」の表示／非表示切り替え
 		private void pctFace1_Click(object sender, EventArgs e)
 		{
 			pctWin1.Visible = !pctWin1.Visible;
@@ -352,6 +358,8 @@ namespace JMCR
 			pctWin3.Visible = !pctWin3.Visible;
 		}
 
+		//--------------------------------------------------------------
+		// 「WIN」クリックで非表示
 		private void pctWin1_Click(object sender, EventArgs e)
 		{
 			pctWin1.Visible = false;
@@ -367,6 +375,8 @@ namespace JMCR
 			pctWin3.Visible = false;
 		}
 
+		//--------------------------------------------------------------
+		// １コース／２コースの切り替え
 		private void lblCourse_Click(object sender, EventArgs e)
 		{
 			if(Course){			// false = 1コース, true = 2コース

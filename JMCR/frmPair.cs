@@ -1,4 +1,7 @@
-﻿using System;
+﻿//======================================================================
+// 予選・決勝の対戦者表示画面
+//======================================================================
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +14,7 @@ namespace JMCR
 {
 	public partial class frmPair : Form
 	{
-
+		//--------------------------------------------------------------
 		int		MarginW				= 10;
 		int		MarginWIn			= 100;
 		int		MarginTop			= 10;
@@ -23,22 +26,22 @@ namespace JMCR
 
 		public frmData frmData = new frmData();
 
+		//--------------------------------------------------------------
+		// コンストラクタ
 		public frmPair()
 		{
 			InitializeComponent();
 
-			//MediaPlayerの設定
+			// MediaPlayerの設定
 			axWindowsMediaPlayer1.settings.autoStart = false;
 			axWindowsMediaPlayer1.uiMode = "none";
 			axWindowsMediaPlayer1.stretchToFit = true;
-		//	axWindowsMediaPlayer1.Dock = DockStyle.Fill;
-		//	axWindowsMediaPlayer1.fullScreen = true;
-		//	axWindowsMediaPlayer1.settings.setMode("loop", true);
-			axWindowsMediaPlayer1.URL = frmMain.movFileName_Next;	//渡されたファイルURLを読み込み
+			axWindowsMediaPlayer1.URL = frmMain.movFileName_Next;	// 渡されたファイルURLを読み込み
 			axWindowsMediaPlayer1.Visible = false;
 
-			ResizeComponents();
+			ResizeComponents();		// 画面リサイズ時の配置調整
 
+			// コンポーネントの登録
 			pctBackImage.Controls.Add(lblSchoolL);
 			pctBackImage.Controls.Add(lblNameL);
 			pctBackImage.Controls.Add(lblCarL);
@@ -48,9 +51,6 @@ namespace JMCR
 			pctBackImage.Controls.Add(lblNameR);
 			pctBackImage.Controls.Add(lblCarR);
 			pctBackImage.Controls.Add(pctR);
-
-		//	pctBackImage.Controls.Add(pctCourse1);
-		//	pctBackImage.Controls.Add(pctCourse2);
 
 			pctBackImage.Controls.Add(lblTitle);
 			pctBackImage.Controls.Add(pctVS);
@@ -62,7 +62,7 @@ namespace JMCR
 
 		//	axWindowsMediaPlayer1.Controls.Add(lblVS);
 
-			//全画面表示
+			// 全画面表示
 			this.FormBorderStyle = FormBorderStyle.None;
 			this.WindowState = FormWindowState.Maximized;
 
@@ -71,10 +71,18 @@ namespace JMCR
 
 			lblCount.Text = (frmMain.PairNoNow+1).ToString();
 
+			// タイマーの設定
 			timer1.Interval		= frmMain.setTimerSchool;
-
 		}
 
+		//--------------------------------------------------------------
+		private void frmTournament_Resize(object sender, EventArgs e)
+		{
+			ResizeComponents();		// 画面リサイズ時の配置調整
+		}
+
+		//--------------------------------------------------------------
+		// 画面リサイズ時の配置調整
 		private void ResizeComponents()
 		{
 			int Width			= ClientSize.Width;
@@ -91,18 +99,15 @@ namespace JMCR
 			lblSchoolL.Font		= lblSchoolR.Font	= fnt;
 			lblNameL.Font		= lblNameR.Font		= fntL;
 			lblCarL.Font		= lblCarR.Font		= fnt;
-		//	lblL.Font			= lblR.Font			= fnt;
 
 			//lblTitle
 			lblTitle.Left	= Center - lblTitle.Width / 2;
 			lblTitle.Top	= 0;
-		//	lblTitle.Height	= pctL.Top;
 
 			//lblL,R
 			lblL.Left		= 0;
 			lblR.Left		= Width - lblR.Width;
 			lblL.Top		= lblR.Top		= 0;
-		//	lblL.Height		= lblR.Height	= FontHeight;
 			lblL.Text		= frmMain.SelectNoL.ToString();
 			lblR.Text		= frmMain.SelectNoR.ToString();
 
@@ -111,8 +116,6 @@ namespace JMCR
 			lblCourse1.Top	= lblTitle.Top;
 			lblCourse2.Left	= lblTitle.Left + lblTitle.Width + 20;
 			lblCourse2.Top	= lblTitle.Top;
-
-
 	
 			//lblCar
 			lblCarL.Left	= MarginW;
@@ -165,15 +168,8 @@ namespace JMCR
 			axWindowsMediaPlayer1.Height = Height;
 		}
 
-		private void frmTournament_Resize(object sender, EventArgs e)
-		{
-			ResizeComponents();
-		}
-
-		private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
-		{
-		}
-
+		//--------------------------------------------------------------
+		// VSクリックで左右入れ替え
 		private void pctVS_Click(object sender, EventArgs e)
 		{
 			String l,r;
@@ -188,6 +184,8 @@ namespace JMCR
 			lblR.Text = l;
 		}
 
+		//--------------------------------------------------------------
+		// ゼッケンNo.テキストボックスへ変更されたとき
 		private void lblL_TextChanged(object sender, EventArgs e)
 		{
 			int n;
@@ -235,6 +233,7 @@ namespace JMCR
 
 		}
 
+		//--------------------------------------------------------------
 		private void frmPair_KeyDown(object sender, KeyEventArgs e)
 		{
 			switch(e.KeyCode){
@@ -250,29 +249,29 @@ namespace JMCR
 					this.WindowState = FormWindowState.Normal;
 					break;
 
-				case Keys.Escape:
+				case Keys.Escape:		// 閉じる
 				//	this.FormBorderStyle = FormBorderStyle.Sizable;
 				//	this.WindowState = FormWindowState.Normal;
 					this.Close();
 					break;
-				case Keys.Up:
+				case Keys.Up:			// 一つ前へ
 					GoPrev();
 					break;
 
-				case Keys.Down:
+				case Keys.Down:			// 一つ次へ
 					GoNext(false);
 					break;
 
-				case Keys.Space:
+				case Keys.Space:		// アニメーション表示後、次へ
 					GoNext(true);
 					break;
 
-				case Keys.Left:
+				case Keys.Left:			// 左に「WIN」表示
 					pctWinL.Visible = true;
 					pctWinR.Visible = false;
 					break;
 	
-				case Keys.Right:
+				case Keys.Right:		// 右に「WIN」表示
 					pctWinL.Visible = false;
 					pctWinR.Visible = true;
 					break;
@@ -281,6 +280,8 @@ namespace JMCR
 
 		}
 
+		//--------------------------------------------------------------
+		// 「次の対戦者」表示前のアニメーション表示
 		private void axWindowsMediaPlayer1_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
 		{
 			switch (e.newState){
@@ -294,9 +295,7 @@ namespace JMCR
 
 				case (int)WMPLib.WMPPlayState.wmppsMediaEnded:
 					//再生終了時
-				//	pctBackImage.Visible = true;
 					axWindowsMediaPlayer1.Visible = false;
-				//	pctL.Visible = pctR.Visible = true;
 					break;
 
 				default:
@@ -304,18 +303,22 @@ namespace JMCR
 				}
 		}
 
+		//--------------------------------------------------------------
+		// マウスクリック
 		private void pctBackImage_MouseClick(object sender, MouseEventArgs e)
 		{
-			switch(e.Button){
+			switch(e.Button){				// 何もないところのクリックで次の対戦者
 			//	case MouseButtons.Left:
 			//		GoNext(true);
 			//		break;
-				case MouseButtons.Right:
+				case MouseButtons.Right:	// 右クリックでデータ画面表示
 					ShowData();
 					break;
 			}
 		}
 
+		//--------------------------------------------------------------
+		// 次の対戦者表示
 		private void GoNext(bool movie)
 		{
 			if(movie){
@@ -337,6 +340,8 @@ namespace JMCR
 			pctBackImage.Visible = true;
 		}
 
+		//--------------------------------------------------------------
+		// ひとつ前のレースNo.に戻る
 		private void GoPrev()
 		{
 			if(frmMain.PairNoNow > 0) frmMain.PairNoNow--;
@@ -349,6 +354,8 @@ namespace JMCR
 			pctWinR.Visible = false;
 		}
 
+		//--------------------------------------------------------------
+		// データ画面へ
 		private void ShowData()
 		{
 			frmData.ShowDialog();
@@ -356,11 +363,15 @@ namespace JMCR
 			lblR.Text	= frmMain.SelectNoR.ToString();
 		}
 
+		//--------------------------------------------------------------
+		// タイトル文字クリックで閉じる
 		private void lblTitle_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
 
+		//--------------------------------------------------------------
+		// ゼッケンNo.クリックでデータ画面表示
 		private void lblL_Click(object sender, EventArgs e)
 		{
 			frmData.rdL.Checked = true;
@@ -375,6 +386,8 @@ namespace JMCR
 			lblR.Text	= frmMain.SelectNoR.ToString();
 		}
 
+		//--------------------------------------------------------------
+		// 学校名クリックで学校紹介画像表示
 		private void lblSchoolL_Click(object sender, EventArgs e)
 		{
 			//
@@ -394,38 +407,45 @@ namespace JMCR
 			timer1.Enabled = true;
 		}
 
+		//--------------------------------------------------------------
+		// 学校紹介画像クリックで閉じる
 		private void pctSchool_Click(object sender, EventArgs e)
 		{
 			pctSchool.Visible = false;
 			timer1.Enabled = false;
 		}
 
+		//--------------------------------------------------------------
+		// 個人写真クリックで「WIN」表示
 		private void pctL_Click(object sender, EventArgs e)
 		{
-			//
 			pctWinL.Visible = true;
 			pctWinR.Visible = false;
-
 		}
 
 		private void pctR_Click(object sender, EventArgs e)
 		{
-			//
 			pctWinL.Visible = false;
 			pctWinR.Visible = true;
 		}
 
+		//--------------------------------------------------------------
+		// フォームが表示されたら、レースNo.表示
 		private void frmPair_Shown(object sender, EventArgs e)
 		{
 			lblCount.Text = (frmMain.PairNoNow+1).ToString();
 		}
 
+		//--------------------------------------------------------------
+		// レースNo.クリックで、データ画面表示
 		private void lblCount_Click(object sender, EventArgs e)
 		{
 			ShowData();
 			lblCount.Text = (frmMain.PairNoNow+1).ToString();
 		}
 
+		//--------------------------------------------------------------
+		// タイマーインターバル毎に呼び出される
 		private void timer1_Tick(object sender, EventArgs e)
 		{
 			if(pctSchool.Visible){
