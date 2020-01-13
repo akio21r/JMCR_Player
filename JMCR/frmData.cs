@@ -136,6 +136,19 @@ namespace JMCR
 			}
 		}
 
+		private void btnToPair_Click(object sender, EventArgs e)
+		{
+			int n = lstDataPair.SelectedIndex;
+			
+			frmMain.DataPair[n, 0] = int.Parse(txtL.Text);
+			frmMain.DataPair[n, 1] = int.Parse(txtR.Text);
+			
+			lstDataPair.Items[n] = (n+1).ToString("00") + " :  "
+									+ frmMain.DataPair[n, 0].ToString("000") + " , "
+									+ frmMain.DataPair[n, 1].ToString("000");
+			lstDataPair.SelectedIndex = n;
+		}
+
 		private void btnOK_Click(object sender, EventArgs e)
 		{
 

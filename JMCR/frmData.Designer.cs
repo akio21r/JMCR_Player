@@ -33,6 +33,7 @@
 			this.txtL = new System.Windows.Forms.TextBox();
 			this.txtR = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnToPair = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.btnSave = new System.Windows.Forms.Button();
@@ -52,8 +53,9 @@
 			// lstDataPair
 			// 
 			this.lstDataPair.Dock = System.Windows.Forms.DockStyle.Right;
+			this.lstDataPair.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lstDataPair.FormattingEnabled = true;
-			this.lstDataPair.ItemHeight = 12;
+			this.lstDataPair.ItemHeight = 16;
 			this.lstDataPair.Location = new System.Drawing.Point(526, 0);
 			this.lstDataPair.Name = "lstDataPair";
 			this.lstDataPair.Size = new System.Drawing.Size(121, 563);
@@ -106,6 +108,7 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.btnToPair);
 			this.panel1.Controls.Add(this.btnCancel);
 			this.panel1.Controls.Add(this.label4);
 			this.panel1.Controls.Add(this.btnSave);
@@ -123,6 +126,16 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(526, 93);
 			this.panel1.TabIndex = 23;
+			// 
+			// btnToPair
+			// 
+			this.btnToPair.Location = new System.Drawing.Point(404, 61);
+			this.btnToPair.Name = "btnToPair";
+			this.btnToPair.Size = new System.Drawing.Size(122, 25);
+			this.btnToPair.TabIndex = 36;
+			this.btnToPair.Text = "対戦表へ反映　→";
+			this.btnToPair.UseVisualStyleBackColor = true;
+			this.btnToPair.Click += new System.EventHandler(this.btnToPair_Click);
 			// 
 			// btnCancel
 			// 
@@ -272,5 +285,6 @@
 		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button btnCancel;
+		private System.Windows.Forms.Button btnToPair;
 	}
 }

@@ -307,9 +307,9 @@ namespace JMCR
 		private void pctBackImage_MouseClick(object sender, MouseEventArgs e)
 		{
 			switch(e.Button){
-				case MouseButtons.Left:
-					GoNext(true);
-					break;
+			//	case MouseButtons.Left:
+			//		GoNext(true);
+			//		break;
 				case MouseButtons.Right:
 					ShowData();
 					break;
